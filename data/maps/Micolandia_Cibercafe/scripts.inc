@@ -86,7 +86,7 @@ Cibercafe_PCRandom::
 	compare VAR_RESULT, B_OUTCOME_DREW
     call_if_eq PC_BatallaFinDRAW
     compare VAR_RESULT, B_OUTCOME_WON
-    call_if_eq PC_BatallaFinFarmeo
+    call_if_eq PC_BatallaFinWINPCRandom
     compare VAR_RESULT, B_OUTCOME_LOST
     call_if_eq PC_BatallaFinLOSS
 	release
@@ -232,6 +232,11 @@ PC_Batalla_Script_RandomPrize1_BagFull::
     call Common_EventScript_BagIsFull
     msgbox Script_RandomPrize1_Text_NoRoomForThis, MSGBOX_DEFAULT
     return
+	
+PC_BatallaFinWINPCRandom::
+	special HealPlayerParty
+	release
+	end
 	
 PC_BatallaFinLOSS::
 	special HealPlayerParty
