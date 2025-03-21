@@ -2067,6 +2067,7 @@ const u8 gText_EVO_NONE[]                           = _("There is no evolution f
 const u8 gText_EVO_ITEM_LEVEL_30[]                  = _(" {STR_VAR_2} is used with Lvl 30");
 const u8 gText_EVO_ITEM_LEVEL_40[]                  = _(" {STR_VAR_2} is used with Lvl 40");
 const u8 gText_EVO_ITEM_LEVEL_50[]                  = _(" {STR_VAR_2} is used with Lvl 50");
+const u8 gText_EVO_PreEvo[]                         = _("{STR_VAR_1} evolves from {STR_VAR_2}");
 
 // Pokemon center move tutor/name rater menu
 const u8 gText_RememberAMove[] = _("REMEMBER A MOVE");

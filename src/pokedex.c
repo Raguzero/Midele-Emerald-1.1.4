@@ -132,6 +132,7 @@ struct PokedexView
     u8 numLevelUpMoves;
     u8 numTMHMMoves;
     u8 numTutorMoves;
+	u8 numPreEvolutions; //HGSS_Ui
     u16 selectedMonSpriteId;
     u16 unk628;
     u16 unk62A;
@@ -297,6 +298,7 @@ static void Task_HandleEvolutionScreenInput(u8 taskId);
 static void Task_SwitchScreensFromEvolutionScreen(u8 taskId);
 static void Task_ExitEvolutionScreen(u8 taskId);
 static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 depth_i);
+static u8 PrintPreEvolutions(u8 taskId, u16 species);
 static u8 ShowSplitIcon(u32 split); //Physical/Special Split from BE
 static void DestroySplitIcon(void); //Physical/Special Split from BE
 //Stat bars on scrolling screens
@@ -7330,10 +7332,12 @@ static void Task_LoadEvolutionScreen(u8 taskId)
     case 3:
         if (gTasks[taskId].data[1] == 0)
         {
+            sPokedexView->selectedScreen = EVO_SCREEN;
             //Icon
             FreeMonIconPalettes(); //Free space for new pallete
             LoadMonIconPalette(sPokedexListItem->species); //Loads pallete for current mon
-                gTasks[taskId].data[4] = CreateMonIcon(sPokedexListItem->species, SpriteCB_MonIcon, 19, 34, 4, 0, TRUE); //Create pokemon sprite
+			PrintPreEvolutions(taskId, NationalPokedexNumToSpecies(sPokedexListItem->dexNum));
+                gTasks[taskId].data[4] = CreateMonIcon(sPokedexListItem->species, SpriteCB_MonIcon, 19 + 32*sPokedexView->numPreEvolutions, 34, 4, 0, TRUE); //Create pokemon sprite
             gSprites[gTasks[taskId].data[4]].oam.priority = 0;
         }
         gMain.state++;
@@ -7341,7 +7345,7 @@ static void Task_LoadEvolutionScreen(u8 taskId)
     case 4:
         //Print evo info and icons
         gTasks[taskId].data[3] = 0;
-        PrintEvolutionTargetSpeciesAndMethod(taskId, sPokedexListItem->species, 0, 0);
+        PrintEvolutionTargetSpeciesAndMethod(taskId, sPokedexListItem->species, 0, sPokedexView->numPreEvolutions);
         gMain.state++;
         break;
     case 5:
@@ -7457,17 +7461,101 @@ static void CreateCaughtBallEvolutionScreen(u16 targetSpecies, u8 x, u8 y, u16 u
 {
     bool8 owned = GetSetPokedexFlag(SpeciesToNationalPokedexNum(targetSpecies), FLAG_GET_CAUGHT);
     if (owned)
-        BlitBitmapToWindow(0, gUnknown_0855D2BE, x, y, 8, 16);
+        BlitBitmapToWindow(0, gUnknown_0855D2BE, x, y-1, 8, 16);
     else
     {
-        PrintInfoScreenTextSmall(gText_OneDash, x+1, y);
+        PrintInfoScreenTextSmall(gText_OneDash, x+1, y-1);
     }
+}
+static void HandlePreEvolutionSpeciesPrint(u8 taskId, u16 preSpecies, u16 species, u8 base_x, u8 base_y, u8 base_y_offset, u8 base_i)
+{
+    bool8 seen = GetSetPokedexFlag(SpeciesToNationalPokedexNum(preSpecies), FLAG_GET_SEEN);
+
+    StringCopy(gStringVar1, gSpeciesNames[species]); //evolution mon name
+    if (seen || !HGSS_HIDE_UNSEEN_EVOLUTION_NAMES)
+        StringCopy(gStringVar2, gSpeciesNames[preSpecies]); //evolution mon name
+    else
+        StringCopy(gStringVar2, gText_ThreeQuestionMarks); //show questionmarks instead of name
+
+    StringExpandPlaceholders(gStringVar3, gText_EVO_PreEvo); //evolution mon name
+    PrintInfoScreenTextSmall(gStringVar3, base_x, base_y + base_y_offset*base_i); //evolution mon name
+
+    if(base_i < 3) 
+    {
+        LoadMonIconPalette(preSpecies); //Loads pallete for current mon
+            gTasks[taskId].data[4+base_i] = CreateMonIcon(preSpecies, SpriteCB_MonIcon, 18 + 32*base_i, 31, 4, 0, TRUE); //Create pokemon sprite
+        gSprites[gTasks[taskId].data[4+base_i]].oam.priority = 0;
+    }
+}
+
+static u8 PrintPreEvolutions(u8 taskId, u16 species)
+{
+    u16 i;
+    u16 j;
+
+    u8 base_x = 13;
+    u8 base_x_offset = 54;
+    u8 base_y = 51;
+    u8 base_y_offset = 9;
+    u8 base_i = 0;
+    u8 depth_x = 16;
+
+    u16 preEvolutionOne = 0;
+    u16 preEvolutionTwo = 0;
+    u8 numPreEvolutions = 0;
+
+    //Calculate previous evolution
+    for (i = 0; i < NUM_SPECIES; i++)
+    {
+        for (j = 0; j < EVOS_PER_MON; j++)
+        {
+            if (gEvolutionTable[i][j].targetSpecies == species)
+            {
+                preEvolutionOne = i;
+                numPreEvolutions += 1;
+                break;
+            }
+        }
+    }
+
+    //Calculate if previous evolution also has a previous evolution
+    if (numPreEvolutions != 0)
+    {
+        for (i = 0; i < NUM_SPECIES; i++)
+        {
+            for (j = 0; j < EVOS_PER_MON; j++)
+            {
+                if (gEvolutionTable[i][j].targetSpecies == preEvolutionOne)
+                {
+                    preEvolutionTwo = i;
+                    numPreEvolutions += 1;
+                    CreateCaughtBallEvolutionScreen(preEvolutionTwo, base_x - 9, base_y + base_y_offset*0, 0);
+                    HandlePreEvolutionSpeciesPrint(taskId, preEvolutionTwo, preEvolutionOne, base_x, base_y, base_y_offset, 0);
+                    break;
+                }
+            }
+        }
+    }
+
+    //Print ball and name
+    if (preEvolutionOne != 0)
+    {
+        CreateCaughtBallEvolutionScreen(preEvolutionOne, base_x - 9, base_y + base_y_offset*(numPreEvolutions - 1), 0);
+        HandlePreEvolutionSpeciesPrint(taskId, preEvolutionOne, species, base_x, base_y, base_y_offset, numPreEvolutions - 1);
+    }
+
+    //vertical line
+    FillWindowPixelRect(0, PIXEL_FILL(5), 33 + 32*numPreEvolutions, 18, 1, 32); //PIXEL_FILL(15) for black
+
+    sPokedexView->numPreEvolutions = numPreEvolutions;
+
+    return numPreEvolutions;
 }
 
 #define EVO_SCREEN_LVL_DIGITS 2
 static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u8 depth_i)
 {
-    int i;
+    u16 i;
     u16 targetSpecies = 0;
 
     u16 item;
@@ -7495,7 +7583,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     if (times == 0 && depth == 0)
     {
         StringExpandPlaceholders(gStringVar4, gText_EVO_NONE); 
-        PrintInfoScreenTextSmall(gStringVar4, base_x-7, base_y + base_offset*base_i);
+        PrintInfoScreenTextSmall(gStringVar4, base_x-7, base_y + base_offset*depth_i);
     }
 
     //If there are evolutions find out which and print them 1 by 1
