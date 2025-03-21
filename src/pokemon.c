@@ -8548,7 +8548,6 @@ bool8 HasTwoFramesAnimation(u16 species)
 			&& species != SPECIES_G_BUTTERFREE
             && species != SPECIES_ALCREMIE
             && species != SPECIES_TOXTRICITY_LK
-			&& species != SPECIES_DURALUDON
             && species != SPECIES_TOXTRICITY
             && species != SPECIES_RILLABOOM
 		    && species != SPECIES_SILICOBRA
@@ -8577,7 +8576,6 @@ bool8 HasTwoFramesAnimation(u16 species)
 			&& species != SPECIES_KINGAMBIT
 			&& species != SPECIES_DUDUNSPARCE
 			&& species != SPECIES_WOOPER_PALDEAN
-			&& species != SPECIES_CLODSIRE
 			&& species != SPECIES_TAUROS_PALDEAN_FIGHT
 			&& species != SPECIES_TAUROS_PALDEAN_AQUA
 			&& species != SPECIES_TAUROS_PALDEAN_BLAZE

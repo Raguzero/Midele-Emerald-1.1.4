@@ -5701,7 +5701,10 @@ static const union AnimCmd sAnim_APPLETUN_1[] =
 
 static const union AnimCmd sAnim_DURALUDON_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 60),
+    ANIMCMD_FRAME(0, 2),
     ANIMCMD_END,
 };
 
@@ -6649,7 +6652,9 @@ static const union AnimCmd sAnim_WOOPER_PALDEAN_1[] =
 
 static const union AnimCmd sAnim_CLODSIRE_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 
