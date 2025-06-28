@@ -2566,7 +2566,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_KABUTOPS,
         .moves = {MOVE_SWORDS_DANCE, MOVE_ROCK_SLIDE, MOVE_FLAIL, MOVE_ENDURE},
         .itemTableId = BATTLE_FRONTIER_ITEM_SALAC_BERRY,
-        .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_ATTACK,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_POLIWRATH_2] = {
@@ -16214,7 +16214,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_DIPPLIN_1] = {
         .species = SPECIES_DIPPLIN,
-        .moves = {MOVE_RECYCLE, MOVE_DRAGON_BREATH, MOVE_RECOVER, MOVE_ENERGY_BALL},
+        .moves = {MOVE_RECYCLE, MOVE_DRAGON_BREATH, MOVE_RECOVER, MOVE_GIGA_DRAIN},
         .itemTableId = BATTLE_FRONTIER_ITEM_PETAYA_BERRY,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_BOLD
@@ -16222,7 +16222,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 
     [FRONTIER_MON_DIPPLIN_2] = {
         .species = SPECIES_DIPPLIN,
-        .moves = {MOVE_REFLECT, MOVE_DRAGON_BREATH, MOVE_RECOVER, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_REFLECT, MOVE_DRAGON_BREATH, MOVE_RECOVER, MOVE_ENERGY_BALL},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
         .nature = NATURE_CALM
@@ -16230,7 +16230,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 	
     [FRONTIER_MON_HYDRAPPLE_1] = {
         .species = SPECIES_HYDRAPPLE,
-        .moves = {MOVE_NASTY_PLOT, MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_ENERGY_BALL},
+        .moves = {MOVE_NASTY_PLOT, MOVE_HYDRO_PUMP, MOVE_DRAGON_PULSE, MOVE_ENERGY_BALL},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_MODEST
@@ -16238,7 +16238,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 	
     [FRONTIER_MON_HYDRAPPLE_2] = {
         .species = SPECIES_HYDRAPPLE,
-        .moves = {MOVE_RECOVER, MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_ENERGY_BALL},
+        .moves = {MOVE_RECOVER, MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_GIGA_DRAIN},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
         .nature = NATURE_CALM
@@ -16246,21 +16246,21 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 	
     [FRONTIER_MON_HYDRAPPLE_3] = {
         .species = SPECIES_HYDRAPPLE,
-        .moves = {MOVE_RECOVER, MOVE_EARTHQUAKE, MOVE_DRAGON_BREATH, MOVE_ENERGY_BALL},
+        .moves = {MOVE_RECOVER, MOVE_EARTHQUAKE, MOVE_DRAGON_BREATH, MOVE_GIGA_DRAIN},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_HYDRAPPLE_4] = {
         .species = SPECIES_HYDRAPPLE,
-        .moves = {MOVE_NASTY_PLOT, MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_ENERGY_BALL},
+        .moves = {MOVE_NASTY_PLOT, MOVE_RECOVER, MOVE_DRAGON_PULSE, MOVE_GIGA_DRAIN},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_HYDRAPPLE_5] = {
         .species = SPECIES_HYDRAPPLE,
-        .moves = {MOVE_LEAF_STORM, MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_ENERGY_BALL},
+        .moves = {MOVE_LEAF_STORM, MOVE_HYDRO_PUMP, MOVE_DRAGON_PULSE, MOVE_ENERGY_BALL},
         .itemTableId = BATTLE_FRONTIER_ITEM_CHOICE_SPECS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_MODEST
