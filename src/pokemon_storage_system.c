@@ -3810,6 +3810,8 @@ static void Cb_OnBPressed(u8 taskId)
             PlaySE(SE_HAZURE);
             PrintStorageActionText(PC_TEXT_HOLDING_POKE);
             sPSSData->state = 1;
+            PlaySE(SE_SELECT);
+            SetPSSCallback(Cb_PlaceMon);
         }
         else if (IsActiveItemMoving())
         {
