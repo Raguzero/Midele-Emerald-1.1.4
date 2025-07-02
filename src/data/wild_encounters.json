@@ -2056,7 +2056,7 @@
                     },
                     "map": "MAP_FORBIDDEN_FOREST",
                     "water_mons": {
-                        "encounter_rate": 4,
+                        "encounter_rate": 12,
                         "mons": [
                             {
                                 "max_level": 65,
@@ -2410,7 +2410,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_CENTISKORCH"
+                                "species": "SPECIES_CASTFORM"
                             },
                             {
                                 "max_level": 70,

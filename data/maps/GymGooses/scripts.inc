@@ -1039,6 +1039,8 @@ GymGooses_EventScript_Primera_Casilla_Prueba::
 	end
 GymGooses_EventScript_Comienza2::
 	msgbox GymGooses_Text_Curacion, MSGBOX_DEFAULT
+	playfanfare MUS_ME_ASA
+	waitfanfare
 	special HealPlayerParty
 	applymovement EVENT_OBJ_ID_PLAYER, GymGoosesComienzPrueba
 	waitmovement 0
