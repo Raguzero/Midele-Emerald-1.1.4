@@ -206,6 +206,7 @@ static const u8 sMapName_OldaleRuins[] = _("OLDALE RUINS");
 static const u8 sMapName_ForbiddenForest[] = _("FORBIDDEN FOREST");
 static const u8 sMapName_MauvilleRuins[] = _("MAUVILLE RUINS");
 static const u8 sMapName_MonocycleRoute[] = _("MONOCYCLE ROAD");
+static const u8 sMapName_TempleOfTime[] = _("TEMPLE OF TIME");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ABANDONED_SHIP]            = {6, 14, 1, 1, sMapName_AbandonedShip},
@@ -398,6 +399,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_TANOBY_CHAMBERS]           = {0, 0, 1, 1, sMapName_TanobyChambers},
     [MAPSEC_TANOBY_KEY]                = {0, 0, 1, 1, sMapName_TanobyKey},
     [MAPSEC_TANOBY_RUINS]              = {0, 0, 1, 1, sMapName_TanobyRuins},
+    [MAPSEC_TEMPLE_OF_TIME]            = {19, 12, 1, 1, sMapName_TempleOfTime},
     [MAPSEC_TERRA_CAVE]                = {0, 0, 1, 1, sMapName_TerraCave},
     [MAPSEC_THREE_ISLAND]              = {0, 0, 1, 1, sMapName_ThreeIsland},
     [MAPSEC_THREE_ISLE_PATH]           = {0, 0, 1, 1, sMapName_ThreeIslePath},

@@ -1188,3 +1188,11 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/SapphireGym2/scripts.inc"
 
 	.include "data/maps/SapphireGym_Basement/scripts.inc"
+
+	.include "data/maps/Micolandia_Temple_of_Time/scripts.inc"
+
+	.include "data/maps/Micolandia_Temple_of_Time2/scripts.inc"
+
+	.include "data/maps/Micolandia_Temple_of_Time3/scripts.inc"
+
+	.include "data/maps/CelebiRoom/scripts.inc"

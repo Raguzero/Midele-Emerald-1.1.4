@@ -180,10 +180,10 @@ Micolandia_EventScript_Rotonda::
 	release
 	end
 	
-Micolandia_EventScript_Kraft::
+Micolandia_EventScript_NPC::
 	lock
 	faceplayer
-	msgbox Micolandia_Text_Kraft, MSGBOX_DEFAULT
+	msgbox Micolandia_Text_NPC, MSGBOX_DEFAULT
 	release
 	end
 	
@@ -425,8 +425,8 @@ Micolandia_Text_Rotonda:
 	.string "Por cierto, si ves a mi hijo,\n"
 	.string "dile que le estoy buscando.$"
 	
-Micolandia_Text_Kraft:
-	.string "KRAFT: Jejeje, estas plantitas...\n"
+Micolandia_Text_NPC:
+	.string "Jejeje, estas plantitas...\n"
 	.string "así de fumadas... fuuuuuuuuuu....\p"
 	
 	.string "Fuuuuuuuuuuuuuuuuuuuu...\p"

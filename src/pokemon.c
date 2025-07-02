@@ -3128,6 +3128,7 @@ static const u16 sLevelCapFlags[] =
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
     FLAG_EXPLANATION_MICOLANDIA,  // Postgame Begin
+	FLAG_COMPLETE_FORBIDDEN_FOREST, // Postgame Complete Forbidden Forest
     FLAG_DEFEATED_SANTY_GYM,  // Gym 1
     FLAG_DEFEATED_SAPPH_GYM,  // Gym 2
     FLAG_DEFEATED_GOOSES_GYM,  // Gym 3
@@ -3145,7 +3146,8 @@ static const u8 sCapLevels[] =
     50,  // 6 medallas
     55,  // 7 medallas
     65,  // 8 medallas
-    80,  // Postgame Begin
+    73,  // Postgame Begin
+    78,  // Postgame Complete Forbidden Forest
     85,  // Gym 1
     90,  // Gym 2
     95,  // Gym 3

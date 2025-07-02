@@ -7,10 +7,10 @@
         {
             "elevation": 0,
             "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-            "script": "ForbiddenForest_EventScript_Celebi_Sign",
+            "script": "ForbiddenForest_EventScript_Templo_Sign",
             "type": "sign",
-            "x": 19,
-            "y": 17
+            "x": 4,
+            "y": 12
         }
     ],
     "connections": [
@@ -28,19 +28,6 @@
     "music": "MUS_RG_T_MORI",
     "name": "ForbiddenForest",
     "object_events": [
-        {
-            "elevation": 3,
-            "flag": "FLAG_HIDE_CELEBI",
-            "graphics_id": "EVENT_OBJ_GFX_CELEBI",
-            "movement_range_x": 0,
-            "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-            "script": "ForbiddenForest_EventScript_Celebi",
-            "trainer_sight_or_berry_tree_id": "0",
-            "trainer_type": "0",
-            "x": 20,
-            "y": 10
-        },
         {
             "elevation": 3,
             "flag": "0",
@@ -160,19 +147,6 @@
         },
         {
             "elevation": 3,
-            "flag": "FLAG_COMPLETE_FORBIDDEN_FOREST",
-            "graphics_id": "EVENT_OBJ_GFX_PSYCHIC_M",
-            "movement_range_x": 0,
-            "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_FACE_UP",
-            "script": "ForbiddenForest_EventScript_Santygrass",
-            "trainer_sight_or_berry_tree_id": "0",
-            "trainer_type": "0",
-            "x": 19,
-            "y": 18
-        },
-        {
-            "elevation": 3,
             "flag": "0",
             "graphics_id": "EVENT_OBJ_GFX_NINJA_BOY",
             "movement_range_x": 0,
@@ -267,6 +241,13 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_MICOLANDIA_TEMPLE_OF_TIME",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 5,
+            "y": 7
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

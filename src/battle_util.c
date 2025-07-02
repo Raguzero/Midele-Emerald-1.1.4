@@ -3778,7 +3778,9 @@ u8 IsMonDisobedient(void)
         if (FlagGet(FLAG_BADGE08_GET))
             obedienceLevel = 65;
         if (FlagGet(FLAG_EXPLANATION_MICOLANDIA))
-            obedienceLevel = 80;
+            obedienceLevel = 73;
+        if (FlagGet(FLAG_COMPLETE_FORBIDDEN_FOREST))
+            obedienceLevel = 78;
         if (FlagGet(FLAG_DEFEATED_SANTY_GYM))
             obedienceLevel = 85;
         if (FlagGet(FLAG_DEFEATED_SAPPH_GYM))

@@ -1250,13 +1250,13 @@
 #define FLAG_EXPLANATION_MICOLANDIA                                 0x4A6 // Previously Unused Flag
 #define FLAG_UNIT_SYSTEM                                            0x4A7 // Previously Unused Flag
 #define FLAG_MATCH_CALL_OFF                                         0x4A8 // Previously Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
+#define FLAG_ITEM_TempleTime_YELLOWFLUTE                            0x4A9 // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_BLUEFLUTE                              0x4AA // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_REDFLUTE                               0x4AB // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_POKEDOLL                               0x4AC // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_FLUFFYTAIL                             0x4AD // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_CLEANSETAG                             0x4AE // Previously Unused Flag
+#define FLAG_ITEM_TempleTime_SOOTHEBELL                             0x4AF // Previously Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
@@ -1517,7 +1517,7 @@
 #define FLAG_LANDMARK_IZABE_CAVE                    (SYSTEM_FLAGS + 0x88) // Previously unused Flag
 #define FLAG_LANDMARK_MICOLO_HIDEOUT                (SYSTEM_FLAGS + 0x89) // Previously unused Flag
 #define FLAG_LANDMARK_MONOCYCLE_ROUTE               (SYSTEM_FLAGS + 0x8A) // Previously Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
+#define FLAG_LANDMARK_TEMPLE_OF_TIME                (SYSTEM_FLAGS + 0x8B) // Previously Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
 #define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag

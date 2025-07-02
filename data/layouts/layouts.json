@@ -4939,6 +4939,46 @@
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_Cave",
             "width": 9
+        },
+        {
+            "blockdata_filepath": "data/layouts/Micolandia_Temple_of_Time/map.bin",
+            "border_filepath": "data/layouts/Micolandia_Temple_of_Time/border.bin",
+            "height": 48,
+            "id": "LAYOUT_MICOLANDIA_TEMPLE_OF_TIME",
+            "name": "Micolandia_Temple_of_Time_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_PetalburgGym",
+            "width": 21
+        },
+        {
+            "blockdata_filepath": "data/layouts/Micolandia_Temple_of_Time2/map.bin",
+            "border_filepath": "data/layouts/Micolandia_Temple_of_Time2/border.bin",
+            "height": 20,
+            "id": "LAYOUT_MICOLANDIA_TEMPLE_OF_TIME2",
+            "name": "Micolandia_Temple_of_Time2_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_BattleArena",
+            "width": 30
+        },
+        {
+            "blockdata_filepath": "data/layouts/Micolandia_Temple_of_Time3/map.bin",
+            "border_filepath": "data/layouts/Micolandia_Temple_of_Time3/border.bin",
+            "height": 20,
+            "id": "LAYOUT_MICOLANDIA_TEMPLE_OF_TIME3",
+            "name": "Micolandia_Temple_of_Time3_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_BattlePike",
+            "width": 30
+        },
+        {
+            "blockdata_filepath": "data/layouts/CelebiRoom/map.bin",
+            "border_filepath": "data/layouts/CelebiRoom/border.bin",
+            "height": 20,
+            "id": "LAYOUT_CELEBI_ROOM",
+            "name": "CelebiRoom_Layout",
+            "primary_tileset": "gTileset_General",
+            "secondary_tileset": "gTileset_BattlePike",
+            "width": 20
         }
     ],
     "layouts_table_label": "gMapLayouts"

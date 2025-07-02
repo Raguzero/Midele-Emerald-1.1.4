@@ -4854,6 +4854,274 @@
                     }
                 },
                 {
+                    "base_label": "gMicolandia_Temple_of_Time0",
+                    "land_mons": {
+                        "encounter_rate": 10,
+                        "mons": [
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_NINCADA"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_GROWLITHE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_TYROGUE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_MINUN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_PLUSLE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 65,
+                                "species": "SPECIES_WIGGLYTUFF"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 63,
+                                "species": "SPECIES_MEDICHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_MAWILE"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_GRUMPIG"
+                            },
+                            {
+                                "max_level": 69,
+                                "min_level": 65,
+                                "species": "SPECIES_MAROWAK"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_SHEDINJA"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_NINJASK"
+                            }
+                        ]
+                    },
+                    "land_mons_night": {
+                        "encounter_rate": 10,
+                        "mons": [
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_NINCADA"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_GROWLITHE_HISUIAN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_ALOLAN_PERSIAN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_PANCHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_ILLUMISE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_VOLBEAT"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 63,
+                                "species": "SPECIES_MEDICHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_CHIMECHO"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_MISMAGIUS"
+                            },
+                            {
+                                "max_level": 69,
+                                "min_level": 65,
+                                "species": "SPECIES_XATU"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_SHEDINJA"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_NINJASK"
+                            }
+                        ]
+                    },
+                    "map": "MAP_MICOLANDIA_TEMPLE_OF_TIME"
+                },
+                {
+                    "base_label": "gMicolandia_Temple_of_Time20",
+                    "land_mons": {
+                        "encounter_rate": 10,
+                        "mons": [
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_NINCADA"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_GROWLITHE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_TYROGUE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_MINUN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_PLUSLE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 65,
+                                "species": "SPECIES_WIGGLYTUFF"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 63,
+                                "species": "SPECIES_MEDICHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_MAWILE"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_GRUMPIG"
+                            },
+                            {
+                                "max_level": 69,
+                                "min_level": 65,
+                                "species": "SPECIES_MAROWAK"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_SHEDINJA"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_NINJASK"
+                            }
+                        ]
+                    },
+                    "land_mons_night": {
+                        "encounter_rate": 10,
+                        "mons": [
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_NINCADA"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 64,
+                                "species": "SPECIES_GROWLITHE_HISUIAN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_ALOLAN_PERSIAN"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_PANCHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_ILLUMISE"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_VOLBEAT"
+                            },
+                            {
+                                "max_level": 67,
+                                "min_level": 63,
+                                "species": "SPECIES_MEDICHAM"
+                            },
+                            {
+                                "max_level": 70,
+                                "min_level": 66,
+                                "species": "SPECIES_CHIMECHO"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_MISMAGIUS"
+                            },
+                            {
+                                "max_level": 69,
+                                "min_level": 65,
+                                "species": "SPECIES_XATU"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_SHEDINJA"
+                            },
+                            {
+                                "max_level": 68,
+                                "min_level": 64,
+                                "species": "SPECIES_NINJASK"
+                            }
+                        ]
+                    },
+                    "map": "MAP_MICOLANDIA_TEMPLE_OF_TIME2"
+                },
+                {
                     "base_label": "gMicoloHideout_ExperimentRoom0",
                     "land_mons": {
                         "encounter_rate": 50,

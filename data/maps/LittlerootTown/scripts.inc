@@ -1231,4 +1231,4 @@ LittlerootTown_Text_Teleport_4:
 	
 LevelCapItem_Text_LittlerootTown:
 	.string "LEVEL CAP: Actualización completada.\n"
-	.string "El nuevo límite es el nivel 80.$"
+	.string "El nuevo límite es el nivel 73.$"

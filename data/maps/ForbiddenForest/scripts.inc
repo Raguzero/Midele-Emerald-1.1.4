@@ -1,121 +1,15 @@
 ForbiddenForest_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, ForbiddenForest_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, ForbiddenForest_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, ForbiddenForest_OnLoad
 	.byte 0
-	
-ForbiddenForest_OnResume: 
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, ForbiddenForest_EventScript_TryRemoveCelebi
-	end
 	
 ForbiddenForest_OnTransition:
 	setflag FLAG_LANDMARK_FORBIDDEN_FOREST
-	call_if_unset FLAG_CAUGHT_CELEBI, ForbiddenForest_EventScript_TryShowCelebi
 	end
 	
-ForbiddenForest_OnLoad:
-	call_if_unset FLAG_FORBIDDEN_FOREST_CELEBI_ENTRANCE, ForbiddenForest_Script_Close
-	end
-	
-ForbiddenForest_EventScript_Celebi_Sign::
-	lockall
-	goto_if_set FLAG_FORBIDDEN_FOREST_CELEBI_ENTRANCE, ForbiddenForest_EventScript_Celebi_Sign3	
-	msgbox ForbiddenForest_Text_Celebi, MSGBOX_SIGN
-	specialvar VAR_RESULT, CheckJirachiMewinTeam
-	compare VAR_RESULT, TRUE
-	goto_if_eq ForbiddenForest_EventScript_Celebi_Sign2
-	end
-	
-ForbiddenForest_EventScript_Celebi_Sign3::
+ForbiddenForest_EventScript_Templo_Sign::
 	lock
-	msgbox ForbiddenForest_Text_Celebi, MSGBOX_SIGN
+	msgbox ForbiddenForest_Text_Templo, MSGBOX_SIGN
 	release
-	end
-
-ForbiddenForest_EventScript_Celebi_Sign2::
-	waitse
-	playmoncry SPECIES_MEW, 2
-	delay 40
-	waitmoncry
-	waitse
-	playmoncry SPECIES_JIRACHI, 2
-	delay 40
-	waitmoncry
-	setmetatile 19, 12, METATILE_General_Grass, 0
-	setmetatile 19, 13, METATILE_General_Grass, 0
-	setmetatile 19, 14, METATILE_General_Grass, 0
-	setmetatile 19, 15, METATILE_General_Grass, 0
-	setmetatile 20, 12, METATILE_General_Grass, 0
-	setmetatile 20, 13, METATILE_General_Grass, 0
-	setmetatile 20, 14, METATILE_General_Grass, 0
-	setmetatile 20, 15, METATILE_General_Grass, 0
-	special DrawWholeMapView
-	setflag FLAG_FORBIDDEN_FOREST_CELEBI_ENTRANCE
-	msgbox ForbiddenForest_Text_Celebi2, MSGBOX_SIGN
-	releaseall
-	end
-	
-ForbiddenForest_Script_Close::
-	setmetatile 19, 12, METATILE_General_Grass_TreeUp, 1
-	setmetatile 19, 13, 0x016, 1
-	setmetatile 19, 14, METATILE_General_Grass_TreeUp, 1
-	setmetatile 19, 15, 0x016, 1
-	setmetatile 20, 12, METATILE_General_Grass_TreeUp, 1
-	setmetatile 20, 13, 0x016, 1
-	setmetatile 20, 14, METATILE_General_Grass_TreeUp, 1
-	setmetatile 20, 15, 0x016, 1
-	return
-
-ForbiddenForest_EventScript_TryRemoveCelebi::
-	specialvar VAR_RESULT, GetBattleOutcome
-	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_ne Common_EventScript_NopReturn
-	removeobject 1
-	return
-
-ForbiddenForest_EventScript_HideCelebi::
-	setvar VAR_TEMP_1, 1
-	setflag FLAG_HIDE_CELEBI
-	return
-
-ForbiddenForest_EventScript_TryShowCelebi::
-	setvar VAR_TEMP_1, 1
-	goto_if_set FLAG_DEFEATED_CELEBI, Common_EventScript_NopReturn
-	setvar VAR_TEMP_1, 0
-	clearflag FLAG_HIDE_CELEBI
-	return
-
-ForbiddenForest_EventScript_Celebi::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_CELEBI, 2
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_CELEBI, 60, ITEM_LUM_BERRY
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq ForbiddenForest_EventScript_DefeatedCelebi
-	compare VAR_RESULT, B_OUTCOME_RAN
-	goto_if_eq ForbiddenForest_EventScript_RanFromCelebi
-	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-	goto_if_eq ForbiddenForest_EventScript_RanFromCelebi
-	setflag FLAG_CAUGHT_CELEBI
-	release
-	end
-
-ForbiddenForest_EventScript_DefeatedCelebi:: 
-	setflag FLAG_DEFEATED_CELEBI
-	goto Common_EventScript_RemoveStaticPokemon
-	end
-
-ForbiddenForest_EventScript_RanFromCelebi:: 
-	setvar VAR_0x8004, SPECIES_CELEBI
-	goto Common_EventScript_LegendaryFlewAway
 	end
 	
 ForbiddenForest_EventScript_RareCandy::
@@ -228,56 +122,8 @@ ForbiddenForest_EventScript_Castillo::
 	msgbox Castillo_DespuesDeBatalla, MSGBOX_AUTOCLOSE
 	end
 	
-ForbiddenForest_EventScript_Santygrass::
-	lockall
-	msgbox ForbiddenForest_Text_Santygrass_TalkToHimself, MSGBOX_DEFAULT
-	faceplayer
-	playse SE_PIN
-	applymovement 11, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox ForbiddenForest_Text_Santygrass_Talks, MSGBOX_NPC
-	setflag FLAG_COMPLETE_FORBIDDEN_FOREST
-	applymovement 11, ForbiddenForest_Movement_SantygrassSpin
-	waitmovement 0
-	playse SE_W100
-	applymovement 11, ForbiddenForest_Movement_SantygrassJumpaway
-	waitmovement 0
-	removeobject 11
-	releaseall
-	end
-	
-ForbiddenForest_Movement_SantygrassSpin:
-	face_up
-	delay_4
-	face_left
-	delay_4
-	face_down
-	delay_4
-	face_right
-	delay_4
-	step_end
-
-ForbiddenForest_Movement_SantygrassJumpaway:
-	face_up
-	disable_anim
-	slide_up
-	slide_up
-	slide_up
-	slide_up
-	slide_up
-	slide_up
-	step_end
-	
-ForbiddenForest_Text_Celebi:
-	.string "EL CAMINO HACIA EL VIAJERO DEL\n"
-	.string "TIEMPO SOLO SE ABRIRÁ CON LA\l"
-	.string "LLAMADA DEL POKéMON QUE CONTIENE\l"
-	.string "EL ADN DE TODOS Y DEL POKéMON QUE\l"
-	.string "PUEDE CONCEDER CUALQUIER DESEO$"
-	
-ForbiddenForest_Text_Celebi2:
-	.string "EL CAMINO SE HA ABIERTO\n"
-	.string "EL VIAJERO DEL TIEMPO QUIERE VERTE$"
+ForbiddenForest_Text_Templo:
+	.string "Templo del Tiempo$"
 
 ForbiddenForest_Text_EzecuterIntro: 
 	.string "Dicen que por aquí se esconde un\n"
@@ -593,34 +439,3 @@ Castillo_DespuesDeBatalla:
 	.string "parece que ash tiene un crayon en el\l"
 	.string "cerebro como homero simpson, ojala que\l"
 	.string "serena no me haga nada por decir esto$" 
-	
-ForbiddenForest_Text_Santygrass_TalkToHimself:
-	.string "Qué extraño es este bosque...\p"
-
-	.string "Por mucho que lo intente quemar...\n"
-	.string "¡las llamas se vuelven a apagar!\p"
-	
-	.string "Siento como si el mismísimo TIEMPO\n"
-	.string "volviese hacia atrás cada vez que\l"
-	.string "lo intento.\p"
-
-	.string "¿Debe ser que el CELEBI de este mundo\n"
-	.string "es el protector de este bosque?$"
-
-ForbiddenForest_Text_Santygrass_Talks:
-	.string "¡Oh! ¡No me di cuenta de que estabas\n"
-	.string "ahí!\p"
-
-	.string "Así que eres {PLAYER} ¿eh?\n"
-	.string "He oído cosas impresionantes de tí.\p"
-	
-	.string "Yo soy SANTYGRASS, uno de los cuatro\n"
-	.string "líderes de GYM de MICOLANDIA.\l"
-	.string "¿Me estabas buscando?\p"
-	
-	.string "De acuerdo, ahora mismo vuelvo a mi\n"
-	.string "GIMNASIO para esperar tu desafío.\l"
-	.string "¡No te lo pondré fácil!\p"
-
-	.string "Y recuerda: ¡no hay nada mejor\n"
-	.string "que el olor a hierba quemada!$"

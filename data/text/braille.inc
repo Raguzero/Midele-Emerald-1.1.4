@@ -257,3 +257,15 @@ MauvilleRuins_Braille_RegielekiPuzzle:
 	.braille "EL ELECTRICO\n"
 	.braille "QUE ILUMINA\n"
 	.braille "UN FARO.$"
+	
+OldaleRuins_Braille_CelebiPuzzle:
+	.byte 0
+	.byte 0
+	.byte 29
+	.byte 19
+	.byte 3
+	.byte 3
+	.braille "POKEMON ADN\n"
+	.braille "Y DEL DESEO\n"
+	.braille "TE ABREN AL\n"
+	.braille "VIAJERO.$"

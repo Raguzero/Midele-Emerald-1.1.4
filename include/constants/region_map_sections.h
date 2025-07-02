@@ -222,7 +222,8 @@
 #define MAPSEC_IZABE_CAVE                   0xDA
 #define MAPSEC_MICOLO_HIDEOUT               0xDB
 #define MAPSEC_MONOCYCLE_ROUTE              0xDC
-#define MAPSEC_NONE                         0xDD
+#define MAPSEC_TEMPLE_OF_TIME               0xDD
+#define MAPSEC_NONE                         0xDE
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

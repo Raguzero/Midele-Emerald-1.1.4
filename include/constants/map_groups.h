@@ -644,6 +644,10 @@
 #define MAP_SAPPHIRE_GYM                         (47 | (34 << 8))
 #define MAP_SAPPHIRE_GYM2                        (48 | (34 << 8))
 #define MAP_SAPPHIRE_GYM_BASEMENT                (49 | (34 << 8))
+#define MAP_MICOLANDIA_TEMPLE_OF_TIME            (50 | (34 << 8))
+#define MAP_MICOLANDIA_TEMPLE_OF_TIME2           (51 | (34 << 8))
+#define MAP_MICOLANDIA_TEMPLE_OF_TIME3           (52 | (34 << 8))
+#define MAP_CELEBI_ROOM                          (53 | (34 << 8))
 
 #define MAP_GROUPS_COUNT 35
 
