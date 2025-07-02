@@ -5292,7 +5292,12 @@ void PCBatallaRandomSetTrainer(void)
         TRAINER_ESCROTO,
         TRAINER_SAPPH,
         TRAINER_KRUB_2,
-        TRAINER_IZABE_LAVENDER
+        TRAINER_IZABE_LAVENDER,
+        TRAINER_PICHU7,
+        TRAINER_GERPH,
+		TRAINER_IZABE_MAYOR_2, // GARM
+		TRAINER_MELKOR,
+		TRAINER_LORD
     };
 
     static const s32 NUM_TRAINERS_PC_BATALLA = sizeof(PC_Batalla_Random_Trainers)/sizeof(PC_Batalla_Random_Trainers[0]);

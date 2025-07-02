@@ -159,6 +159,11 @@ MicoloLeagueLobby_EventScript_ResetTrainerYESConfirmo::
 	cleartrainerflag TRAINER_LAEX
 	cleartrainerflag TRAINER_GERPH
 	cleartrainerflag TRAINER_POKEXAVI
+	cleartrainerflag TRAINER_KRAFT
+	cleartrainerflag TRAINER_GATOLETE
+	cleartrainerflag TRAINER_PAJAROESPIN
+	cleartrainerflag TRAINER_FRANTASY
+	cleartrainerflag TRAINER_NEUER
 	release
 	end
 	

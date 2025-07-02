@@ -10942,19 +10942,20 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Wattson4),
         .party = {.ItemCustomMidele = sParty_Wattson4},
     },
-
-    [TRAINER_WATTSON_5] =
+	
+    [TRAINER_FRANTASY] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_WATTSON,
-        .trainerName = _("WATTSON"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .battleMusic = MUS_RG_VS_TORE,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = _("FRANTASY"),
         .items = {},
-        .doubleBattle = TRUE,
+        .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
-        .partySize = ARRAY_COUNT(sParty_Wattson5),
-        .party = {.ItemCustomMidele = sParty_Wattson5},
+        .partySize = ARRAY_COUNT(sParty_Frantasy),
+        .party = {.ItemCustomMidele = sParty_Frantasy},
     },
 
     [TRAINER_FLANNERY_2] =
@@ -10985,32 +10986,33 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMidele = sParty_Flannery3},
     },
 
-    [TRAINER_FLANNERY_4] =
+    [TRAINER_PAJAROESPIN] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .trainerName = _("FLANNERY"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .battleMusic = MUS_RG_VS_TORE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = _("PAJAROESPIN"),
         .items = {},
-        .doubleBattle = TRUE,
+        .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
-        .partySize = ARRAY_COUNT(sParty_Flannery4),
-        .party = {.ItemCustomMidele = sParty_Flannery4},
+        .partySize = ARRAY_COUNT(sParty_Pajaroespin),
+        .party = {.ItemCustomMidele = sParty_Pajaroespin},
     },
-
-    [TRAINER_FLANNERY_5] =
+    [TRAINER_GATOLETE] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
-        .trainerName = _("FLANNERY"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .battleMusic = MUS_RG_VS_TORE,
+        .trainerPic = TRAINER_PIC_POKEMANIAC,
+        .trainerName = _("GATOLETE"),
         .items = {},
-        .doubleBattle = TRUE,
+        .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
-        .partySize = ARRAY_COUNT(sParty_Flannery5),
-        .party = {.ItemCustomMidele = sParty_Flannery5},
+        .partySize = ARRAY_COUNT(sParty_Gatolete),
+        .party = {.ItemCustomMidele = sParty_Gatolete},
     },
 
     [TRAINER_NORMAN_2] =
@@ -11097,32 +11099,33 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMidele = sParty_Winona3},
     },
 
-    [TRAINER_WINONA_4] =
+    [TRAINER_NEUER] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .trainerName = _("WINONA"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .battleMusic = MUS_RG_VS_TORE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = _("NEUER"),
         .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
-        .partySize = ARRAY_COUNT(sParty_Winona4),
-        .party = {.ItemCustomMidele = sParty_Winona4},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
+        .partySize = ARRAY_COUNT(sParty_Neuer),
+        .party = {.ItemCustomMidele = sParty_Neuer},
     },
-
-    [TRAINER_WINONA_5] =
+    [TRAINER_KRAFT] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_WINONA,
-        .trainerName = _("WINONA"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .battleMusic = MUS_RG_VS_TORE,
+        .trainerPic = TRAINER_PIC_KINDLER,
+        .trainerName = _("KRAFT"),
         .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
-        .partySize = ARRAY_COUNT(sParty_Winona5),
-        .party = {.ItemCustomMidele = sParty_Winona5},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
+        .partySize = ARRAY_COUNT(sParty_Kraft),
+        .party = {.ItemCustomMidele = sParty_Kraft},
     },
 
     [TRAINER_TATE_AND_LIZA_2] =
