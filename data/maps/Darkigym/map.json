@@ -1,6 +1,6 @@
 {
     "allow_bike": false,
-    "allow_escape_rope": false,
+    "allow_escape_rope": true,
     "allow_running": false,
     "battle_scene": "MAP_BATTLE_SCENE_MAGMA",
     "bg_events": [
@@ -672,7 +672,7 @@
     ],
     "region_map_section": "MAPSEC_MICOLANDIA",
     "requires_flash": true,
-    "show_map_name": true,
+    "show_map_name": false,
     "warp_events": [
         {
             "dest_map": "MAP_MICOLANDIA",

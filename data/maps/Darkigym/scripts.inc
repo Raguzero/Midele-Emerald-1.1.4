@@ -210,8 +210,16 @@ Darkigym_EventScript_BuenroDefeated2::
 	goto_if_set FLAG_DEFEATED_DARKI_GYM, Darkigym_EventScript_Buenro_DarkiDerrotado
 	lock
 	faceplayer
-	msgbox Darkigym_Text_BuenroPostBattle2, MSGBOX_DEFAULT
+	msgbox Darkigym_Text_BuenroPostBattle2, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Darkigym_EventScript_Heal
+	release
+	end
+Darkigym_EventScript_Heal::
+	playfanfare MUS_ME_ASA
+	waitfanfare
 	special HealPlayerParty
+	msgbox Darkigym_Text_BuenroPostBattleHeal, MSGBOX_DEFAULT
 	release
 	end
 	
@@ -402,8 +410,9 @@ DarkiGym_EventScript_TeleportFeature_Text_0:
 	.string "como en SINNOH, irónico.\p"
 	.string "Cambios de sexo, desapariciones de\n"
 	.string "monturas de SURF, imposibilidad de\l"
-	.string "utilizar CASCADA... esos son algunos de\l"
-	.string "los efectos de todo este caos...\p"
+	.string "utilizar WATERFALL para subir la\l"
+	.string "cascada... esos son algunos de los\l"
+	.string "efectos de todo este caos...\p"
 	.string "Sí, son FEATURES, no BUGS. De todas\n"
 	.string "formas, si crees estar atascado en el\l"
 	.string "GIMNASIO debido a una de estas\l"
@@ -1201,8 +1210,8 @@ Darkigym_Text_BuenroDefeat:
 
 Darkigym_Text_BuenroPostBattle:
 	.string "Ahora te espera la más genial de mis\n"
-	.string "creaciones y me la encargo nada más ni\l" 
-	.string "nada menos que mi hermano el Mal rollo.\p"
+	.string "creaciones y me la encargó nada más ni\l" 
+	.string "nada menos que mi hermano el Mal Rollo.\p"
 
 	.string "Él quería que construyera una mazmorra\n" 
 	.string "que les hiciera sentir el horror y la\l"
@@ -1259,23 +1268,34 @@ Darkigym_Text_BuenroPostBattle:
 	.string "¿A que es todo un cacho de pan,\n"
 	.string "malrollo?\p"
 
-	.string "Estoy seguro que te agradará.\p" 
-	
+	.string "Estoy seguro que te agradará.\n"
 	.string "Nyeh heh heh\p"
 
-	.string "Oh, veo que tu equipo está decaído.\p"
+	.string "Oh, veo que tu equipo está decaído,\n"
+	.string "te curaré.\p"
 	
-	.string "(Fuiste curado de las heridas)\p"
-
-	.string "Tanto mejor, sigue adelante, humano,\n" 
+	.string "Tanto mejor, pero ten en cuenta que\n"
+	.string "para superar este gymnasio debes tener\l"
+	.string "a tu disposición POKéMON que puedan usar\l"
+	.string "ROCK SMASH, STRENGTH, SURF y WATERFALL.\p"
+	
+	.string "Nyeh heh heh\p"
+	
+	.string "Sigue adelante, humano,\n" 
 	.string "no pierdas la determinación.$"
 
-Darkigym_Text_BuenroPostBattle2:	
-	.string "Oh, veo que tu equipo está decaído.\p"
-	
-	.string "(Fuiste curado de las heridas)\p"
+Darkigym_Text_BuenroPostBattle2:
+	.string "Ten en cuenta que para superar este\n"
+	.string "gymnasio debes tener a tu disposición\l"
+	.string "POKéMON que puedan usar ROCK SMASH,\l"
+	.string "STRENGTH, SURF y WATERFALL.\p"
+	.string "Oh, ¿Quieres que cure a tu equipo?$"
 
-	.string "Tanto mejor, sigue adelante, humano,\n" 
+Darkigym_Text_BuenroPostBattleHeal:
+	.string "Tanto mejor.\n"
+	.string "Nyeh heh heh\p"
+	
+	.string "Sigue adelante, humano,\n" 
 	.string "no pierdas la determinación.$"
 	
 Darkigym_Text_BuenroPostBattle3:

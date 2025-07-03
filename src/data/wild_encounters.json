@@ -1356,7 +1356,7 @@
                 {
                     "base_label": "gDarkigym0",
                     "land_mons": {
-                        "encounter_rate": 100,
+                        "encounter_rate": 20,
                         "mons": [
                             {
                                 "max_level": 85,
@@ -1422,7 +1422,7 @@
                     },
                     "map": "MAP_DARKIGYM",
                     "rock_smash_mons": {
-                        "encounter_rate": 50,
+                        "encounter_rate": 100,
                         "mons": [
                             {
                                 "max_level": 85,
@@ -1452,7 +1452,7 @@
                         ]
                     },
                     "water_mons": {
-                        "encounter_rate": 50,
+                        "encounter_rate": 10,
                         "mons": [
                             {
                                 "max_level": 85,
