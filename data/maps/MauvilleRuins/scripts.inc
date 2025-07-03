@@ -111,9 +111,10 @@ MauvilleRuins_EventScript_Regieleki_Robado::
 	end
 
 MauvilleRuins_EventScript_Vader::
-	lockall
+	lock
 	faceplayer
 	goto_if_set FLAG_VADER_MAUVILLE_RUINS_ANTESDEABRIR, MauvilleRuins_EventScript_Vader2
+	goto_if_set FLAG_REGI_DOORS_OPENED, MauvilleRuins_EventScript_Vader2Extra
 	msgbox MauvilleRuins_Text_Vader, MSGBOX_NPC
 	switch VAR_FACING
 	case DIR_EAST, MauvilleRuins_EventScript_East
@@ -132,10 +133,25 @@ MauvilleRuins_EventScript_East::
 	releaseall
 	end
 	
+MauvilleRuins_EventScript_Vader2Extra::
+	goto_if_set FLAG_SYS_BRAILLE_REGIELEKI_COMPLETED, MauvilleRuins_EventScript_Vader3
+	msgbox MauvilleRuins_Text_VaderExtra, MSGBOX_NPC
+	switch VAR_FACING
+	case DIR_EAST, MauvilleRuins_EventScript_East
+	applymovement 2, MauvilleRuins_Avader_Movement
+	waitmovement 0
+	setflag FLAG_VADER_MAUVILLE_RUINS_ANTESDEABRIR
+	releaseall
+	end
+	
 MauvilleRuins_EventScript_Vader2::
-	lock
-	faceplayer
-	msgbox MauvilleRuins_Text_Vader, MSGBOX_NPC
+	goto_if_set FLAG_SYS_BRAILLE_REGIELEKI_COMPLETED, MauvilleRuins_EventScript_Vader3
+	msgbox MauvilleRuins_Text_Vader4, MSGBOX_NPC
+	release
+	end
+	
+MauvilleRuins_EventScript_Vader3::
+	msgbox MauvilleRuins_Text_Vader5, MSGBOX_NPC
 	release
 	end
 	
@@ -165,9 +181,178 @@ MauvilleRuins_Avader3_Movement:
 	step_end
 	
 MauvilleRuins_Text_Vader:
-	.string "A.VADER: Vaya, ¡Pero si es {PLAYER}!\p"
+	.string "A.VADER: Este taladro de ANTHONY\n"
+	.string "ha sido lo suficientemente\l"
+	.string "poderoso para derribar la entrada\l"
+	.string "de estas ruinas, pero ha quedado\l"
+	.string "hecho trizas, ya no sirve para nada\l"
+	.string "este cacharro.\p"
+
+	.string "Vaya, ¡Pero si es {PLAYER}!\p"
+	.string "No me había dado cuenta de que\n"
+	.string "estabas justo ahí.\p"
 	
-	.string "Si mis calculos son correctos...\p"
+	.string "Por cierto, si mis calculos son\n"
+	.string "correctos...\p"
+	
+	.string "Esta es la cueva donde me tiré a\n"
+	.string "tu MADRE, quiero decir... donde\l"
+	.string "reside el poderoso POKéMON eléctrico\l"
+	.string "con el nombre de REGIELEKI.\p"
+	
+	.string "Llevo mucho tiempo investigando a\n"
+	.string "a estos seres llamados REGIS.\p"
+	
+	.string "Toda mi investigación era consistente\n"
+	.string "en cuanto a que REGICE, REGIROCK y\l"
+	.string "REGISTEEL deberían despertar al\l"
+	.string "temido REGIGIGAS...\p" 
+	
+	.string "Pero...\p"
+	
+	.string "¿De dónde han salido REGIDRAGO y\n"
+	.string "REGIELEKI? ¿Por qué existen?\p"
+	
+	.string "¡Por más que investigo no tiene sentido\n"
+	.string "que existan estos últimos!\p"
+	
+	.string "¡Es como si los hubiesen inventado solo\n"
+	.string "para intentar vendernos el DLC de\l"
+	.string "POKéMON ESPADA y POKéMON ESCUDO!\p"
+	
+	.string "Ni siquiera tienen la habilidad CLEAR BODY\n"
+	.string "de REGICE, REGIROCK y REGISTEEL.\p"
+	
+	.string "Tampoco se parecen sus Movepool a los\n"
+	.string "suyos, al no poder aprender CURSE,\l" 
+	.string "ni SUPERPOWER.\p"
+	
+	.string "¡Maldito MASUDA!, ¿Por qué te cargaste el\n"
+	.string "LORE de HOENN y SINNOH?\p"
+	
+	.string "...\p"
+
+	.string "EJEM...\p"
+	
+	.string "Dejemos de lado todo este brote autista\n"
+	.string "y vayamos a lo importante de\l"
+	.string "este asunto.\p"
+	
+	.string "¿Quieres abrir esta puerta para atrapar a\n"
+	.string "REGIELEKI?\p"
+	
+	.string "Pues para abrir esta puerta tendrás que\n"
+	.string "leer el código braille, así que para ello\l"
+	.string "prueba a arrancarte los ojos, así serás\l"
+	.string "ciego y no te quedará más remedio que\l" 
+	.string "aprender BRAILLE.\p"
+	
+	.string "¡JAJAJAJAJAJAJA!\p"
+	
+	.string "Bueno, te ayudaré esta vez.\p"
+	
+	.string "El CÓDIGO BRAILLE dice:\p"
+	.string "PRESENTA AL ELECTRICO\n"
+	.string "QUE ILUMINA UN FARO.\p"
+	
+	.string "En mi viaje por JOHTO, me suena haber\n"
+	.string "oído algo sobre cierto POKéMON que\l"
+	.string "iluminaba un faro. ¿Cuál sería?\p"
+	
+	.string "¡Eso ya tendrás que descubrirlo usando\n"
+	.string "tu cerebro de mosquito!\p"
+	
+	.string "Háblame de nuevo si quieres escuchar de\n"
+	.string "nuevo toda mi autistada, y el cómo abrir\l"
+	.string "esta puerta.$"
+	
+MauvilleRuins_Text_VaderExtra:
+	.string "A.VADER: Que extraño. Vine a demoler la\n"
+	.string "entrada de estas ruinas con el taladro\l"
+	.string "que le robé a ANTHONY, pero la entrada\l"
+	.string "ya estaba abierta.\p"
+
+	.string "Vaya, ¡Pero si es {PLAYER}!\p"
+	.string "No me había dado cuenta de que\n"
+	.string "estabas justo ahí.\p"
+	
+	.string "Por cierto, si mis calculos son\n"
+	.string "correctos...\p"
+	
+	.string "Esta es la cueva donde me tiré a\n"
+	.string "tu MADRE, quiero decir... donde\l"
+	.string "reside el poderoso POKéMON eléctrico\l"
+	.string "con el nombre de REGIELEKI.\p"
+	
+	.string "Llevo mucho tiempo investigando a\n"
+	.string "a estos seres llamados REGIS.\p"
+	
+	.string "Toda mi investigación era consistente\n"
+	.string "en cuanto a que REGICE, REGIROCK y\l"
+	.string "REGISTEEL deberían despertar al\l"
+	.string "temido REGIGIGAS...\p" 
+	
+	.string "Pero...\p"
+	
+	.string "¿De dónde han salido REGIDRAGO y\n"
+	.string "REGIELEKI? ¿Por qué existen?\p"
+	
+	.string "¡Por más que investigo no tiene sentido\n"
+	.string "que existan estos últimos!\p"
+	
+	.string "¡Es como si los hubiesen inventado solo\n"
+	.string "para intentar vendernos el DLC de\l"
+	.string "POKéMON ESPADA y POKéMON ESCUDO!\p"
+	
+	.string "Ni siquiera tienen la habilidad CLEAR BODY\n"
+	.string "de REGICE, REGIROCK y REGISTEEL.\p"
+	
+	.string "Tampoco se parecen sus Movepool a los\n"
+	.string "suyos, al no poder aprender CURSE,\l" 
+	.string "ni SUPERPOWER.\p"
+	
+	.string "¡Maldito MASUDA!, ¿Por qué te cargaste el\n"
+	.string "LORE de HOENN y SINNOH?\p"
+	
+	.string "...\p"
+
+	.string "EJEM...\p"
+	
+	.string "Dejemos de lado todo este brote autista\n"
+	.string "y vayamos a lo importante de\l"
+	.string "este asunto.\p"
+	
+	.string "¿Quieres abrir esta puerta para atrapar a\n"
+	.string "REGIELEKI?\p"
+	
+	.string "Pues para abrir esta puerta tendrás que\n"
+	.string "leer el código braille, así que para ello\l"
+	.string "prueba a arrancarte los ojos, así serás\l"
+	.string "ciego y no te quedará más remedio que\l" 
+	.string "aprender BRAILLE.\p"
+	
+	.string "¡JAJAJAJAJAJAJA!\p"
+	
+	.string "Bueno, te ayudaré esta vez.\p"
+	
+	.string "El CÓDIGO BRAILLE dice:\p"
+	.string "PRESENTA AL ELECTRICO\n"
+	.string "QUE ILUMINA UN FARO.\p"
+	
+	.string "En mi viaje por JOHTO, me suena haber\n"
+	.string "oído algo sobre cierto POKéMON que\l"
+	.string "iluminaba un faro. ¿Cuál sería?\p"
+	
+	.string "¡Eso ya tendrás que descubrirlo usando\n"
+	.string "tu cerebro de mosquito!\p"
+	
+	.string "Háblame de nuevo si quieres escuchar de\n"
+	.string "nuevo toda mi autistada, y el cómo abrir\l"
+	.string "esta puerta.$"
+	
+MauvilleRuins_Text_Vader4:
+	.string "A.VADER: Si mis calculos son\n"
+	.string "correctos...\p"
 	
 	.string "Esta es la cueva donde me tiré a\n"
 	.string "tu MADRE, quiero decir... donde\l"
@@ -262,3 +447,7 @@ MauvilleRuins_Text_Vader3:
 	.string "¡Está claro que lo segundo! ¡JAJAJAJA!\p"
 	
 	.string "¡Adios PRINGAO, nos vemos en MICOLANDIA!$"
+	
+MauvilleRuins_Text_Vader5:
+	.string "A.VADER: ¡Today, We Use Our Power To Fell\n"
+	.string "A God, And Then... Seize Our Destiny!!$"

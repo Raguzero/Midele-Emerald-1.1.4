@@ -11,11 +11,23 @@ Route110_OnResume: @ 81EF279
 	
 Route110_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route110_EventScript_CloseMauvilleRuins
+	call_if_unset FLAG_AVADER_OPEN_MAUVILLE_RUINS, Route110_EventScript_CloseMauvilleRuins3
 	end
 
 Route110_EventScript_CloseMauvilleRuins::
+	goto_if_set FLAG_AVADER_OPEN_MAUVILLE_RUINS, Route110_EventScript_CloseMauvilleRuins2
 	setmetatile 26, 48, METATILE_General_RockWall_RockBase, 1
 	setmetatile 26, 49, METATILE_General_RockWall_SandBase, 1
+	return
+Route110_EventScript_CloseMauvilleRuins2::
+	return
+	
+Route110_EventScript_CloseMauvilleRuins3::
+	goto_if_set FLAG_REGI_DOORS_OPENED, Route110_EventScript_CloseMauvilleRuins4
+	setmetatile 26, 48, METATILE_General_RockWall_RockBase, 1
+	setmetatile 26, 49, METATILE_General_RockWall_SandBase, 1
+	return
+Route110_EventScript_CloseMauvilleRuins4::
 	return
 
 Route110_OnTransition: @ 81EF27D

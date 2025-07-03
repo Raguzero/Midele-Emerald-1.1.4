@@ -418,7 +418,7 @@ MicoloHideout_MeetingRoom_PC6_Text_0:
 	.string "capaces de cambiar el METAGAME.\p"
 	
 	.string "Se lo debemos todo a la ayuda inestimable\n"
-	.string "de RAGU, y de MERUM, los fundadores del\l"
+	.string "de RAGU, y de MERÚM, los fundadores del\l"
 	.string "proyecto.\p"
 	
 	.string "Nuestra primera creación es un nuevo\n"
@@ -484,9 +484,20 @@ MicoloHideout_MeetingRoom_MauvilleMewVader::
 	faceplayer
 	playmoncry SPECIES_MEW, 2
 	waitmoncry
+	setflag FLAG_AVADER_OPEN_MAUVILLE_RUINS
 	msgbox MicoloHideout_MeetingRoom_MauvilleMewVader_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	msgbox MicoloHideout_MeetingRoom_MauvilleMewVader_Text_1, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq MicoloHideout_MeetingRoom_MauvilleMewVader2
 	release
-	return
+	end
+MicoloHideout_MeetingRoom_MauvilleMewVader2:
+	warp MAP_ROUTE110, 6, 0, 0
+	waitstate
+	release
+	end
 
 
 MicoloHideout_MeetingRoom_MauvilleMewVader_Text_0:
@@ -494,3 +505,9 @@ MicoloHideout_MeetingRoom_MauvilleMewVader_Text_0:
 	.string "“He ido a la RUTA 110 con tu PRIMA.\n"
 	.string "Si quieres pasar, ve a buscarme.\p"
 	.string "A.VADER”$"
+	
+
+MicoloHideout_MeetingRoom_MauvilleMewVader_Text_1:
+	.string "MEW puede teletransportarte hasta\n"
+	.string "el lugar de encuentro.\p"
+	.string "¿Quieres que te lleve hacia allí?$"

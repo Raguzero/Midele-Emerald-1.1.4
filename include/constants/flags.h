@@ -725,7 +725,7 @@
 #define FLAG_SHINY_CREATION  0x2AC // Previously Unused Flag
 #define FLAG_DEFEATED_BOSS_TITAN   0x2AD // Previously unused Flag
 #define FLAG_RECEIVED_ZARUDE  0x2AE // Previously unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
+#define FLAG_AVADER_OPEN_MAUVILLE_RUINS  0x2AF // Previously unused Flag
 #define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
 #define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
 #define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
