@@ -4577,9 +4577,15 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (FlagGet(FLAG_SYS_NO_BAG_USE) || gBattleTypeFlags & (BATTLE_TYPE_LINK //DEBUG
+                    if (FlagGet(FLAG_SYS_NO_BAG_USE) || gBossBattleFlags == BATTLE_TYPE_BOSS || gBossBattleFlags ==  BATTLE_TYPE_TOTEM || gBattleTypeFlags & (BATTLE_TYPE_LINK //DEBUG
                                             | BATTLE_TYPE_FRONTIER_NO_PYRAMID
                                             | BATTLE_TYPE_EREADER_TRAINER
+                                            | BATTLE_TYPE_DOUBLE
+											| BATTLE_TYPE_TRAINER
+											| BATTLE_TYPE_MULTI
+											| BATTLE_TYPE_TWO_OPPONENTS
+											| BATTLE_TYPE_TRAINER_HILL
+											| BATTLE_TYPE_SECRET_BASE
                                             | BATTLE_TYPE_x2000000))
                     {
                         RecordedBattle_ClearBattlerAction(gActiveBattler, 1);
