@@ -77,7 +77,7 @@ MicoloHideout_ExperimentRoom_EventScript_Regieleki::
 	playmoncry SPECIES_REGIELEKI, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGIELEKI, 90, ITEM_NONE
+	setwildbattle SPECIES_REGIELEKI, 40, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate

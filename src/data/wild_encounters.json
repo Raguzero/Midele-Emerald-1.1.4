@@ -2410,7 +2410,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_CASTFORM"
+                                "species": "SPECIES_CENTISKORCH"
                             },
                             {
                                 "max_level": 70,
@@ -2435,7 +2435,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_TYPHLOSION_HISUIAN"
+                                "species": "SPECIES_CASTFORM"
                             },
                             {
                                 "max_level": 68,
@@ -2445,17 +2445,17 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_CHARIZARD"
+                                "species": "SPECIES_TYPHLOSION_HISUIAN"
                             },
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_INFERNAPE"
+                                "species": "SPECIES_TYPHLOSION_HISUIAN"
                             },
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_BLAZIKEN"
+                                "species": "SPECIES_TYPHLOSION"
                             }
                         ]
                     },
@@ -2500,7 +2500,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_TYPHLOSION_HISUIAN"
+                                "species": "SPECIES_CASTFORM"
                             },
                             {
                                 "max_level": 68,
@@ -2510,17 +2510,17 @@
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_CHARIZARD"
+                                "species": "SPECIES_TYPHLOSION_HISUIAN"
                             },
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_INFERNAPE"
+                                "species": "SPECIES_TYPHLOSION_HISUIAN"
                             },
                             {
                                 "max_level": 68,
                                 "min_level": 65,
-                                "species": "SPECIES_BLAZIKEN"
+                                "species": "SPECIES_TYPHLOSION"
                             }
                         ]
                     },
@@ -4722,7 +4722,7 @@
                             {
                                 "max_level": 65,
                                 "min_level": 60,
-                                "species": "SPECIES_DELCATTY"
+                                "species": "SPECIES_AIPOM"
                             },
                             {
                                 "max_level": 65,
@@ -4787,7 +4787,7 @@
                             {
                                 "max_level": 65,
                                 "min_level": 60,
-                                "species": "SPECIES_MISDREAVUS"
+                                "species": "SPECIES_DELCATTY"
                             },
                             {
                                 "max_level": 65,
@@ -4966,7 +4966,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 64,
-                                "species": "SPECIES_MISMAGIUS"
+                                "species": "SPECIES_MISDREAVUS"
                             },
                             {
                                 "max_level": 69,
@@ -5100,7 +5100,7 @@
                             {
                                 "max_level": 68,
                                 "min_level": 64,
-                                "species": "SPECIES_MISMAGIUS"
+                                "species": "SPECIES_MISDREAVUS"
                             },
                             {
                                 "max_level": 69,
