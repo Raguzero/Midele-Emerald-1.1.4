@@ -4,6 +4,7 @@ MicoloHideout_LavaRoom_MapScripts::
 MicoloHideout_LavaRoom_EventScript_GiratinaMaster::
 	lock
 	faceplayer
+	setflag FLAG_AVADER_MAUVILLE_RUINS_MEW_BYE
 	special HasDefeatedAllMicoloHideoutTrainers
 	compare VAR_RESULT, TRUE
 	goto_if_eq MicoloHideout_LavaRoom_EventScript_GiratinaMaster_2

@@ -180,6 +180,30 @@ MauvilleRuins_Avader3_Movement:
 	walk_down
 	step_end
 	
+MauvilleRuins_MauvilleMewVader::
+	lock
+	faceplayer
+	playmoncry SPECIES_MEW, 2
+	waitmoncry
+	msgbox MauvilleRuins_MauvilleMewVader_Text_1, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq MauvilleRuins_MauvilleMewVader2
+	release
+	end
+MauvilleRuins_MauvilleMewVader2:
+	setflag FLAG_AVADER_MAUVILLE_RUINS_MEW_BYE
+	warp MAP_MICOLO_HIDEOUT_MEETING_ROOM, 0, 0, 0
+	waitstate
+	release
+	end
+	
+MauvilleRuins_MauvilleMewVader_Text_1:
+	.string "El MEW de A.VADER puede llevarte\n"
+	.string "de vuelta hasta MICOLANDIA.\p"
+	.string "¿Quieres que te lleve hacia allí?$"
+
+	
 MauvilleRuins_Text_Vader:
 	.string "A.VADER: Este taladro de ANTHONY\n"
 	.string "ha sido lo suficientemente\l"

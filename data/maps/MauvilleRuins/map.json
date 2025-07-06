@@ -86,6 +86,19 @@
             "trainer_type": "0",
             "x": 7,
             "y": 21
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_AVADER_MAUVILLE_RUINS_MEW_BYE",
+            "graphics_id": "EVENT_OBJ_GFX_MEW",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "MauvilleRuins_MauvilleMewVader",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 5,
+            "y": 28
         }
     ],
     "region_map_section": "MAPSEC_MAUVILLE_RUINS",
