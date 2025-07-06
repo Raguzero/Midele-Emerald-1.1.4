@@ -890,8 +890,14 @@ static void Task_ViewClock2(u8 taskId)
 {
     InitClockWithRtc(taskId);
     if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-    {
         gTasks[taskId].func = Task_ViewClock3;
+    if (gMain.newKeys & R_BUTTON){
+        PlaySE(SE_SELECT);
+        LZ77UnCompVram(gUnknown_08DCC648, (u16 *)BG_SCREEN_ADDR(7));
+        AddTextPrinterParameterized(1, 1, gText_Confirm3, 0, 1, 0, NULL);
+        PutWindowTilemap(1);
+        schedule_bg_copy_tilemap_to_vram(2);
+        gTasks[taskId].func = Task_SetClock2;
     }
 }
 
