@@ -278,6 +278,7 @@ MicoloHideout_GameCorner_EventScript_MonPrizesFirst:
 	end
 
 MicoloHideout_GameCorner_EventScript_MonPrizesFirst2:
+	clearflag FLAG_SHINY_CREATION
 	message MicoloHideout_GameCorner_Text_WhichPrize
 	waitmessage
 	setvar VAR_TEMP_1, 0
@@ -285,6 +286,7 @@ MicoloHideout_GameCorner_EventScript_MonPrizesFirst2:
 	goto MicoloHideout_GameCorner_EventScript_MonPrizesList
 	
 MicoloHideout_GameCorner_EventScript_MonPrizesFirst3:
+	clearflag FLAG_SHINY_CREATION
 	message MicoloHideout_GameCorner_Text_WhichPrize
 	waitmessage
 	setvar VAR_TEMP_1, 0
@@ -362,126 +364,132 @@ MicoloHideout_GameCorner_EventScript_MonConfirmUnown:
 	case 5, MicoloHideout_GameCorner_EventScript_PRINPAWN
 	end
 
-MicoloHideout_GameCorner_EventScript_DARK_PIKA:
+// SOLO SCRIPT givecustommon
+.macro GiveMonGameCorner2 species:req, level:req, item:req, ball:req, nature:req, abilityNum:req, hpEv:req, atkEv:req, defEv:req, spAtkEv:req, spDefEv:req, speedEv:req, hpIv:req, atkIv:req, defIv:req, spAtkIv:req, spDefIv:req, speedIv:req, move1:req, move2:req, move3:req, move4:req, isShiny:req, nickname:req, coins:req, chooseAddress:req
 	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 9000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
+	compare VAR_TEMP_2, \coins
+	goto_if_ge .GiveMonGameCorner_Pay_\@
+	call MicoloHideout_GameCorner_EventScript_NoCoinsForMon
+	goto \chooseAddress
+.GiveMonGameCorner_Pay_\@:
+	givecustommon \species, \level, ITEM_NONE, ITEM_NONE, \nature, \abilityNum, \hpEv, \atkEv, \defEv, \spAtkEv, \spDefEv, \speedEv, \hpIv, \atkIv, \defIv, \spAtkIv, \spDefIv, \speedIv, \move1, \move2, \move3, \move4, \isShiny, \nickname
+	compare VAR_RESULT, MON_CANT_GIVE
+	goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
 	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 9000
+	removecoins \coins
 	updatecoinsbox 0, 0
 	playse SE_REGI
-  waitse
+	waitse
 	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_DARK_PIKACHU
+	bufferspeciesname 0, \species
 	message MicoloHideout_GameCorner_Text_GetMon
 	waitfanfare
 	waitmessage
-	setflag FLAG_SHINY_CREATION
-	givemon SPECIES_DARK_PIKACHU, 5, ITEM_NONE
-	bufferspeciesname 1, SPECIES_DARK_PIKACHU
-	clearflag FLAG_SHINY_CREATION
+	bufferspeciesname 1, \species
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	goto_if_ne .GiveMonGameCorner_NicknameDone_\@
+	compare VAR_0x8004, MON_GIVEN_TO_PC
+	goto_if_eq .GiveMonGameCorner_NicknamePC_\@
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto .GiveMonGameCorner_NicknameDone_\@
+.GiveMonGameCorner_NicknamePC_\@:
+	call Common_EventScript_NameReceivedBoxMon
+.GiveMonGameCorner_NicknameDone_\@:
+	setvar VAR_TEMP_1, \species
+	compare VAR_0x8004, MON_GIVEN_TO_PC
+	call_if_eq Common_EventScript_TransferredToPC
+    goto \chooseAddress
+.endm
+
+
+// SOLO SCRIPT givemon
+.macro GiveMonGameCorner3 species:req, level:req, coins:req, chooseAddress:req
+	checkcoins VAR_TEMP_2
+	compare VAR_TEMP_2, \coins
+	goto_if_ge .GiveMonGameCorner_Pay_\@
+	call MicoloHideout_GameCorner_EventScript_NoCoinsForMon
+	goto \chooseAddress
+.GiveMonGameCorner_Pay_\@:
+	givemon \species, \level, ITEM_NONE
+	compare VAR_RESULT, MON_CANT_GIVE
+	goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
+	copyvar VAR_0x8004, VAR_RESULT
+	removecoins \coins
+	updatecoinsbox 0, 0
+	playse SE_REGI
+	waitse
+	playfanfare MUS_FANFA4
+	bufferspeciesname 0, \species
+	message MicoloHideout_GameCorner_Text_GetMon
+	waitfanfare
+	waitmessage
+	bufferspeciesname 1, \species
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_ne .GiveMonGameCorner_NicknameDone_\@
+	compare VAR_0x8004, MON_GIVEN_TO_PC
+	goto_if_eq .GiveMonGameCorner_NicknamePC_\@
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto .GiveMonGameCorner_NicknameDone_\@
+.GiveMonGameCorner_NicknamePC_\@:
+	call Common_EventScript_NameReceivedBoxMon
+.GiveMonGameCorner_NicknameDone_\@:
+	setvar VAR_TEMP_1, \species
+	compare VAR_0x8004, MON_GIVEN_TO_PC
+	call_if_eq Common_EventScript_TransferredToPC
+    goto \chooseAddress
+.endm
+
+
+// SOLO CATERMANO givecustommon, SIN PEDIR PONER NICKNAME
+.macro GiveMonGameCorner4 species:req, level:req, item:req, ball:req, nature:req, abilityNum:req, hpEv:req, atkEv:req, defEv:req, spAtkEv:req, spDefEv:req, speedEv:req, hpIv:req, atkIv:req, defIv:req, spAtkIv:req, spDefIv:req, speedIv:req, move1:req, move2:req, move3:req, move4:req, isShiny:req, nickname:req, coins:req, chooseAddress:req
+	checkcoins VAR_TEMP_2
+	compare VAR_TEMP_2, \coins
+	goto_if_ge .GiveMonGameCorner_Pay_\@
+	call MicoloHideout_GameCorner_EventScript_NoCoinsForMon
+	goto \chooseAddress
+.GiveMonGameCorner_Pay_\@:
+	givecustommon \species, \level, ITEM_NONE, ITEM_NONE, \nature, \abilityNum, \hpEv, \atkEv, \defEv, \spAtkEv, \spDefEv, \speedEv, \hpIv, \atkIv, \defIv, \spAtkIv, \spDefIv, \speedIv, \move1, \move2, \move3, \move4, \isShiny, \nickname
+	compare VAR_RESULT, MON_CANT_GIVE
+	goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
+	copyvar VAR_0x8004, VAR_RESULT
+	removecoins \coins
+	updatecoinsbox 0, 0
+	playse SE_REGI
+	waitse
+	playfanfare MUS_FANFA4
+	bufferspeciesname 0, \species
+	message MicoloHideout_GameCorner_Text_GetMon
+	waitfanfare
+	waitmessage
+	bufferspeciesname 1, \species
+	call Common_EventScript_GetGiftMonPartySlot
+	setvar VAR_TEMP_1, \species
+	compare VAR_0x8004, MON_GIVEN_TO_PC
+	call_if_eq Common_EventScript_TransferredToPC
+    goto \chooseAddress
+.endm
+
+MicoloHideout_GameCorner_EventScript_DARK_PIKA:
+	setflag FLAG_SHINY_CREATION
+	GiveMonGameCorner3 SPECIES_DARK_PIKACHU, 5, 9000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst2
 
 MicoloHideout_GameCorner_EventScript_WINTASS:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 5000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 5000
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_WINTASS
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
 	setflag FLAG_SHINY_CREATION
-	givemon SPECIES_WINTASS, 90, ITEM_NONE
-	bufferspeciesname 1, SPECIES_WINTASS
-	clearflag FLAG_SHINY_CREATION
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner3 SPECIES_WINTASS, 90, 5000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst2
 
 MicoloHideout_GameCorner_EventScript_CATERMANO:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 9000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 9000
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_CATERPIE
-	message MicoloHideout_GameCorner_Text_GetCatermano
-	waitfanfare
-	waitmessage
-	givecustommon SPECIES_CATERPIE, 100, ITEM_NONE, ITEM_MASTER_BALL, NATURE_NAIVE, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_HORN_DRILL, MOVE_FISSURE, MOVE_MEGAHORN, MOVE_MIDELE_POWER, TRUE, NICKNAME_CATERMANO
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner4 SPECIES_CATERPIE, 100, ITEM_NONE, ITEM_MASTER_BALL, NATURE_NAIVE, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_HORN_DRILL, MOVE_FISSURE, MOVE_MEGAHORN, MOVE_MIDELE_POWER, TRUE, NICKNAME_CATERMANO, 9000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst2
   
 MicoloHideout_GameCorner_EventScript_UNOWN:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 1000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 1000
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_UNOWN
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
-	givecustommon SPECIES_UNOWN, 100, ITEM_NONE, ITEM_MASTER_BALL, 0, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_HIDDEN_POWER, MOVE_MIDELE_POWER, MOVE_NONE, MOVE_NONE, TRUE, 0
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner2 SPECIES_UNOWN, 100, ITEM_NONE, ITEM_MASTER_BALL, 0, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_HIDDEN_POWER, MOVE_MIDELE_POWER, MOVE_NONE, MOVE_NONE, TRUE, 0, 1000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst2
   
 MicoloHideout_GameCorner_EventScript_PRINPAWN:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 3000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 3000
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_PRINPAWN
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
 	setflag FLAG_SHINY_CREATION
-	givemon SPECIES_PRINPAWN, 90, ITEM_NONE
-	bufferspeciesname 1, SPECIES_PRINPAWN
-	clearflag FLAG_SHINY_CREATION
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner3 SPECIES_PRINPAWN, 90, 3000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst2
   
 MicoloHideout_GameCorner_EventScript_MonPrizesList2:
   multichoice 12, 0, MULTI_GAME_CORNER_PKMN4, 0
@@ -568,146 +576,36 @@ MicoloHideout_GameCorner_EventScript_MonConfirmKecleon:
 	end
   
 MicoloHideout_GameCorner_EventScript_POSORD:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 4000
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon2
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 4000
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_POSORD
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
 	setflag FLAG_SHINY_CREATION
-	givemon SPECIES_POSORD, 90, ITEM_NONE
-	bufferspeciesname 1, SPECIES_POSORD
-	clearflag FLAG_SHINY_CREATION
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner3 SPECIES_POSORD, 90, 4000, MicoloHideout_GameCorner_EventScript_MonPrizesFirst3
   
   
 MicoloHideout_GameCorner_EventScript_NUMEL_LUCKY:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 800
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon2
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 800
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_NUMEL_LUCKY
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
 	setflag FLAG_SHINY_CREATION
-	givemon SPECIES_NUMEL_LUCKY, 90, ITEM_NONE
-	bufferspeciesname 1, SPECIES_NUMEL_LUCKY
-	clearflag FLAG_SHINY_CREATION
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner3 SPECIES_NUMEL_LUCKY, 90, 800, MicoloHideout_GameCorner_EventScript_MonPrizesFirst3
   
   
 MicoloHideout_GameCorner_EventScript_ZUBAT:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 1500
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon2
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 1500
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_ZUBAT
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
-	givecustommon SPECIES_ZUBAT, 90, ITEM_NONE, ITEM_LUXURY_BALL, NATURE_HASTY, 0, 6, 0, 0, 252, 0, 252, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_ICE_BEAM, MOVE_NASTY_PLOT, MOVE_HYPNOSIS, TRUE
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner2 SPECIES_ZUBAT, 90, ITEM_NONE, ITEM_LUXURY_BALL, NATURE_HASTY, 0, 6, 0, 0, 252, 0, 252, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_ICE_BEAM, MOVE_NASTY_PLOT, MOVE_HYPNOSIS, TRUE, 0, 1500, MicoloHideout_GameCorner_EventScript_MonPrizesFirst3
   
 MicoloHideout_GameCorner_EventScript_PROBOPASS:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 1500
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon2
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 1500
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_PROBOPASS
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
 	setflag FLAG_SHINY_CREATION
-	givecustommon SPECIES_PROBOPASS, 100, ITEM_NONE, ITEM_MASTER_BALL, 0, 0, 252, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SHORE_UP, MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_FIRE_PUNCH, 0, 0
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-	clearflag FLAG_SHINY_CREATION
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner2 SPECIES_PROBOPASS, 100, ITEM_NONE, ITEM_MASTER_BALL, 0, 0, 252, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SHORE_UP, MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_FIRE_PUNCH, 0, 0, 1500, MicoloHideout_GameCorner_EventScript_MonPrizesFirst3
   
 MicoloHideout_GameCorner_EventScript_KECLEON:
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, 1500
-	goto_if_lt MicoloHideout_GameCorner_EventScript_NoCoinsForMon2
-	getpartysize
-	compare VAR_RESULT, 6
-  goto_if_eq MicoloHideout_GameCorner_EventScript_NoRoom
-	copyvar VAR_0x8004, VAR_RESULT
-	removecoins 1500
-	updatecoinsbox 0, 0
-	playse SE_REGI
-  waitse
-	playfanfare MUS_FANFA4
-	bufferspeciesname 0, SPECIES_KECLEON
-	message MicoloHideout_GameCorner_Text_GetMon
-	waitfanfare
-	waitmessage
-	givecustommon SPECIES_KECLEON, 90, ITEM_NONE, ITEM_LUXURY_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SKY_UPPERCUT, MOVE_DISABLE, MOVE_X_SCISSOR, MOVE_SLASH, TRUE
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq Common_EventScript_NameReceivedPartyMon
-  goto MicoloHideout_GameCorner_EventScript_Bye
+	GiveMonGameCorner2 SPECIES_KECLEON, 90, ITEM_NONE, ITEM_LUXURY_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SKY_UPPERCUT, MOVE_DISABLE, MOVE_X_SCISSOR, MOVE_SLASH, TRUE, 0, 1500, MicoloHideout_GameCorner_EventScript_MonPrizesFirst3
   
 
 MicoloHideout_GameCorner_EventScript_NoRoom:
+	clearflag FLAG_SHINY_CREATION
 	msgbox MicoloHideout_GameCorner_Text_NoRoom, 4
 	hidecoinsbox 0, 0
 	release
 	end
 
 MicoloHideout_GameCorner_EventScript_NoCoinsForMon:
-	msgbox MicoloHideout_GameCorner_Text_DontHaveEnoughCoins, 4
-	goto MicoloHideout_GameCorner_EventScript_MonPrizesList
-	end
-	
-MicoloHideout_GameCorner_EventScript_NoCoinsForMon2:
-	msgbox MicoloHideout_GameCorner_Text_DontHaveEnoughCoins, 4
-	goto MicoloHideout_GameCorner_EventScript_MonPrizesList2
-	end
+	msgbox MicoloHideout_GameCorner_Text_DontHaveEnoughCoins, MSGBOX_DEFAULT
+	return	
 
 MicoloHideout_GameCorner_EventScript_CancelDollSelect:: @ 820FE92
 	msgbox MicoloHideout_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
@@ -1204,7 +1102,7 @@ MicoloHideout_GameCorner_Text_GetCatermano::
 	.string "{PLAYER} received CATERMANO!$"
 
 MicoloHideout_GameCorner_Text_NoRoom::
-    .string "No hay sitio en tu equipo.$"
+    .string "Tu equipo y tu PC está lleno.$"
 
 MicoloHideout_GameCorner_Text_OhIsThatSo: @ 82106BF
 	.string "¿Estás seguro?\n"
