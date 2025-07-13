@@ -262,7 +262,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
 // NUEVO PARA LEVEL CAP BADGE
    // if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
-	   if (GetMonData(&pokemon, MON_DATA_LEVEL) != GetLevelCap())
+	   if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetLevelCap())
 // NUEVO PARA LEVEL CAP BADGE
     {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
