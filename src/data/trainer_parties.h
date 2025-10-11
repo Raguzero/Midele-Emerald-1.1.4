@@ -23126,7 +23126,7 @@ static const struct TrainerMonCustomMidele sParty_Hypeantonio[] = {
 static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_IGGLYBUFF,
 	.heldItem = ITEM_CHARCOAL, 
@@ -23137,7 +23137,7 @@ static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
 	},
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_PICHU,
 	.heldItem = ITEM_FOCUS_SASH, 
@@ -23150,7 +23150,7 @@ static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
 	},
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_CLEFFA,
 	.heldItem = ITEM_FOCUS_SASH, 
@@ -23161,7 +23161,7 @@ static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
 	},
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_MIMEJR,
 	.heldItem = ITEM_FOCUS_SASH, 
@@ -23172,7 +23172,7 @@ static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
 	},
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_HYPNO,
 	.heldItem = ITEM_SILK_SCARF, 
@@ -23183,7 +23183,7 @@ static const struct TrainerMonCustomMidele sParty_Vladiland[] = {
 	},
     {
     .iv = 31,  
-    .lvl = 20,
+    .lvl = 1,
 	.syncLevel = TRUE,
     .species = SPECIES_DITTO,
 	.heldItem = ITEM_EVERSTONE, 

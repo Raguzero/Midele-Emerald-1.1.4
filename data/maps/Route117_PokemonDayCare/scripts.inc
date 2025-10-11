@@ -88,8 +88,9 @@ Route117_PokemonDayCare_Text_Vladiland_BeforeBattle:
 	.string "Mjmjmjmjmjmjmjmjjmjmjm...\p"
 	
 	.string "Bien, te explicaré en qué consiste,\n"
-	.string "pero primero...\l"
-	.string "¿hacemos un combate POKéMON?$"
+	.string "pero primero... ¿hacemos un combate\l"
+	.string "POKéMON? Ten en cuenta que me adapto\l"
+	.string "a tu POKéMON de mayor nivel, ¿jugamos?$"
 	
 Route117_PokemonDayCare_Text_Vladiland_BeforeBattle2:
 	.string "¡¡¡Jejejejejeje!!!\p"
