@@ -327,7 +327,15 @@ Route103_EventScript_AlteringCave_NoChange::
 	release
 	end
 	
+Route103_EventScript_AlteringCave_Actual::
+	hidemoneybox
+	msgbox Route103_Text_AlteringCave_Actual
+	release
+	end
+	
 Route103_EventScript_AlteringCaveGen1::
+	compare VAR_ALTERING_CAVE_RND, 0
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -343,6 +351,8 @@ Route103_EventScript_AlteringCaveGen1::
 	end
 	
 Route103_EventScript_AlteringCaveGen2::
+	compare VAR_ALTERING_CAVE_RND, 1
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -358,6 +368,8 @@ Route103_EventScript_AlteringCaveGen2::
 	end
 	
 Route103_EventScript_AlteringCaveGen3::
+	compare VAR_ALTERING_CAVE_RND, 2
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -373,6 +385,8 @@ Route103_EventScript_AlteringCaveGen3::
 	end
 	
 Route103_EventScript_AlteringCaveGen4::
+	compare VAR_ALTERING_CAVE_RND, 3
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -388,6 +402,8 @@ Route103_EventScript_AlteringCaveGen4::
 	end
 	
 Route103_EventScript_AlteringCaveGen5::
+	compare VAR_ALTERING_CAVE_RND, 4
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -403,6 +419,8 @@ Route103_EventScript_AlteringCaveGen5::
 	end
 	
 Route103_EventScript_AlteringCaveGen6::
+	compare VAR_ALTERING_CAVE_RND, 5
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -418,6 +436,8 @@ Route103_EventScript_AlteringCaveGen6::
 	end
 	
 Route103_EventScript_AlteringCaveGen7::
+	compare VAR_ALTERING_CAVE_RND, 6
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -433,6 +453,8 @@ Route103_EventScript_AlteringCaveGen7::
 	end
 	
 Route103_EventScript_AlteringCaveGen8::
+	compare VAR_ALTERING_CAVE_RND, 7
+	call_if_eq Route103_EventScript_AlteringCave_Actual
 	showmoneybox 0, 0, 0
 	checkmoney 20000, 0
     compare VAR_RESULT, 0
@@ -632,6 +654,11 @@ Route103_Text_AlteringCaveChoose:
 	
 Route103_Text_AlteringCaveNoChange:
 	.string "Vuelve cuando quieras.$"
+	
+Route103_Text_AlteringCave_Actual:
+	.string "El tipo de ALTERING CAVE que elegiste\n"
+	.string "es de la misma gen que la actual.\p"
+	.string "Elige otra.$"
 	
 Route103_Text_AlteringCaveGen1:
 	.string "ALTERING CAVE ahora es Gen 1.$"
