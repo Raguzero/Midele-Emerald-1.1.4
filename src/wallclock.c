@@ -865,6 +865,15 @@ static void Task_SetClock4(u8 taskId)
 static void Task_SetClock5(u8 taskId)
 {
     RtcInitLocalTimeOffset(gTasks[taskId].tHours, gTasks[taskId].tMinutes);
+    if (FlagGet(FLAG_SET_WALL_CLOCK))
+    {
+        RtcCalcLocalTimeOffset(gLocalTime.days, gTasks[taskId].tHours, gTasks[taskId].tMinutes, 0);
+        gSaveBlock2Ptr->lastBerryTreeUpdate = gLocalTime;
+    }
+    else
+    {
+        RtcInitLocalTimeOffset(gTasks[taskId].tHours, gTasks[taskId].tMinutes);
+    }	
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_SetClock6;
 }
