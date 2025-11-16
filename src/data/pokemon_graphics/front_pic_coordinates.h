@@ -3426,7 +3426,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_ANNIHILAPE] =
     {
         .size = 0x77,
-        .y_offset = 0x07,
+        .y_offset = 0x02,
     },
     [SPECIES_KINGAMBIT] =
     {
