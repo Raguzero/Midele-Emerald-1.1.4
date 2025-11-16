@@ -714,6 +714,7 @@ static void DebugAction_Util_Fly(u8 taskId)
     FlagSet(FLAG_VISITED_EVER_GRANDE_CITY);
     FlagSet(FLAG_LANDMARK_POKEMON_LEAGUE);
     FlagSet(FLAG_LANDMARK_BATTLE_FRONTIER);
+    FlagSet(FLAG_VISITED_MICOLANDIA);
     Debug_DestroyMenu(taskId);
     SetMainCallback2(MCB2_FlyMap);
 }
@@ -1127,6 +1128,7 @@ static void DebugAction_Flags_ToggleFlyFlags(u8 taskId)
     FlagToggle(FLAG_VISITED_EVER_GRANDE_CITY);
     FlagToggle(FLAG_LANDMARK_POKEMON_LEAGUE);
     FlagToggle(FLAG_LANDMARK_BATTLE_FRONTIER);
+    FlagToggle(FLAG_VISITED_MICOLANDIA);
 }
 static void DebugAction_Flags_ToggleBadgeFlags(u8 taskId)
 {
