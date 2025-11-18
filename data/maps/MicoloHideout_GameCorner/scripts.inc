@@ -1063,7 +1063,7 @@ MicoloHideout_EventScript_NerdMaquinas_Text_1:
 
 
 MicoloHideout_GameCorner_Text_ThisIsMicoloHideoutGameCorner: @ 8210460
-	.string "Bienvenido al MICOCASINO.$"
+	.string "Te doy la bienvenida al MICOCASINO.$"
 
 MicoloHideout_GameCorner_Text_NeedCoinCaseForCoins: @ 821047E
 	.string "¿Quieres COINS?\n"
@@ -1144,7 +1144,6 @@ MicoloHideout_GameCorner_Text_WhichPrize: @ 821060D
 	.string "¿Qué premio te gustaría comprar?$"
 
 MicoloHideout_GameCorner_Text_ExchangeCoinsForPrizes: @ 82105D7
-	.string "Bienvenido.\p"
 	.string "Aquí puedes intercambiar tus COINS\n"
 	.string "por premios midélicos.$"
 

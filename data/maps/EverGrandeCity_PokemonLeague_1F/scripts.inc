@@ -482,8 +482,8 @@ Script_RandomPrize1_Text_NoRoomForThis:
 	.string "¡Recuerda dejar espacio en tu mochila!$"
 
 RANDOMCC_Batalla:
-	.string "¡Bienvenido al simulador de\n"
-	.string "CHALLENGE CUP!\p"
+	.string "¡Te doy la bienvenida al simulador de\n"
+	.string "CHALLENGE CUP! Abreviado como CC.\p"
 	
 	.string "Esta simulación consiste\n"
 	.string "en una batalla individual\l"
@@ -499,7 +499,7 @@ RANDOMCC_Batalla:
 	.string "¿Quieres participar?$"
 
 RANDOM_Batalla:
-	.string "¡Bienvenido al simulador de\n"
+	.string "¡Te doy la bienvenida al simulador de\n"
 	.string "RANDOM BATTLE!\p"
 	
 	.string "Esta simulación consiste\n"

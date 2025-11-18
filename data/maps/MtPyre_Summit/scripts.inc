@@ -793,8 +793,7 @@ MtPyre_Summit_EventScript_Micolo_Text_0:
 	.string "Hablando de palizas, me acaban de\n"
 	.string "entrar ganas de combatir contra ti y\l"
 	.string "ver cómo has mejorado.\p"
-	.string "¿Estás preparado para ello? Hora de\n"
-	.string "comprobarlo n.n$"
+	.string "¡Hora de comprobarlo n.n!$"
 
 MtPyre_Summit_EventScript_Micolo_Text_1:
 	.string "Todo va como he planeado... n.n$"

@@ -248,7 +248,7 @@ IzabeIsland_OutskirtsCave_Text_Lavender_ExplainSituation::
 	.string "me derrotas te la diré.$"
 
 IzabeIsland_OutskirtsCave_Text_Lavender_AskFight:
-	.string "¿Estás listo para el combate?$"
+	.string "¿Todo listo para el combate?$"
 
 IzabeIsland_OutskirtsCave_Text_Lavender_LetsFight:
 	.string "¡Vamos a ello!$"

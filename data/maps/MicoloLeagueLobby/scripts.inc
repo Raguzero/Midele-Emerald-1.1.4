@@ -411,7 +411,7 @@ MicoloLeagueLobby_EventScript_GuardCheck_Text_0:
 	.string "Ten en cuenta que una vez que entres,\n"
 	.string "no podrás salir hasta completar la\l"
 	.string "MICOLIGA... o perder.\p"
-	.string "Si estás preparado, entra por esa\n"
+	.string "Si te has preparado, entra por esa\n"
 	.string "puerta, pero si no eres más que otro\l"
 	.string "cobarde, llora, y vuelve a casa con tu\l"
 	.string "mamá.$"

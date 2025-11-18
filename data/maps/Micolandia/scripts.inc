@@ -294,7 +294,7 @@ Micolandia_Text_Marihuana:
 	.string	"acabará bien salvaje. ¡Jeje!$"
 
 Micolandia_Text_BienvenidaSign:
-	.string "¡Bienvenido a MICOLANDIA!\p"
+	.string "¡Te doy la bienvenida a MICOLANDIA!\p"
 	.string "Si estás aquí es que fuiste elegido\n"
 	.string "para afrontar el desafio de la\l"
 	.string "LIGA POKéMON MIDELAR, o para\l"

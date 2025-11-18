@@ -124,7 +124,7 @@ Micolandia_Mart_Pokemart:
 	end
 	
 Micolandia_EV_Mart:
-	.string "¡Bienvenido al EV CHANGER!\p"
+	.string "¡Te doy la bienvenida al EV CHANGER!\p"
 
 	.string "Aquí podrás cambiar a tu gusto los\n"
 	.string "EVs de tus POKéMON.\p"

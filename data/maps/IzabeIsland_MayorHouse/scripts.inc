@@ -136,7 +136,7 @@ IzabeIsland_MayorHouse_Text_Mayor_ExplainSituation::
   .string "prueba.$"
 
 IzabeIsland_MayorHouse_Text_Mayor_AreYouPrepared::
-  .string "¿Estás listo?$"
+  .string "¡No te rajes! ¿Combatimos?$"
 
 IzabeIsland_MayorHouse_Text_Mayor_YouAreNotPrepared::
   .string "Pues oc. Noob.$"

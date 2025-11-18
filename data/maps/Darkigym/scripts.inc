@@ -1192,7 +1192,7 @@ Darkigym_Text_BuenroIntro:
 	.string "alguien igual de genialoso como yo\l"
 	.string "podría atravesarlo y salir indemne.\p"
 	
-	.string "¿Insistes en seguir? ¿Estás preparado\n"
+	.string "¿Insistes en seguir? ¿Te has preparado\n"
 	.string "para hacerme frente en un combate?$"
 	
 Darkigym_Text_BuenroIntro2:
