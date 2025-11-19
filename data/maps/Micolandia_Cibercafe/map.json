@@ -51,6 +51,22 @@
             "type": "sign",
             "x": 18,
             "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+            "script": "EverGrandeCity_PokemonLeague_1F_Sign_VictoriasNormal",
+            "type": "sign",
+            "x": 5,
+            "y": 3
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EverGrandeCity_PokemonLeague_1F_Sign_VictoriasCC",
+            "type": "sign",
+            "x": 6,
+            "y": 3
         }
     ],
     "connections": null,
@@ -165,6 +181,32 @@
             "trainer_type": "0",
             "x": 18,
             "y": 13
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_CONTEST_JUDGE",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "Ryu_StartRandomBattle",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 0,
+            "y": 3
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_LINK_RECEPTIONIST",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "Ryu_StartRandomBattleCC",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 3,
+            "y": 3
         }
     ],
     "region_map_section": "MAPSEC_MICOLANDIA",
