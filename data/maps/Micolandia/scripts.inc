@@ -116,11 +116,20 @@ Micolandia_Kirlia_Script::
 Micolandia_Dueno_de_Kirlia_Script::
 	lock
 	faceplayer
+	goto_if_set FLAG_MICOLANDIA_MODE, Micolandia_Dueno_de_Kirlia_Script_Midele_Mode	
 	msgbox Micolandia_Dueno_de_Kirlia_Text, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Micolandia_Dueno_de_Kirlia_Teleport
 	release
 	end
+
+Micolandia_Dueno_de_Kirlia_Script_Midele_Mode::
+	lock
+	faceplayer
+	msgbox Micolandia_Dueno_de_Kirlia_Midele_Mode_Text, MSGBOX_DEFAULT
+	release
+	end	
+	
 Micolandia_Dueno_de_Kirlia_Teleport::
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -410,6 +419,9 @@ Micolandia_Dueno_de_Kirlia_Text:
 	.string "a tu casa. ¡Es gratis!\p"
 	
 	.string "¿Quieres que te lleve a tu casa?$"
+	
+Micolandia_Dueno_de_Kirlia_Midele_Mode_Text:
+	.string "Que buen día hace hoy ¿verdad?$"
 	
 Micolandia_Text_Rotonda:
 	.string "¡Oye, quítate de la rotonda que\n"

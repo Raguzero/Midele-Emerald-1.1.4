@@ -3986,7 +3986,7 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage++;
                  }
 
-                    if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE)
+                    if (FlagGet(FLAG_SYS_GAME_CLEAR) == TRUE || FlagGet(FLAG_MICOLANDIA_MODE) == TRUE)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
 
                     if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]))

@@ -121,8 +121,11 @@ void SavePostMicolo(void)
     }
 
     SetContinueGameWarpStatus();
-
-    if (gSaveBlock2Ptr->playerGender == MALE)
+	
+	if (FlagGet(FLAG_MICOLANDIA_MODE) == TRUE)
+        SetContinueGameWarpToHealLocation(HEAL_LOCATION_MICOLANDIA);
+	
+    else if (gSaveBlock2Ptr->playerGender == MALE)
         SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
     else
         SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);

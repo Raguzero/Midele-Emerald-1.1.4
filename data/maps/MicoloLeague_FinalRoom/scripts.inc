@@ -29,6 +29,17 @@ MicoloLeague_FinalRoom_Micolo_EventScript_ReceiveMonEnd:
 MicoloLeague_FinalRoom_Micolo_Defeat_1:
 	msgbox MicoloLeague_FinalRoom_Micolo_Defeat_Text_2, MSGBOX_DEFAULT	
 	call MicoloLeague_FinalRoom_GameEndFlags
+	goto_if_unset FLAG_MICOLANDIA_MODE, MicoloLeague_FinalRoom_Micolo_Defeat_1_Continue
+	setrespawn HEAL_LOCATION_MICOLANDIA
+	special SavePostMicolo @ Guarda partida
+	closemessage
+	fadescreenspeed FADE_TO_BLACK, 24
+	special ShowGameCredits @ Muestra créditos
+	waitstate
+	releaseall
+	return
+
+MicoloLeague_FinalRoom_Micolo_Defeat_1_Continue:
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq MicoloLeague_FinalRoom_Micolo_Defeat_5

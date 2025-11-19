@@ -802,6 +802,12 @@ MicoloHideout_EventScript_ExitVendingMachine::
 MicoloHideout_VentaTickets::
 	lock
 	faceplayer
+	goto_if_unset FLAG_MICOLANDIA_MODE, MicoloHideout_VentaTickets2
+	msgbox MicoloHideout_SiVendido_Text
+	release
+	end
+
+MicoloHideout_VentaTickets2::
 	goto_if_set FLAG_SYS_HAS_EON_TICKET, MicoloHideoutYaCompradoTickets
 	showmoneybox 0, 0, 0
 	msgbox MicoloHideout_VentaTickets_Text, MSGBOX_YESNO
