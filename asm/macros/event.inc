@@ -1591,7 +1591,7 @@
 	.endm
 
 @ new givecustommon
-    .macro givecustommon species:req, level:req, item, ball, nature, abilityNum, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, nickname
+    .macro givecustommon species:req, level:req, item, ball, nature, abilityNum, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, nickname, cool, beauty, cute, smart, tough, sheen
     .byte 0xe5
     .2byte \species
     .byte \level
@@ -1706,6 +1706,37 @@
         .byte 0
     .else
         .byte \nickname
+    .endif
+    @contest stats
+    .ifb \cool
+        .byte 0
+    .else
+        .byte \cool
+    .endif
+    .ifb \beauty
+        .byte 0
+    .else
+        .byte \beauty
+    .endif
+    .ifb \cute
+        .byte 0
+    .else
+        .byte \cute
+    .endif
+    .ifb \smart
+        .byte 0
+    .else
+        .byte \smart
+    .endif
+    .ifb \tough
+        .byte 0
+    .else
+        .byte \tough
+    .endif
+    .ifb \sheen
+        .byte 0
+    .else
+        .byte \sheen
     .endif
     .endm
     

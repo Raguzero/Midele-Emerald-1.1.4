@@ -789,7 +789,7 @@ void ReducePlayerPartyToSelectedMons(void)
     CalculatePlayerPartyCount();
 }
 
-u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, u8 nickname)
+u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, u8 nickname, u8* conditions, u8 sheen)
 {
     u16 nationalDexNum;
     int sentToPc;
@@ -851,6 +851,15 @@ u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 a
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
+	
+	// contest stats
+
+    SetMonData(&mon, MON_DATA_COOL, &conditions[0]);
+    SetMonData(&mon, MON_DATA_BEAUTY, &conditions[1]);
+    SetMonData(&mon, MON_DATA_CUTE, &conditions[2]);
+    SetMonData(&mon, MON_DATA_SMART, &conditions[3]);
+    SetMonData(&mon, MON_DATA_TOUGH, &conditions[4]);
+    SetMonData(&mon, MON_DATA_SHEEN, &sheen);
 
     // give player the mon
     //sentToPc = GiveMonToPlayer(&mon);
@@ -903,6 +912,8 @@ u8 GiveMonWithLevelAndAbilityNum(u16 species, u8 level, u16 item, u8 abilityNum)
   u8 ivs[NUM_STATS] = {32, 32, 32, 32, 32, 32}; // se elegirán al azar
   u16 moves[4] = {0, 0, 0, 0}; // creo que se ponen los de la especie
   bool8 isShiny = FALSE;  // podría ser shiny, con la probabilidad normal
+  u8 conditions[CONTEST_CATEGORIES_COUNT] = {0, 0, 0, 0, 0};
+  u8 sheen = 0;
 
-  return ScriptGiveCustomMon(species, level, item, ball, nature, abilityNum, evs, ivs, moves, isShiny, NICKNAME_NONE);
+  return ScriptGiveCustomMon(species, level, item, ball, nature, abilityNum, evs, ivs, moves, isShiny, NICKNAME_NONE, conditions, sheen);
 }
