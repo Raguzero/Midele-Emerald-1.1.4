@@ -5646,7 +5646,6 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
 		}
         gDexnavBattle = FALSE;
         ResetSpriteData();
-        if (gLeveledUpInBattle == 0 || gBattleOutcome != B_OUTCOME_WON)
         if (gLeveledUpInBattle == 0 || gBattleOutcome != B_OUTCOME_WON || FlagGet(FLAG_NO_EVOLUTION_OPTION))
         {
             gBattleMainFunc = ReturnFromBattleToOverworld;
