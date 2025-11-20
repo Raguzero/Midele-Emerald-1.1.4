@@ -3352,4 +3352,7 @@ extern const u8 gText_Var1DotVar2_Metric[];
 extern const u8 gText_SavingVersionNum[];
 extern const u8 gText_SavingVersionNum2[];
 
+// Evolution party screen option
+extern const u8 gText_Evolution[];
+
 #endif // GUARD_STRINGS_H

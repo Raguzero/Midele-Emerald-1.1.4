@@ -2214,3 +2214,5 @@ const u8 gText_Var1DotVar2_Metric[] = _("{STR_VAR_1}.{STR_VAR_2}cm");
 
 const u8 gText_SavingVersionNum[] = _("GAME VERSION");
 const u8 gText_SavingVersionNum2[] = _("{COLOR GREEN}1.2.0{COLOR GREEN}");
+// Evolution party screen option
+const u8 gText_Evolution[] = _("{COLOR GREEN}EVOLUTION{COLOR GREEN}");

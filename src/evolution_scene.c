@@ -7,6 +7,7 @@
 #include "decompress.h"
 #include "evolution_scene.h"
 #include "evolution_graphics.h"
+#include "event_data.h"
 #include "gpu_regs.h"
 #include "link.h"
 #include "link_rfu.h"
@@ -608,7 +609,9 @@ static void Task_EvolutionScene(u8 taskID)
     struct Pokemon* mon = &gPlayerParty[gTasks[taskID].tPartyID];
 
     // check if B Button was held, so the evolution gets stopped
-    if (gMain.heldKeys == B_BUTTON
+    if ((gMain.heldKeys == B_BUTTON
+	|| ((GetMonData(mon, MON_DATA_SPECIES) == SPECIES_CATERPIE) && (GetMonData(mon, MON_DATA_MET_LEVEL) == 100))
+	|| ((!FlagGet(FLAG_DEFEATED_DARKI_GYM)) && (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_MAGIKARP) && (GetMonData(mon, MON_DATA_MET_LEVEL) == 100)))
         && gTasks[taskID].tState == 8
         && gTasks[sEvoGraphicsTaskID].isActive
         && gTasks[taskID].tBits & TASK_BIT_CAN_STOP)
