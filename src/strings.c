@@ -1499,7 +1499,7 @@ const u8 gText_BattleStyle[] = _("BATTLE STYLE");
 const u8 gText_Sound[] = _("SOUND");
 const u8 gText_Frame[] = _("FRAME");
 const u8 gText_Autorun[] = _("AUTORUN");
-const u8 gText_OptionMenuCancel[] = _("CANCEL");
+const u8 gText_OptionMenuCancel[] = _("        SAVE THIS WINDOW OPTION");
 const u8 gText_ButtonMode[] = _("BUTTON MODE");
 const u8 gText_TextSpeedSlow[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
 const u8 gText_TextSpeedMid[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MID");
@@ -2211,8 +2211,11 @@ const u8 gText_PageNav[] = _("{L_BUTTON}{R_BUTTON} PAGE");
 const u8 gText_UnitSystemMetric[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}METRIC");
 const u8 gText_UnitSystemImperial[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}IMPERIAL");
 const u8 gText_Var1DotVar2_Metric[] = _("{STR_VAR_1}.{STR_VAR_2}cm");
+const u8 gText_NoEvolveBattleOptionOFF[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}YES");
+const u8 gText_NoEvolveBattleOptionON[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NO");
 
 const u8 gText_SavingVersionNum[] = _("GAME VERSION");
 const u8 gText_SavingVersionNum2[] = _("{COLOR GREEN}1.2.0{COLOR GREEN}");
 // Evolution party screen option
 const u8 gText_Evolution[] = _("{COLOR GREEN}EVOLUTION{COLOR GREEN}");
+const u8 gText_Evolution[] = _("{COLOR GREEN}EVOLVE{COLOR GREEN}");

@@ -3348,6 +3348,8 @@ extern const u8 gText_PageNav[];
 extern const u8 gText_UnitSystemMetric[];
 extern const u8 gText_UnitSystemImperial[];
 extern const u8 gText_Var1DotVar2_Metric[];
+extern const u8 gText_NoEvolveBattleOptionOFF[];
+extern const u8 gText_NoEvolveBattleOptionON[];
 
 extern const u8 gText_SavingVersionNum[];
 extern const u8 gText_SavingVersionNum2[];

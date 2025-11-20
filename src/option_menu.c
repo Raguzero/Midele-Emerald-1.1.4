@@ -30,6 +30,7 @@ enum
     TD_AUTORUN,
     TD_MAIN_UNIT_SYSTEM,
 	TD_CUSTOM_MATCH_CALL,
+	TD_NO_EVOLVE_BATTLE,
 };
 
 // Menu items Pg1
@@ -50,6 +51,7 @@ enum
 {
     MENUITEM_MAIN_UNIT_SYSTEM,
 	MENUITEM_CUSTOM_MATCHCALL,
+	MENUITEM_NO_EVOLVE_BATTLE,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -73,6 +75,7 @@ enum
 //Pg2
 #define YPOS_MAIN_UNIT_SYSTEM      (MENUITEM_MAIN_UNIT_SYSTEM * 16)
 #define YPOS_CUSTOM_MATCHCALL      (MENUITEM_CUSTOM_MATCHCALL * 16)
+#define YPOS_NO_EVOLVE_BATTLE      (MENUITEM_NO_EVOLVE_BATTLE * 16)
 #define PAGE_COUNT  2
 
 // this file's functions
@@ -100,6 +103,7 @@ static void DrawOptionMenuTexts(void);
 static void sub_80BB154(void);
 static void DrawChoices_UnitSystem(u8 selection);
 static void DrawChoices_MatchCall(u8 selection);
+static void DrawChoices_No_Evolve_Battle(u8 selection);
 
 // EWRAM vars
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
@@ -111,6 +115,7 @@ static const u16 sUnknown_0855C604[] = INCBIN_U16("graphics/misc/option_menu_tex
 static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/misc/option_menu_equals_sign.4bpp");
 static const u8 sText_UnitSystem[]  = _("UNIT SYSTEM");
 static const u8 sText_OptionMatchCalls[] = _("MATCH CALL");
+static const u8 sText_NoEvolveBattle[] = _("EVOLVE IN BATTLE");
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -127,6 +132,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MAIN_UNIT_SYSTEM] = sText_UnitSystem,
     [MENUITEM_CUSTOM_MATCHCALL]   = sText_OptionMatchCalls,
+    [MENUITEM_NO_EVOLVE_BATTLE]   = sText_NoEvolveBattle,
     [MENUITEM_CANCEL_PG2]      = gText_OptionMenuCancel,
 };
 
@@ -204,6 +210,7 @@ static void ReadAllCurrentSettings(u8 taskId)
 	gTasks[taskId].data[TD_AUTORUN] = gSaveBlock2Ptr->autoRun;
     gTasks[taskId].data[TD_MAIN_UNIT_SYSTEM] = FlagGet(FLAG_UNIT_SYSTEM);
     gTasks[taskId].data[TD_CUSTOM_MATCH_CALL] = FlagGet(FLAG_MATCH_CALL_OFF);
+    gTasks[taskId].data[TD_NO_EVOLVE_BATTLE] = FlagGet(FLAG_NO_EVOLUTION_OPTION);
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -224,6 +231,7 @@ static void DrawOptionsPg2(u8 taskId)
     ReadAllCurrentSettings(taskId);
     DrawChoices_UnitSystem(gTasks[taskId].data[TD_MAIN_UNIT_SYSTEM]);
     DrawChoices_MatchCall(gTasks[taskId].data[TD_CUSTOM_MATCH_CALL]);
+    DrawChoices_No_Evolve_Battle(gTasks[taskId].data[TD_NO_EVOLVE_BATTLE]);
     HighlightOptionMenuItem(gTasks[taskId].data[TD_MENUSELECTION]);
     CopyWindowToVram(WIN_OPTIONS, 3);
 }
@@ -524,6 +532,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].data[TD_CUSTOM_MATCH_CALL])
                 DrawChoices_MatchCall(gTasks[taskId].data[TD_CUSTOM_MATCH_CALL]);
             break;
+        case MENUITEM_NO_EVOLVE_BATTLE:
+            previousOption = gTasks[taskId].data[TD_NO_EVOLVE_BATTLE];
+            gTasks[taskId].data[TD_NO_EVOLVE_BATTLE] = BattleScene_ProcessInput(gTasks[taskId].data[TD_NO_EVOLVE_BATTLE]);
+
+            if (previousOption != gTasks[taskId].data[TD_NO_EVOLVE_BATTLE])
+                DrawChoices_No_Evolve_Battle(gTasks[taskId].data[TD_NO_EVOLVE_BATTLE]);
+            break;
         default:
             return;
         }
@@ -546,6 +561,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->autoRun = gTasks[taskId].data[TD_AUTORUN];
 	gTasks[taskId].data[TD_MAIN_UNIT_SYSTEM] == 0 ? FlagClear(FLAG_UNIT_SYSTEM) : FlagSet(FLAG_UNIT_SYSTEM);
 	gTasks[taskId].data[TD_CUSTOM_MATCH_CALL] == 0 ? FlagClear(FLAG_MATCH_CALL_OFF) : FlagSet(FLAG_MATCH_CALL_OFF);
+	gTasks[taskId].data[TD_NO_EVOLVE_BATTLE] == 0 ? FlagClear(FLAG_NO_EVOLUTION_OPTION) : FlagSet(FLAG_NO_EVOLUTION_OPTION);
 
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -654,6 +670,17 @@ static void DrawChoices_UnitSystem(u8 selection)
     DrawOptionMenuChoice(gText_UnitSystemImperial, GetStringRightAlignXOffset(1, gText_UnitSystemMetric, 198), YPOS_MAIN_UNIT_SYSTEM, styles[1]);
 }
 
+static void DrawChoices_No_Evolve_Battle(u8 selection)
+{
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_NoEvolveBattleOptionOFF, 104, YPOS_NO_EVOLVE_BATTLE, styles[0]);
+    DrawOptionMenuChoice(gText_NoEvolveBattleOptionON, GetStringRightAlignXOffset(1, gText_NoEvolveBattleOptionON, 198), YPOS_NO_EVOLVE_BATTLE, styles[1]);
+}
 static void DrawChoices_MatchCall(u8 selection)
 {
     u8 styles[2];

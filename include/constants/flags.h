@@ -1259,7 +1259,7 @@
 #define FLAG_ITEM_TempleTime_SOOTHEBELL                             0x4AF // Previously Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_MICOLANDIA_MODE                                        0x4B1 // Previously Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_NO_EVOLUTION_OPTION                                    0x4B2 // Previously Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
