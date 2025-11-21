@@ -2217,5 +2217,4 @@ const u8 gText_NoEvolveBattleOptionON[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NO
 const u8 gText_SavingVersionNum[] = _("GAME VERSION");
 const u8 gText_SavingVersionNum2[] = _("{COLOR GREEN}1.2.0{COLOR GREEN}");
 // Evolution party screen option
-const u8 gText_Evolution[] = _("{COLOR GREEN}EVOLUTION{COLOR GREEN}");
 const u8 gText_Evolution[] = _("{COLOR GREEN}EVOLVE{COLOR GREEN}");
