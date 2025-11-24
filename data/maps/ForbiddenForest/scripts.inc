@@ -17,7 +17,7 @@ ForbiddenForest_EventScript_RareCandy::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 13
+	removeobject 11
 	setflag FLAG_ITEM_FORBIDDENFOREST_3RARECANDY
 	end
 	
@@ -26,7 +26,7 @@ ForbiddenForest_EventScript_Revive::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 14
+	removeobject 12
 	setflag FLAG_ITEM_FORBIDDENFOREST_6REVIVE
 	end
 	
@@ -35,7 +35,7 @@ ForbiddenForest_EventScript_PPMax::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 15
+	removeobject 13
 	setflag FLAG_ITEM_FORBIDDENFOREST_3PPMAX
 	end
 	
@@ -44,7 +44,7 @@ ForbiddenForest_EventScript_Leftovers::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 16
+	removeobject 14
 	setflag FLAG_ITEM_FORBIDDENFOREST_LEFTOVERS
 	end
 	
@@ -53,7 +53,7 @@ ForbiddenForest_EventScript_Stardust::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 17
+	removeobject 15
 	setflag FLAG_ITEM_FORBIDDENFOREST_4STARDUST
 	end
 	
@@ -62,7 +62,7 @@ ForbiddenForest_EventScript_FocusBand::
 	compare VAR_RESULT, FALSE
 	call_if_eq ForbiddenForest_BagFull
 	closemessage
-	removeobject 18
+	removeobject 16
 	setflag FLAG_ITEM_FORBIDDENFOREST_FOCUSBAND
 	end
 	
