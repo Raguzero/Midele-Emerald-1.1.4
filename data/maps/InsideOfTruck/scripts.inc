@@ -80,7 +80,9 @@ MicolandiaMode::
 	message InsideOfTruck_Text_PC_Config3
 	waitmessage
 	setvar VAR_MUSIC_PLAYER, MUSIC_PLAYER_STATE_LILYCOVE
+	setflag FLAG_VADER_MAUVILLE_RUINS_ROBO
 	setflag FLAG_ITEM_SECRET_POTION
+	setflag FLAG_SYS_PC_LANETTE
     setflag FLAG_SYS_POKEMON_GET
     setflag FLAG_SYS_POKEDEX_GET
     setflag FLAG_SYS_POKENAV_GET
