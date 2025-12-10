@@ -231,10 +231,10 @@ BlueYellow_AntesBatalla:
 	.string "hagas la tonta! ¿Recuerdas esa foto en\l"
 	.string "la que saliste tan sexy como modelo de\l"
 	.string "cierta marca de ropa de cierto\l"
-	.string "catálago de moda?\p"
+	.string "catálogo de moda?\p"
 	
 	.string "Mi amiga BLUE es modelo, ¿sabes?\n"
-	.string "No dejaré que se acerque a ella ningun\l"
+	.string "No dejaré que se acerque a ella ningún\l"
 	.string "baboso ni nadie que pueda hacerle algo\l"
 	.string "malo.\p"
 
@@ -249,11 +249,11 @@ BlueYellow_MensajeDerrota:
 BlueYellow_DespuesDeBatalla:
 	.string "BLUE: Conozco de sobra los extremos a\n"
 	.string "los que puede llegar un chico, no solo\l"
-	.string "las fotos la ropa interior que dejas en\l"
-	.string "el cesto de la ropa sucia que\l"
+	.string "las fotos. La ropa interior que dejas\l"
+	.string "en el cesto de la ropa sucia que\l"
 	.string "desaparece, la que puedes dejar\l"
 	.string "tendida al sol para que se seque y\l"
-	.string "despues encontrarla toda arrugada y\l"
+	.string "después encontrarla toda arrugada y\l"
 	.string "con una rara mancha que desprende un\l"
 	.string "desagradable olor.\p"
 	

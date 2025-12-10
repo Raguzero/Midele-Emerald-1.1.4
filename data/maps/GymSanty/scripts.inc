@@ -130,7 +130,7 @@ GymSanty_Text_GymGuideAdvice:
 GymSanty_Text_GymGuideAdvice2:
 	.string "Te explicaré en que consiste todo esto.\p"
 	
-	.string "En MICOLANDIA se está organizado una\n"
+	.string "En MICOLANDIA se está organizando una\n"
 	.string "nueva competición que permite sacar\l"
 	.string "todo el potencial de los entrenadores.\p"
 	

@@ -666,7 +666,7 @@ Darkigym_Text_DranixIntro:
 	.string "Espero que hayas traído Autan...\p"
 	
 	.string "¡Porque tu cuerpo será acribillado\n"
-	.string "por las picaduras de mi ejercito\l"
+	.string "por las picaduras de mi ejército\l"
 	.string "definitivo de BEEDRILLs!$"
 
 Darkigym_Text_DranixDefeat: 
