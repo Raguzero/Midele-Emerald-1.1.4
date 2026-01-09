@@ -10090,9 +10090,9 @@ static const struct TrainerMonCustomMidele sParty_Fernando5[] = {
     {
     .iv = 31,
     .lvl = 67,
-    .species = SPECIES_CHIMECHO,
+    .species = SPECIES_MEGA_CHIMECHO,
 	.nature = NATURE_BOLD,
-	.heldItem = ITEM_CLEANSE_TAG,
+	.heldItem = ITEM_LEFTOVERS,
 	.evs = {252, 0, 252, 0, 0, 6},
     .moves = {MOVE_RECOVER, MOVE_PSYCHIC, MOVE_TOXIC, MOVE_WRAP}
     },
@@ -19290,10 +19290,10 @@ static const struct TrainerMonCustomMidele sParty_Mariela[] = {
     {
     .iv = 31,
     .lvl = 51,
-    .species = SPECIES_CHIMECHO,
+    .species = SPECIES_MEGA_CHIMECHO,
 	.nature = NATURE_TIMID,
 	.evs = {108, 0, 0, 0, 0, 252},
-	.heldItem = ITEM_CLEANSE_TAG,
+	.heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HEAL_PULSE, MOVE_EXTRASENSORY, MOVE_RECOVER, MOVE_PERISH_SONG}
     }
 };
@@ -24633,7 +24633,7 @@ static const struct TrainerMonCustomMidele sParty_Ragu[] = {
 	.nature = NATURE_TIMID,
 	.evs = {252, 0, 6, 0, 0, 252},
 	.ability = 1,
-	.moves = {MOVE_SOFT_BOILED, MOVE_DAZZLING_GLEAM, MOVE_FLAMETHROWER, MOVE_NASTY_PLOT} 
+	.moves = {MOVE_SOFT_BOILED, MOVE_MOONBLAST, MOVE_FLAMETHROWER, MOVE_NASTY_PLOT} 
 	},
 	{
 	.iv = 31,
@@ -26272,13 +26272,23 @@ static const struct TrainerMonCustomMidele sParty_Josito2[] = {
     },
     {
     .iv = 31, 
+    .lvl = 85,
+    .species = SPECIES_STRANCLOUD,
+	.heldItem = ITEM_SITRUS_BERRY,
+	.nature = NATURE_TIMID,
+	.evs = {6, 0, 0, 252, 0, 252},
+	.ability = 0, // DRIZZLE
+    .moves = {MOVE_THUNDER, MOVE_WEATHER_BALL, MOVE_HAZE, MOVE_BLIZZARD}
+    },
+    {
+    .iv = 31, 
     .lvl = 87,
     .species = SPECIES_GOLDUCK,
 	.heldItem = ITEM_CHOICE_SPECS,
 	.nature = NATURE_MODEST,
 	.evs = {252, 0, 0, 252, 0, 6},
-	.hpType = TYPE_FIRE,
-	.ability = 1, // CLOUD NINE
+	.hpType = TYPE_ELECTRIC,
+	.ability = 0, // SWIFT SWIM
     .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_HIDDEN_POWER, MOVE_NONE}
     },
     {
@@ -26989,12 +26999,12 @@ static const struct TrainerMonCustomMidele sParty_Gerph[] = {
     {
     .iv = 31, 
     .lvl = 89,
-    .species = SPECIES_WOOLOO,
-	.heldItem = ITEM_SILK_SCARF,
-	.nature = NATURE_JOLLY,
-	.evs = {6, 252, 0, 0, 0, 252},
-	.ability = 1, // PURE POWER
-    .moves = {MOVE_BODY_SLAM, MOVE_EARTHQUAKE, MOVE_SUPERPOWER, MOVE_NONE}
+    .species = SPECIES_TOXLIME_E,
+	.heldItem = ITEM_MAGNET,
+	.nature = NATURE_MODEST,
+	.evs = {6, 0, 0, 252, 0, 252},
+	.ability = 0, // CLOUD NINE
+    .moves = {MOVE_THUNDERBOLT, MOVE_NASTY_PLOT, MOVE_FLAMETHROWER, MOVE_SLACK_OFF}
     },
     {
     .iv = 31, 
@@ -27043,7 +27053,7 @@ static const struct TrainerMonCustomMidele sParty_Gerph[] = {
 	.heldItem = ITEM_LEFTOVERS,
 	.nature = NATURE_JOLLY,
 	.evs = {6, 252, 0, 0, 0, 252},
-	.ability = 0, // KEEN EYE
+	.ability = 0, // LEVITATE
     .moves = {MOVE_BRICK_BREAK, MOVE_MOONLIGHT, MOVE_IRON_HEAD, MOVE_SHADOW_BALL}
     }
 };
