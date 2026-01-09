@@ -3538,4 +3538,34 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x64,
         .y_offset = 0x04,
     },
+    [SPECIES_MEGA_CHIMECHO] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
+    [SPECIES_TOXLIME_G] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
+    [SPECIES_TOXLIME_W] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
+    [SPECIES_TOXLIME_E] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
+    [SPECIES_STRANCLOUD] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
+    [SPECIES_MEGA_STRANCLOUD] =
+    {
+        .size = 0x64,
+        .y_offset = 0x04,
+    },
 };

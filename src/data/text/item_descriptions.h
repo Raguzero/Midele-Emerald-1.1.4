@@ -837,9 +837,9 @@ static const u8 sAmuletCoinDesc[] = _(
     "holder takes part.");
 
 static const u8 sCleanseTagDesc[] = _(
-    "Hold item: Raise DEF\n"
-    "& SDEF CHIMECHO's.\n"
-    "Repel wild POKéMON.");
+    "A hold item that\n"
+    "helps repel wild\n"
+    "POKéMON.");
 
 static const u8 sSoulDewDesc[] = _(
     "Hold item: raises\n"
@@ -1666,3 +1666,8 @@ static const u8 sLevelCapDesc[] = _(
     "A device that\n"
     "self-limits the\n"
     "level rise.");
+	
+static const u8 sCloudPowderDesc[] = _(
+	"Cloud dust. Change\n"
+	"to STRANCLOUD in\n"
+	"its mega form.");

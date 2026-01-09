@@ -680,6 +680,12 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(MAGNESANDS, gMonShinyPalette_Magnesands),
     SPECIES_SHINY_PAL(DIPPLIN, gMonShinyPalette_Dipplin),
     SPECIES_SHINY_PAL(HYDRAPPLE, gMonShinyPalette_Hydrapple),
+    SPECIES_SHINY_PAL(MEGA_CHIMECHO, gMonShinyPalette_MegaChimecho),
+    SPECIES_SHINY_PAL(TOXLIME_G, gMonShinyPalette_Toxlime_G),
+    SPECIES_SHINY_PAL(TOXLIME_W, gMonShinyPalette_Toxlime_W),
+    SPECIES_SHINY_PAL(TOXLIME_E, gMonShinyPalette_Toxlime_E),
+    SPECIES_SHINY_PAL(STRANCLOUD, gMonShinyPalette_Strancloud),
+    SPECIES_SHINY_PAL(MEGA_STRANCLOUD, gMonShinyPalette_MegaStrancloud),
 // NUEVO POKES
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
     SPECIES_SHINY_PAL(UNOWN_B, gMonShinyPalette_Unown),

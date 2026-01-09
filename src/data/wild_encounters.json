@@ -6351,9 +6351,9 @@
                                 "species": "SPECIES_ALOLAN_GRAVELER"
                             },
                             {
-                                "max_level": 28,
-                                "min_level": 25,
-                                "species": "SPECIES_ALOLAN_GRAVELER"
+                                "max_level": 27,
+                                "min_level": 23,
+                                "species": "SPECIES_TOXLIME_E"
                             },
                             {
                                 "max_level": 28,
@@ -6420,9 +6420,9 @@
                                 "species": "SPECIES_ALOLAN_GRAVELER"
                             },
                             {
-                                "max_level": 28,
-                                "min_level": 25,
-                                "species": "SPECIES_ALOLAN_GRAVELER"
+                                "max_level": 27,
+                                "min_level": 23,
+                                "species": "SPECIES_TOXLIME_E"
                             },
                             {
                                 "max_level": 28,
@@ -10129,8 +10129,8 @@
                             },
                             {
                                 "max_level": 30,
-                                "min_level": 30,
-                                "species": "SPECIES_SLOWPOKE"
+                                "min_level": 25,
+                                "species": "SPECIES_STRANCLOUD"
                             },
                             {
                                 "max_level": 30,
@@ -10349,12 +10349,12 @@
                             {
                                 "max_level": 30,
                                 "min_level": 25,
-                                "species": "SPECIES_MASQUERAIN"
+                                "species": "SPECIES_STRANCLOUD"
                             },
                             {
                                 "max_level": 30,
                                 "min_level": 25,
-                                "species": "SPECIES_MASQUERAIN"
+                                "species": "SPECIES_STRANCLOUD"
                             },
                             {
                                 "max_level": 35,
@@ -10768,9 +10768,9 @@
                                 "species": "SPECIES_PUMPKABOO"
                             },
                             {
-                                "max_level": 39,
-                                "min_level": 36,
-                                "species": "SPECIES_SKIPLOOM"
+                                "max_level": 37,
+                                "min_level": 33,
+                                "species": "SPECIES_STRANCLOUD"
                             },
                             {
                                 "max_level": 38,
@@ -10838,9 +10838,9 @@
                                 "species": "SPECIES_MURKROW"
                             },
                             {
-                                "max_level": 38,
-                                "min_level": 35,
-                                "species": "SPECIES_NOCTOWL"
+                                "max_level": 37,
+                                "min_level": 33,
+                                "species": "SPECIES_STRANCLOUD"
                             },
                             {
                                 "max_level": 38,
@@ -13929,8 +13929,8 @@
                             },
                             {
                                 "max_level": 33,
-                                "min_level": 29,
-                                "species": "SPECIES_HOUNDOUR"
+                                "min_level": 28,
+                                "species": "SPECIES_TOXLIME_G"
                             },
                             {
                                 "max_level": 33,
@@ -14028,8 +14028,8 @@
                             },
                             {
                                 "max_level": 33,
-                                "min_level": 29,
-                                "species": "SPECIES_HOUNDOUR"
+                                "min_level": 28,
+                                "species": "SPECIES_TOXLIME_G"
                             },
                             {
                                 "max_level": 33,
@@ -14229,9 +14229,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14241,7 +14241,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14298,9 +14298,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14310,7 +14310,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14367,9 +14367,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14379,7 +14379,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14436,9 +14436,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14448,7 +14448,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14505,9 +14505,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14517,7 +14517,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14629,9 +14629,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14641,7 +14641,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14783,9 +14783,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14795,7 +14795,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,
@@ -14882,9 +14882,9 @@
                                 "species": "SPECIES_CROBAT"
                             },
                             {
-                                "max_level": 45,
-                                "min_level": 42,
-                                "species": "SPECIES_TYNAMO"
+                                "max_level": 43,
+                                "min_level": 39,
+                                "species": "SPECIES_EELEKTRIK"
                             },
                             {
                                 "max_level": 43,
@@ -14894,7 +14894,7 @@
                             {
                                 "max_level": 43,
                                 "min_level": 39,
-                                "species": "SPECIES_EELEKTRIK"
+                                "species": "SPECIES_TOXLIME_W"
                             },
                             {
                                 "max_level": 43,

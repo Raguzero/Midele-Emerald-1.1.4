@@ -7106,4 +7106,40 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 256,
         .trainerOffset = 0,
 	},
+	
+    [NATIONAL_DEX_MEGA_CHIMECHO] =
+    {
+        .categoryName = _("WIND CHIME"),
+        .height = 12,
+        .weight = 80,
+        .description = gMegaChimechoPokedexText,
+        .pokemonScale = 305,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+	
+    [NATIONAL_DEX_TOXLIME_G] =
+    {
+        .categoryName = _("POISON LIME"),
+        .height = 12,
+        .weight = 350,
+        .description = gToxlime_PokedexText,
+        .pokemonScale = 305,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+	
+    [NATIONAL_DEX_STRANCLOUD] =
+    {
+        .categoryName = _("DARK CLOUD"),
+        .height = 10,
+        .weight = 10,
+        .description = gStrancloud_PokedexText,
+        .pokemonScale = 305,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
 };

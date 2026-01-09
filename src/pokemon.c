@@ -779,6 +779,12 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
 	SPECIES_TO_HOENN(MAGNESANDS),
 	SPECIES_TO_HOENN(DIPPLIN),
 	SPECIES_TO_HOENN(HYDRAPPLE),
+	SPECIES_TO_HOENN(MEGA_CHIMECHO),
+	SPECIES_TO_HOENN(TOXLIME_G),
+   [SPECIES_TOXLIME_W - 1] = HOENN_DEX_TOXLIME_G,
+   [SPECIES_TOXLIME_E - 1] = HOENN_DEX_TOXLIME_G,
+  	SPECIES_TO_HOENN(STRANCLOUD),
+   [SPECIES_MEGA_STRANCLOUD - 1] = HOENN_DEX_STRANCLOUD,
 };
 
 const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -1461,6 +1467,12 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
 	SPECIES_TO_NATIONAL(MAGNESANDS),
 	SPECIES_TO_NATIONAL(DIPPLIN),
 	SPECIES_TO_NATIONAL(HYDRAPPLE),
+	SPECIES_TO_NATIONAL(MEGA_CHIMECHO),
+	SPECIES_TO_NATIONAL(TOXLIME_G),
+   [SPECIES_TOXLIME_W - 1] = NATIONAL_DEX_TOXLIME_G,
+   [SPECIES_TOXLIME_E - 1] = NATIONAL_DEX_TOXLIME_G,
+    SPECIES_TO_NATIONAL(STRANCLOUD),
+   [SPECIES_MEGA_STRANCLOUD - 1] = NATIONAL_DEX_STRANCLOUD,
 };
 
 const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
@@ -2062,6 +2074,9 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
 	HOENN_TO_NATIONAL(MAGNESANDS),
 	HOENN_TO_NATIONAL(DIPPLIN),
 	HOENN_TO_NATIONAL(HYDRAPPLE),
+	HOENN_TO_NATIONAL(MEGA_CHIMECHO),
+	HOENN_TO_NATIONAL(TOXLIME_G),
+	HOENN_TO_NATIONAL(STRANCLOUD),
     HOENN_TO_NATIONAL(OLD_UNOWN_B),
     HOENN_TO_NATIONAL(OLD_UNOWN_C),
     HOENN_TO_NATIONAL(OLD_UNOWN_D),
@@ -2820,6 +2835,12 @@ static const u8 sMonFrontAnimIdsTable[] =
 	[SPECIES_MAGNESANDS - 1] = 0x10,
 	[SPECIES_DIPPLIN - 1] = 0x10,	
 	[SPECIES_HYDRAPPLE - 1] = 0x10,
+	[SPECIES_MEGA_CHIMECHO - 1] = 0x10,
+	[SPECIES_TOXLIME_G - 1] = 0x10,
+	[SPECIES_TOXLIME_W - 1] = 0x10,
+	[SPECIES_TOXLIME_E - 1] = 0x10,
+	[SPECIES_STRANCLOUD - 1] = 0x10,
+	[SPECIES_MEGA_STRANCLOUD - 1] = 0x10,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
@@ -4369,8 +4390,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (defenderHoldEffect == HOLD_EFFECT_BIG_MUSHROOM && (defender->species == SPECIES_PARAS || defender->species == SPECIES_PARASECT))
         defense *= 2, spDefense *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_HAPPINESS_UP && (defender->species == SPECIES_WIGGLYTUFF))
-        defense *= 1.5, spDefense *= 1.5;
-    if (defenderHoldEffect == HOLD_EFFECT_REPEL && (defender->species == SPECIES_CHIMECHO))
         defense *= 1.5, spDefense *= 1.5;
     if (attackerHoldEffect == HOLD_EFFECT_CAN_ALWAYS_RUN && (attacker->species == SPECIES_BEAUTIFLY || attacker->species == SPECIES_DUSTOX))
         spAttack *= 1.5;
@@ -7885,7 +7904,11 @@ static u16 DoGetBattleBGM(void)
 	species == NATIONAL_DEX_EXCADRILL ||
 	species == NATIONAL_DEX_SNIVY ||
 	species == NATIONAL_DEX_SERVINE ||
-	species == NATIONAL_DEX_SERPERIOR) return WILDBW2_FINAL;
+	species == NATIONAL_DEX_SERPERIOR ||
+	species == NATIONAL_DEX_PANSAGE ||
+	species == NATIONAL_DEX_SIMISAGE ||
+	species == NATIONAL_DEX_TRUBBISH ||
+	species == NATIONAL_DEX_GARBODOR) return WILDBW2_FINAL;
 	if (species == NATIONAL_DEX_PROBOPASS ||
 	species == NATIONAL_DEX_DUSKNOIR ||
 	species == NATIONAL_DEX_FROSLASS ||
@@ -7935,7 +7958,8 @@ static u16 DoGetBattleBGM(void)
 	species == NATIONAL_DEX_MUNCHLAX ||
 	species == NATIONAL_DEX_MANTYKE ||
 	species == NATIONAL_DEX_CROAGUNK ||
-	species == NATIONAL_DEX_TOXICROAK) return SEQ_BA_POKE;
+	species == NATIONAL_DEX_TOXICROAK ||
+	species == NATIONAL_DEX_OVERQWIL) return SEQ_BA_POKE;
 	if (species == NATIONAL_DEX_JANGMO_O ||
 	species == NATIONAL_DEX_HAKAMO_O ||
 	species == NATIONAL_DEX_KOMMO_O ||
@@ -8027,6 +8051,7 @@ static u16 DoGetBattleBGM(void)
 	species == NATIONAL_DEX_MRRIME ||
 	species == NATIONAL_DEX_RUNERIGUS ||		
 	species == NATIONAL_DEX_PERSERKER ||
+	species == NATIONAL_DEX_ZARUDE ||
 	species == NATIONAL_DEX_CURSOLA) return SWORDSHIELDWILD;
     if (species == NATIONAL_DEX_HONEDGE_MONADO)
     {
@@ -8595,6 +8620,12 @@ bool8 HasTwoFramesAnimation(u16 species)
 			&& species != SPECIES_MAGNESANDS
 			&& species != SPECIES_DIPPLIN
 			&& species != SPECIES_HYDRAPPLE
+			&& species != SPECIES_MEGA_CHIMECHO
+			&& species != SPECIES_TOXLIME_G
+			&& species != SPECIES_TOXLIME_W
+			&& species != SPECIES_TOXLIME_E
+			&& species != SPECIES_STRANCLOUD
+			&& species != SPECIES_MEGA_STRANCLOUD
             && species != SPECIES_BOSS);
 }
 

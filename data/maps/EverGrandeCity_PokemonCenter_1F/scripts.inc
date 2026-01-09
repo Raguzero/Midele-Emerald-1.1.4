@@ -55,6 +55,7 @@ EverGrandeCity_PokemonCenter_1F_Pokemart:
 	.2byte ITEM_UP_GRADE
 	.2byte ITEM_DEEP_SEA_TOOTH
 	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_CLOUD_POWDER
 	.2byte ITEM_NONE
 	release
 	end

@@ -5001,7 +5001,7 @@ bool16 HasAllMons(void)
 {
     u16 i;
 
-    for (i = 0; i < NATIONAL_DEX_HYDRAPPLE; i++)
+    for (i = 0; i < NATIONAL_DEX_STRANCLOUD; i++)
     {
         if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;

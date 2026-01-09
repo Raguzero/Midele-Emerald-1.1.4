@@ -412,7 +412,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_JIRACHI] = gMonFootprint_Jirachi,
     [SPECIES_DEOXYS] = gMonFootprint_Deoxys,
     [SPECIES_CHIMECHO] = gMonFootprint_Chimecho,
-// NUEVO PARA FORMAS ALOLA
+// NUEVOS
 	[SPECIES_ALOLAN_RATTATA] = gMonFootprint_AlolanRattata,
     [SPECIES_ALOLAN_RATICATE] = gMonFootprint_AlolanRaticate,
     [SPECIES_ALOLAN_RAICHU] = gMonFootprint_AlolanRaichu,
@@ -563,7 +563,8 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_MAGNESANDS] = gMonFootprint_Magnesands,
     [SPECIES_DIPPLIN] = gMonFootprint_Dipplin,
     [SPECIES_HYDRAPPLE] = gMonFootprint_Hydrapple,
-// NUEVO PARA FORMAS ALOLA
+    [SPECIES_MEGA_CHIMECHO] = gMonFootprint_MegaChimecho,
+// NUEVOS
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
     [SPECIES_BOSS] = gMonFootprint_Bulbasaur,
 };

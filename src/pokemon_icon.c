@@ -736,6 +736,12 @@ const u8 *const gMonIconTable[] =
 	[SPECIES_MAGNESANDS] = gMonIcon_Magnesands,
 	[SPECIES_DIPPLIN] = gMonIcon_Dipplin,
 	[SPECIES_HYDRAPPLE] = gMonIcon_Hydrapple,
+	[SPECIES_MEGA_CHIMECHO] = gMonIcon_MegaChimecho,
+	[SPECIES_TOXLIME_G] = gMonIcon_Toxlime_G,
+	[SPECIES_TOXLIME_W] = gMonIcon_Toxlime_W,
+	[SPECIES_TOXLIME_E] = gMonIcon_Toxlime_E,
+	[SPECIES_STRANCLOUD] = gMonIcon_Strancloud,
+	[SPECIES_MEGA_STRANCLOUD] = gMonIcon_MegaStrancloud,
 };
 
 const u8 *const gMonIconTableFemale[] =
@@ -1447,6 +1453,12 @@ const u8 gMonIconPaletteIndices[] =
 	[SPECIES_MAGNESANDS] = 0,
 	[SPECIES_DIPPLIN] = 1,
 	[SPECIES_HYDRAPPLE] = 1,
+	[SPECIES_MEGA_CHIMECHO] = 0,
+	[SPECIES_TOXLIME_G] = 0,
+	[SPECIES_TOXLIME_W] = 0,
+	[SPECIES_TOXLIME_E] = 2,
+	[SPECIES_STRANCLOUD] = 2,
+	[SPECIES_MEGA_STRANCLOUD] = 2,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

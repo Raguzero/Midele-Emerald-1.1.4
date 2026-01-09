@@ -3346,6 +3346,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
                     else if (gBattleMons[gBattlerAttacker].item != 0
                         || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
                         || IS_ITEM_MAIL(gBattleMons[gBattlerTarget].item)
+                        || gBattleMons[gBattlerTarget].species == SPECIES_MEGA_STRANCLOUD
                         || gBattleMons[gBattlerTarget].item == 0)
                     {
                         gBattlescriptCurrInstr++;
@@ -10305,6 +10306,8 @@ static void Cmd_tryswapitems(void) // trick
         else if ((gBattleMons[gBattlerAttacker].item == 0 && gBattleMons[gBattlerTarget].item == 0)
                  || gBattleMons[gBattlerAttacker].item == ITEM_ENIGMA_BERRY
                  || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
+                 || gBattleMons[gBattlerTarget].species == SPECIES_MEGA_STRANCLOUD
+                 || (gBattleMons[gBattlerTarget].species == SPECIES_STRANCLOUD && gBattleMons[gBattlerAttacker].item == ITEM_CLOUD_POWDER)
                  || IS_ITEM_MAIL(gBattleMons[gBattlerAttacker].item)
                  || IS_ITEM_MAIL(gBattleMons[gBattlerTarget].item))
         {

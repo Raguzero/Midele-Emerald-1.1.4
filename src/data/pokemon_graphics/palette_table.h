@@ -709,6 +709,12 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(MAGNESANDS, gMonPalette_Magnesands),
     SPECIES_PAL(DIPPLIN, gMonPalette_Dipplin),
     SPECIES_PAL(HYDRAPPLE, gMonPalette_Hydrapple),
+    SPECIES_PAL(MEGA_CHIMECHO, gMonPalette_MegaChimecho),
+    SPECIES_PAL(TOXLIME_G, gMonPalette_Toxlime_G),
+    SPECIES_PAL(TOXLIME_W, gMonPalette_Toxlime_W),
+    SPECIES_PAL(TOXLIME_E, gMonPalette_Toxlime_E),
+    SPECIES_PAL(STRANCLOUD, gMonPalette_Strancloud),
+    SPECIES_PAL(MEGA_STRANCLOUD, gMonPalette_MegaStrancloud),
 };
 
 const struct CompressedSpritePalette gMonPaletteTableFemale[] =

@@ -680,6 +680,12 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(MAGNESANDS, gMonBackPic_Magnesands),
     SPECIES_SPRITE(DIPPLIN, gMonBackPic_Dipplin),
     SPECIES_SPRITE(HYDRAPPLE, gMonBackPic_Hydrapple),
+    SPECIES_SPRITE(MEGA_CHIMECHO, gMonBackPic_MegaChimecho),
+    SPECIES_SPRITE(TOXLIME_G, gMonBackPic_Toxlime_G),
+    SPECIES_SPRITE(TOXLIME_W, gMonBackPic_Toxlime_W),
+    SPECIES_SPRITE(TOXLIME_E, gMonBackPic_Toxlime_E),
+    SPECIES_SPRITE(STRANCLOUD, gMonBackPic_Strancloud),
+    SPECIES_SPRITE(MEGA_STRANCLOUD, gMonBackPic_MegaStrancloud),
 // NUEVOS POKES
     SPECIES_SPRITE(EGG, gMonStillFrontPic_Egg),
     SPECIES_SPRITE(UNOWN_B, gMonBackPic_UnownB),

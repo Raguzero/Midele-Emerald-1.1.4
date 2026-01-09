@@ -3562,3 +3562,21 @@ const u8 gHydrapplePokedexText[] = _(
     "Seven syrpents live inside an apple made\n"
 	"of syrup. The syrpent in the center is\n"
 	"the commander.");
+	
+const u8 gMegaChimechoPokedexText[] = _(
+	"It vibrates its entire body to attack in\n"
+	"all directions using sound waves. Any who\n"
+	"hear the vibrations get so confused, they\n"
+	"forget who they are.");
+	
+const u8 gToxlime_PokedexText[] = _(
+	"In its three forms, it is covered with a\n"
+	"highly toxic mucous membrane that also\n"
+	"protects it physically from adverse\n"
+	"environmental conditions.");
+	
+const u8 gStrancloud_PokedexText[] = _(
+	"It is a species that usually goes in\n"
+	"herds, so if they are affected by any\n"
+	"circumstance they can flood an entire\n"
+	"village on their own.");

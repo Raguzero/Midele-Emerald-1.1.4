@@ -681,5 +681,11 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
 	[SPECIES_MAGNESANDS] = sMagnesandsLevelUpLearnset,
 	[SPECIES_DIPPLIN] = sDipplinLevelUpLearnset,
 	[SPECIES_HYDRAPPLE] = sHydrappleLevelUpLearnset,
+	[SPECIES_MEGA_CHIMECHO] = sMegaChimechoLevelUpLearnset,
+	[SPECIES_TOXLIME_G] = sToxlimeGLevelUpLearnset,
+	[SPECIES_TOXLIME_W] = sToxlimeWLevelUpLearnset,
+	[SPECIES_TOXLIME_E] = sToxlimeELevelUpLearnset,
+	[SPECIES_STRANCLOUD] = sStrancloudLevelUpLearnset,
+	[SPECIES_MEGA_STRANCLOUD] = sStrancloudLevelUpLearnset,
     [SPECIES_BOSS] = sBulbasaurLevelUpLearnset,
 };

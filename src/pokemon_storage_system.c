@@ -2800,7 +2800,7 @@ static void Cb_OnSelectedMon(u8 taskId)
             {
                 sPSSData->state = 3;
             }
-            else if (sPSSData->cursorMonIsEgg)
+            else if (sPSSData->cursorMonIsEgg || sPSSData->cursorMonSpecies == SPECIES_MEGA_STRANCLOUD)
             {
                 sPSSData->state = 5; // Cannot release an Egg.
             }
@@ -8441,7 +8441,7 @@ static bool8 sub_80CFA84(void)
 
 static bool8 sub_80CFB44(void)
 {
-    if (sPSSData->cursorMonSpecies == SPECIES_EGG)
+    if (sPSSData->cursorMonSpecies == SPECIES_EGG || sPSSData->cursorMonSpecies == SPECIES_MEGA_STRANCLOUD || sPSSData->cursorMonSpecies == SPECIES_STRANCLOUD)
         return FALSE;
 
     if (!IsActiveItemMoving())

@@ -6818,6 +6818,42 @@ static const union AnimCmd sAnim_HYDRAPPLE_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_MEGA_CHIMECHO_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TOXLIME_G_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TOXLIME_W_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TOXLIME_E_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_STRANCLOUD_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MEGA_STRANCLOUD_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnims_NONE[] ={
     sAnim_GeneralFrame0,
     sAnim_NONE_1,
@@ -10277,6 +10313,36 @@ static const union AnimCmd *const sAnims_HYDRAPPLE[] ={
     sAnim_HYDRAPPLE_1,
 };
 
+static const union AnimCmd *const sAnims_MEGA_CHIMECHO[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MEGA_CHIMECHO_1,
+};
+
+static const union AnimCmd *const sAnims_TOXLIME_G[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TOXLIME_G_1,
+};
+
+static const union AnimCmd *const sAnims_TOXLIME_W[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TOXLIME_W_1,
+};
+
+static const union AnimCmd *const sAnims_TOXLIME_E[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TOXLIME_E_1,
+};
+
+static const union AnimCmd *const sAnims_STRANCLOUD[] ={
+    sAnim_GeneralFrame0,
+    sAnim_STRANCLOUD_1,
+};
+
+static const union AnimCmd *const sAnims_MEGA_STRANCLOUD[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MEGA_STRANCLOUD_1,
+};
+
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 
@@ -10992,4 +11058,10 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(KILOWATTREL),
     ANIM_CMD(DIPPLIN),
     ANIM_CMD(HYDRAPPLE),
+    ANIM_CMD(MEGA_CHIMECHO),
+    ANIM_CMD(TOXLIME_G),
+    ANIM_CMD(TOXLIME_W),
+    ANIM_CMD(TOXLIME_E),
+    ANIM_CMD(STRANCLOUD),
+    ANIM_CMD(MEGA_STRANCLOUD),
 };

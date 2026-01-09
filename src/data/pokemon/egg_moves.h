@@ -252,6 +252,10 @@ const u16 gEggMovesSpecies[] = {
   SPECIES_TRUBBISH,
   SPECIES_PANSAGE,
   SPECIES_WATTREL,
+  SPECIES_TOXLIME_G,
+  SPECIES_TOXLIME_W,
+  SPECIES_TOXLIME_E,
+  SPECIES_STRANCLOUD,
 };
 
 const u16 gEggMoves[] = {
@@ -2618,7 +2622,6 @@ const u16 gEggMoves[] = {
 		MOVE_BIND,
 		MOVE_UPROAR,
 		MOVE_SIGNAL_BEAM,
-		MOVE_PAIN_SPLIT,
 		MOVE_MAGIC_COAT,
 		MOVE_MIRROR_COAT),
 
@@ -2669,6 +2672,45 @@ const u16 gEggMoves[] = {
         MOVE_STOCKPILE,
         MOVE_SWALLOW,
         MOVE_WEATHER_BALL),
+		
+    egg_moves(STRANCLOUD,
+        MOVE_SILVER_WIND,
+        MOVE_STOCKPILE,
+        MOVE_SPIT_UP,
+        MOVE_SWALLOW,
+        MOVE_MIST,
+        MOVE_ZAP_CANNON,
+        MOVE_COTTON_SPORE),
+		
+    egg_moves(TOXLIME_G,
+        MOVE_HYPNOSIS,
+        MOVE_NATURE_POWER,
+        MOVE_LOW_KICK,
+        MOVE_ACID_ARMOR,
+        MOVE_ODOR_SLEUTH,
+        MOVE_PAIN_SPLIT,
+        MOVE_PERISH_SONG,
+        MOVE_MAGIC_COAT),
+		
+    egg_moves(TOXLIME_W,
+        MOVE_HYPNOSIS,
+        MOVE_NATURE_POWER,
+        MOVE_LOW_KICK,
+        MOVE_ACID_ARMOR,
+        MOVE_ODOR_SLEUTH,
+        MOVE_PAIN_SPLIT,
+        MOVE_PERISH_SONG,
+        MOVE_MAGIC_COAT),
+		
+    egg_moves(TOXLIME_E,
+        MOVE_HYPNOSIS,
+        MOVE_NATURE_POWER,
+        MOVE_LOW_KICK,
+        MOVE_ACID_ARMOR,
+        MOVE_ODOR_SLEUTH,
+        MOVE_PAIN_SPLIT,
+        MOVE_PERISH_SONG,
+        MOVE_MAGIC_COAT),
 		
     EGG_MOVES_TERMINATOR
 };

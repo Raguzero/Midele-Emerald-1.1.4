@@ -14638,6 +14638,10 @@ gCryTable:: @ 869DCF4
 	cry Cry_Magnesands
 	cry Cry_Dipplin
 	cry Cry_Hydrapple
+	cry Cry_MegaChimecho
+	cry Cry_Toxlime
+	cry Cry_Strancloud
+	cry Cry_MegaStrancloud
 
 
 	.align 2
@@ -15241,6 +15245,10 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Magnesands
 	cry2 Cry_Dipplin
 	cry2 Cry_Hydrapple
+	cry2 Cry_MegaChimecho
+	cry2 Cry_Toxlime
+	cry2 Cry_Strancloud
+	cry2 Cry_MegaStrancloud
 	
 
 	.align 2

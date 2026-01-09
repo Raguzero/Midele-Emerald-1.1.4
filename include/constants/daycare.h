@@ -26,6 +26,6 @@
 #define EGG_LVL_UP_MOVES_ARRAY_COUNT    50
 
 // Egg moves
-#define NUM_EGG_MOVES_SPECIES 249 // Aumentar cuando se añade una nueva especie a gEggMoves y gEggMovesSpecies en egg_moves.h
+#define NUM_EGG_MOVES_SPECIES 253 // Aumentar cuando se añade una nueva especie a gEggMoves y gEggMovesSpecies en egg_moves.h
 
 #endif //GUARD_DAYCARE_CONSTANTS_H

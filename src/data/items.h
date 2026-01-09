@@ -3091,12 +3091,12 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_0E9] =
+    [ITEM_CLOUD_POWDER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("CLOUD POWDER"),
+        .itemId = ITEM_CLOUD_POWDER,
+        .price = 4800,
+        .description = sCloudPowderDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

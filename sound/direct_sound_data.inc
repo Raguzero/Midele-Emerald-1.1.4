@@ -2883,6 +2883,22 @@ Cry_Dipplin::
 Cry_Hydrapple::
 	.incbin "sound/direct_sound_samples/cry_hydrapple.bin"
 	.align 2
+	
+Cry_MegaChimecho::
+	.incbin "sound/direct_sound_samples/cry_megachimecho.bin"
+	.align 2
+	
+Cry_Toxlime::
+	.incbin "sound/direct_sound_samples/cry_toxlime.bin"
+	.align 2
+	
+Cry_Strancloud::
+	.incbin "sound/direct_sound_samples/cry_strancloud.bin"
+	.align 2
+
+Cry_MegaStrancloud::
+	.incbin "sound/direct_sound_samples/cry_megastrancloud.bin"
+	.align 2	
 
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"

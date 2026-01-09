@@ -1734,6 +1734,7 @@ static void DisplaySwitchedHeldItemMessage(u16 item, u16 item2, bool8 keepOpen)
 static void GiveItemToMon(struct Pokemon *mon, u16 item)
 {
     u8 itemBytes[2];
+	u16 forme;
 
     if (ItemIsMail(item) == TRUE)
     {
@@ -1743,11 +1744,27 @@ static void GiveItemToMon(struct Pokemon *mon, u16 item)
     itemBytes[0] = item;
     itemBytes[1] = item >> 8;
     SetMonData(mon, MON_DATA_HELD_ITEM, itemBytes);
+
+    if (item == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_STRANCLOUD)
+    {
+        forme = SPECIES_MEGA_STRANCLOUD;
+        gPartyMenuUseExitCallback = TRUE;
+        PlayCry2(forme, 0, 0x7D, 0xA);
+        SetMonData(mon, MON_DATA_SPECIES, &forme);
+        FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+        CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+        CalculateMonStats(mon);
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, ChangedForm);
+        DisplayPartyMenuMessage(gStringVar4, FALSE);
+        schedule_bg_copy_tilemap_to_vram(2);
+    }
 }
 
 static u8 TryTakeMonItem(struct Pokemon* mon)
 {
     u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
+	u16 forme;
 
     if (item == ITEM_NONE)
         return 0;
@@ -1756,6 +1773,20 @@ static u8 TryTakeMonItem(struct Pokemon* mon)
 
     item = ITEM_NONE;
     SetMonData(mon, MON_DATA_HELD_ITEM, &item);
+    if (item == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_STRANCLOUD)
+    {
+        forme = SPECIES_MEGA_STRANCLOUD;
+        gPartyMenuUseExitCallback = TRUE;
+        PlayCry2(forme, 0, 0x7D, 0xA);
+        SetMonData(mon, MON_DATA_SPECIES, &forme);
+        FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+        CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+        CalculateMonStats(mon);
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, ChangedForm);
+        DisplayPartyMenuMessage(gStringVar4, FALSE);
+        schedule_bg_copy_tilemap_to_vram(2);
+    }
     return 2;
 }
 
@@ -3127,6 +3158,10 @@ static void Task_SwitchItemsYesNo(u8 taskId)
 
 static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
 {
+    u16 item;
+	u16 forme;
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
     case 0: // Yes, switch items
@@ -3149,6 +3184,20 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
         // Giving item
         else
         {
+			if (GetMonData(mon, MON_DATA_HELD_ITEM) == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_MEGA_STRANCLOUD)
+			{
+				forme = SPECIES_STRANCLOUD;
+				gPartyMenuUseExitCallback = TRUE;
+				PlayCry2(forme, 0, 0x7D, 0xA);
+				SetMonData(mon, MON_DATA_SPECIES, &forme);
+				FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+				CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+				CalculateMonStats(mon);
+				GetMonNickname(mon, gStringVar1);
+				StringExpandPlaceholders(gStringVar4, ChangedForm);
+				DisplayPartyMenuMessage(gStringVar4, FALSE);
+				schedule_bg_copy_tilemap_to_vram(2);
+			}
             GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId);
             DisplaySwitchedHeldItemMessage(gSpecialVar_ItemId, sPartyMenuItemId, TRUE);
             gTasks[taskId].func = Task_UpdateHeldItemSprite;
@@ -3239,6 +3288,7 @@ static void CursorCb_TakeItem(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
+	u16 forme;
 
     PlaySE(SE_SELECT);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
@@ -3256,6 +3306,20 @@ static void CursorCb_TakeItem(u8 taskId)
         break;
     default: // Took item
         DisplayTookHeldItemMessage(mon, item, TRUE);
+    if (item == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_MEGA_STRANCLOUD)
+    {
+        forme = SPECIES_STRANCLOUD;
+        gPartyMenuUseExitCallback = TRUE;
+        PlayCry2(forme, 0, 0x7D, 0xA);
+        SetMonData(mon, MON_DATA_SPECIES, &forme);
+        FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+        CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+        CalculateMonStats(mon);
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, ChangedForm);
+        DisplayPartyMenuMessage(gStringVar4, FALSE);
+        schedule_bg_copy_tilemap_to_vram(2);
+    }
         break;
     }
     schedule_bg_copy_tilemap_to_vram(2);
@@ -5508,10 +5572,26 @@ static void GiveItemOrMailToSelectedMon(u8 taskId)
 static void GiveItemToSelectedMon(u8 taskId)
 {
     u16 item;
+	u16 forme;
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
 
     if (!gPaletteFade.active)
     {
         item = gPartyMenu.bagItem;
+			if (GetMonData(mon, MON_DATA_HELD_ITEM) == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_STRANCLOUD)
+			{
+				forme = SPECIES_MEGA_STRANCLOUD;
+				gPartyMenuUseExitCallback = TRUE;
+				PlayCry2(forme, 0, 0x7D, 0xA);
+				SetMonData(mon, MON_DATA_SPECIES, &forme);
+				FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+				CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+				CalculateMonStats(mon);
+				GetMonNickname(mon, gStringVar1);
+				StringExpandPlaceholders(gStringVar4, ChangedForm);
+				DisplayPartyMenuMessage(gStringVar4, FALSE);
+				schedule_bg_copy_tilemap_to_vram(2);
+			}
         DisplayGaveHeldItemMessage(&gPlayerParty[gPartyMenu.slotId], item, FALSE, 1);
         GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], item);
         RemoveItemToGiveFromBag(item);
@@ -5588,6 +5668,8 @@ static void Task_SwitchItemsFromBagYesNo(u8 taskId)
 static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
 {
     u16 item;
+	u16 forme;
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
 
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
@@ -5608,6 +5690,20 @@ static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
         }
         else
         {
+			if (GetMonData(mon, MON_DATA_HELD_ITEM) == ITEM_CLOUD_POWDER && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_MEGA_STRANCLOUD)
+			{
+				forme = SPECIES_STRANCLOUD;
+				gPartyMenuUseExitCallback = TRUE;
+				PlayCry2(forme, 0, 0x7D, 0xA);
+				SetMonData(mon, MON_DATA_SPECIES, &forme);
+				FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+				CreatePartyMonIconSpriteParameterized(forme, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 1, FALSE);
+				CalculateMonStats(mon);
+				GetMonNickname(mon, gStringVar1);
+				StringExpandPlaceholders(gStringVar4, ChangedForm);
+				DisplayPartyMenuMessage(gStringVar4, FALSE);
+				schedule_bg_copy_tilemap_to_vram(2);
+			}
             GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], item);
             DisplaySwitchedHeldItemMessage(item, sPartyMenuItemId, TRUE);
             gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
@@ -6765,8 +6861,10 @@ void CursorCb_MoveItemCallback(u8 taskId)
             return;
         }
 		
-        if(GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) >= ITEM_ORANGE_MAIL
-        && GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) <= ITEM_RETRO_MAIL)
+        if (GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) == ITEM_CLOUD_POWDER
+		|| (GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM) == ITEM_CLOUD_POWDER
+		|| (GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) >= ITEM_ORANGE_MAIL
+        && GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) <= ITEM_RETRO_MAIL)))
         {
             PlaySE(SE_HAZURE);
             return;
