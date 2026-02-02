@@ -37,7 +37,7 @@ Ver [INSTALL.md](INSTALL.md)
 - [Micolo] (Ideas interesantes en cuanto a ataques y pokes regalo)
 - [Kefka] (Beta Tester e ideas interesantes)
 
-## Créditos al resto de personas cuyo código hemos utilizado:
+## Créditos al resto de personas cuyo código y sprites hemos utilizado:
 - Robinlukke https://www.pokecommunity.com/showthread.php?t=435076
 - TheXaman y AsparagusEduardo (Script Pokedex HGSS Style https://github.com/TheXaman/pokeemerald/commit/abf5d238c2a5fe020123544a72fe432c27191153#)
 - Ryuhouji ( Random Battle script --> https://github.com/Ryuhouji/Emerald-Enhanced/commit/467909ab2df0ca674501b164e3915b5fc4871add )
@@ -74,3 +74,4 @@ Ver [INSTALL.md](INSTALL.md)
 - Deepestsilence https://www.deviantart.com/deepestsilence (Sprite de Kagerou Project Sprites)
 - resetes12 (Front Anim Sprites Regidrago Regieleki Annihilape Farigiraf https://github.com/resetes12/pokeemerald/commit/bef266b20e281e4de4892753b24d195404005fda )
 - devolov (Update Move Relearn. Now an evolved pokemon can learn moves from its pre-evolutions https://github.com/pret/pokeemerald/wiki/Allow-Move-Relearner-to-Teach-Moves-that-Pre-Evolutions-Know )
+- Comunidad de Whack a Hack (Sprites Gen 9 https://whackahack.com/foro/threads/9-gen-sprites.67492/ )
