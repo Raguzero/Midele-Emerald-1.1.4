@@ -7114,7 +7114,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .weight = 80,
         .description = gMegaChimechoPokedexText,
         .pokemonScale = 305,
-        .pokemonOffset = 8,
+        .pokemonOffset = 5,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
