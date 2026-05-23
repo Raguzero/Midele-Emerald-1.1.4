@@ -413,9 +413,8 @@ GymSanty2_Text_FarolEncendida2:
 	.string "El fuego arde de forma intensa.$"
 
 GymSanty2_Text_CaminoAbierto:
-	.string "Has encendido las cuatro\n"
-	.string "antorchas. Todas arden con\l"
-	.string "gran intensidad.\p"
+	.string "Has encendido las cuatro antorchas.\n"
+	.string "Todas arden con gran intensidad.\p"
 
 	.string "El camino hacia la siguiente sala\n"
 	.string "ha sido desbloqueado.$"

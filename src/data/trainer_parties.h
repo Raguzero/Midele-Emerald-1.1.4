@@ -26341,7 +26341,7 @@ static const struct TrainerMonCustomMidele sParty_Zzz[] = {
     .nature = NATURE_JOLLY,
 	.friendship = 255,
 	.ability = 1,
-    .evs = {0, 252, 0, 6, 0, 252},
+    .evs = {0, 252, 0, 0, 6, 252},
     .moves = {MOVE_RETURN, MOVE_SWORDS_DANCE, MOVE_DRILL_PECK, MOVE_JUMP_KICK}
     },
     {
@@ -26841,7 +26841,7 @@ static const struct TrainerMonCustomMidele sParty_MirorB[] = {
     .heldItem = ITEM_LEFTOVERS,
     .nature = NATURE_TIMID,
     .evs = {252, 0, 6, 0, 0, 252},
-    .moves = {MOVE_SLEEP_POWDER, MOVE_GIGA_DRAIN, MOVE_ENCORE, MOVE_MIMIC}
+    .moves = {MOVE_SLEEP_POWDER, MOVE_GIGA_DRAIN, MOVE_ENCORE, MOVE_COTTON_SPORE}
   },
    {
     .iv = 31,
