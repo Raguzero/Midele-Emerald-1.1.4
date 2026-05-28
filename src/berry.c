@@ -1069,6 +1069,7 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
     switch (tree->stage)
     {
     case BERRY_STAGE_NO_BERRY:
+	case BERRY_STAGE_BERRIES: // para que no siga revisando este árbol en BerryTreeTimeUpdate si ya ha terminado de crecer
         return FALSE;
     case BERRY_STAGE_FLOWERING:
         tree->berryYield = CalcBerryYield(tree);
