@@ -6974,6 +6974,8 @@ void IsSelectedMonLegendary(void)
     
     isLegendary = FALSE;
     species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2);
+	if (species == SPECIES_ARMOR_MEWTWO)
+		species = SPECIES_MEWTWO;
     for (i = 0; i < ARRAY_COUNT(sLegendaryMons); i++) {
       if (sLegendaryMons[i] == species) {
         isLegendary = TRUE;
