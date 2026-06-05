@@ -39,6 +39,19 @@
             "trainer_type": "0",
             "x": 3,
             "y": 6
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_MAN_1",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "Micolandia_House_2_Script",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 1,
+            "y": 2
         }
     ],
     "region_map_section": "MAPSEC_MICOLANDIA",
