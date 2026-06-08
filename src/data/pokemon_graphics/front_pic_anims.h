@@ -5353,18 +5353,25 @@ static const union AnimCmd sAnim_DECIDUEYE_1[] =
 
 static const union AnimCmd sAnim_POPPLIO_1[] =
 {
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_BRIONNE_1[] =
 {
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_PRIMARINA_1[] =
 {
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(1, 60),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -5440,6 +5447,13 @@ static const union AnimCmd sAnim_EMPOLEON_1[] =
 
 static const union AnimCmd sAnim_DHELMISE_1[] =
 {
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -5496,12 +5510,14 @@ static const union AnimCmd sAnim_SALAZZLE_1[] =
 
 static const union AnimCmd sAnim_SANDYGAST_1[] =
 {
+    ANIMCMD_FRAME(1, 50),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_PALOSSAND_1[] =
 {
+    ANIMCMD_FRAME(1, 50),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };

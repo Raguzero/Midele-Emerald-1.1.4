@@ -8558,17 +8558,12 @@ bool8 HasTwoFramesAnimation(u16 species)
             && species != SPECIES_UNOWN
             && species != SPECIES_GALAR_YAMASK
             && species != SPECIES_THWACKEY
-		    && species != SPECIES_POPPLIO
-		    && species != SPECIES_BRIONNE
-			&& species != SPECIES_PRIMARINA
 			&& species != SPECIES_DRAGAPULT
 			&& species != SPECIES_DRIZZILE
 			&& species != SPECIES_INTELEON
-			&& species != SPECIES_DHELMISE
 			&& species != SPECIES_IMPIDIMP
 			&& species != SPECIES_MORGREM
 			&& species != SPECIES_GRIMMSNARL
-			&& species != SPECIES_SANDYGAST
             && species != SPECIES_FROSMOTH
 			&& species != SPECIES_G_KINGLER
 			&& species != SPECIES_G_BUTTERFREE
