@@ -3,10 +3,12 @@
 #include "string.h"
 #include "string_util.h"
 #include "task.h"
+#include "event_data.h"
 #include "text.h"
 #include "match_call.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
+EWRAM_DATA const u8* gSpeakerName = NULL;
 
 static void textbox_fdecode_auto_and_task_add(u8*, bool32);
 static void textbox_auto_and_task_add(void);
@@ -31,7 +33,14 @@ static void sub_8098154(u8 taskId)
            task->data[0]++;
            break;
         case 1:
-           DrawDialogueFrame(0, 1);
+           if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
+                DrawDialogueFrameWithNameplate(0, TRUE);
+                PutWindowTilemap(1);
+                CopyWindowToVram(1, 3);
+            }
+            else {
+                DrawDialogueFrame(0, TRUE);
+            } 
            task->data[0]++;
            break;
         case 2:
@@ -109,8 +118,26 @@ bool8 sub_80982B8(void)
     return TRUE;
 }
 
+extern void FillDialogFramePlate();
+extern int GetDialogFramePlateWidth();
 static void textbox_fdecode_auto_and_task_add(u8* str, bool32 allowSkippingDelayWithButtonPress)
 {
+    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
+        int strLen = GetStringWidth(0, gSpeakerName, -1);
+        if (strLen > 0) {
+            strLen = GetDialogFramePlateWidth()/2 - strLen/2;
+            gNamePlateBuffer[0] = EXT_CTRL_CODE_BEGIN;
+            gNamePlateBuffer[1] = EXT_CTRL_CODE_CLEAR_TO;
+            gNamePlateBuffer[2] = strLen;
+            StringExpandPlaceholders(&gNamePlateBuffer[3], gSpeakerName);
+        } else {
+            StringExpandPlaceholders(&gNamePlateBuffer[0], gSpeakerName);
+        }
+        FillDialogFramePlate();
+        AddTextPrinterParameterized2(1, 0, gNamePlateBuffer, 0, NULL, 1, 0, 2);
+        PutWindowTilemap(1);
+        CopyWindowToVram(1, 3);
+    }
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     task_add_textbox();
@@ -127,6 +154,7 @@ void HideFieldMessageBox(void)
     task_del_textbox();
     ClearDialogWindowAndFrame(0, 1);
     sFieldMessageBoxMode = 0;
+    gSpeakerName = NULL;
 }
 
 u8 GetFieldMessageBoxMode(void)
@@ -152,4 +180,9 @@ void sub_8098374(void)
 {
     task_del_textbox();
     sFieldMessageBoxMode = 0;
+}
+
+void SetSpeakerName(const u8* name)
+{
+    gSpeakerName = name;
 }

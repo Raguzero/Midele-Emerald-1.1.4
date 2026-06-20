@@ -2253,19 +2253,20 @@ static void NewGameBirchSpeech_ShowDialogueWindow(u8 windowId, u8 copyToVram)
 
 static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8 a, u8 b, u8 c, u8 d, u8 e, u8 f)
 {
-    FillBgTilemapBufferRect(a, 0xFD,  b-2,   c-1, 1,   1, f);
-    FillBgTilemapBufferRect(a, 0xFF,  b-1,   c-1, 1,   1, f);
-    FillBgTilemapBufferRect(a, 0x100, b,     c-1, d,   1, f);
-    FillBgTilemapBufferRect(a, 0x101, b+d-1, c-1, 1,   1, f);
-    FillBgTilemapBufferRect(a, 0x102, b+d,   c-1, 1,   1, f);
+    FillBgTilemapBufferRect(a, 0x0FC, b-2,       c-1, 1,       1, f);
+    FillBgTilemapBufferRect(a, 0x0FD, b-1,       c-1, 1,       1, f);
+    FillBgTilemapBufferRect(a, 0x0FE, b,         c-1, d,   1, f);
+    FillBgTilemapBufferRect(a, 0x0FF, b+d-1, c-1, 1,       1, f);
+    FillBgTilemapBufferRect(a, 0x100, b+d,   c-1, 1,       1, f);
     FillBgTilemapBufferRect(a, 0x103, b-2,   c,   1,   5, f);
-    FillBgTilemapBufferRect(a, 0x105, b-1,   c,   d+1, 5, f);
-    FillBgTilemapBufferRect(a, 0x106, b+d,   c,   1,   5, f);
-    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0xFD), b-2,   c+e, 1,   1, f);
-    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0xFF), b-1,   c+e, 1,   1, f);
-    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x100), b,     c+e, d-1, 1, f);
-    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x101), b+d-1, c+e, 1,   1, f);
-    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x102), b+d,   c+e, 1,   1, f);
+    FillBgTilemapBufferRect(a, 0x104, b-1,       c,   d+1, 5, f);
+    FillBgTilemapBufferRect(a, 0x105, b+d,   c,   1,       5, f);
+
+    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x0FC), b-2,       c+e, 1,       1, f);
+    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x0FD), b-1,       c+e, 1,       1, f);
+    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x0FE), b,         c+e, d-1, 1, f);
+    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x0FF), b+d-1, c+e, 1,       1, f);
+    FillBgTilemapBufferRect(a, BG_TILE_V_FLIP(0x100), b+d,   c+e, 1,       1, f);
 }
 
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8 taskId)

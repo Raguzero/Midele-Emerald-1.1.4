@@ -1783,6 +1783,12 @@
 	.2byte \itemId
 	.2byte \quantity
 	.endm
+	
+@ Sets the text of the name box in the next-shown message box.
+	.macro speakername text:req
+	.byte 0xea
+	.4byte \text
+	.endm
 
 @ Supplementary
 
