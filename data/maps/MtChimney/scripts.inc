@@ -545,6 +545,7 @@ MtChimney_EventScript_Darkizard::
 	applymovement 31, DarkizardMovementEast
 	waitmovement 0
 MtChimney_EventScript_Darkizard_1:
+	speakername CommonName_Text_Desconocido
 	msgbox MtChimney_EventScript_Darkizard_Text_0
 	compare VAR_FACING, DIR_NORTH
 	goto_if_eq MtChimney_EventScript_Darkizard_6
@@ -929,7 +930,7 @@ MtChimney_Text_SawyerPostRematch: @ 8230614
 	.string "I'm overdressed for these parts.$"
 
 MtChimney_EventScript_Darkizard_Text_0:
-	.string "???: Así... que incluso hasta este\n"
+	.string "Así... que incluso hasta este\n"
 	.string "supuesto mundo idílico no escapa de la\l"
 	.string "estupidez de la humanidad...\p"
 	.string "Tú, criatura, ¿fuiste quien lo\n"

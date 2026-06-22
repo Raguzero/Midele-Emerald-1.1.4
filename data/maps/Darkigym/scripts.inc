@@ -119,6 +119,7 @@ Darkigym_EventScript_Darkibuenro_Trigger1::
     @ Estas instrucciones hacen que el jugador mire arriba. Al activarlas, ocurre un bug que hace que el jugador mire abajo al llegar a la instruccion trainerbattle_single de Darkigym_EventScript_Buenro
     @applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_FaceUp
     @waitmovement 0
+	speakername CommonName_Text_Darkibuenro
 	msgbox Darkigym_Text_BuenroIntro, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Darkigym_EventScript_Buenro
@@ -154,9 +155,11 @@ Darkigym_EventScript_Malro::
 Darkigym_EventScript_MalroDefeated::
 	msgbox Darkigym_Text_MalroPostBattle, MSGBOX_DEFAULT
 	waitmessage
+	speakername NULL
 	message Darkigym_Text_ReceivedBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Darkimalro
 	msgbox Darkigym_Text_ExplainBadgeTakeThis, MSGBOX_DEFAULT
 	delay 30
 	msgbox Darkigym_Text_MalroPostBattle2, MSGBOX_DEFAULT
@@ -168,6 +171,7 @@ Darkigym_EventScript_MalroDefeated::
 	playfanfare MUS_ME_B_BIG
 	waitfanfare
 	playse SE_PC_OFF
+	speakername NULL
 	msgbox LevelCapItem_Text_GymDarki, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_0x8004, ITEM_LEVEL_CAP
@@ -183,6 +187,7 @@ Darkigym_EventScript_Darki_Derrotado::
 	goto_if_set FLAG_REMATCH_DARKIMALRO, Darkigym_EventScript_Malro_DarkiRematch
 	faceplayer
 	lock
+	speakername CommonName_Text_Darkimalro
 	msgbox Darkigym_Text_MalroPostBattle2, MSGBOX_DEFAULT
 	release
 	end
@@ -193,6 +198,7 @@ Darkigym_EventScript_Malro_DarkiRematch::
 	end
 	
 Darkigym_EventScript_DarkiMalroRematchDefeated::
+	speakername CommonName_Text_Darkimalro
 	msgbox Darkigym_Text_MalroPostBattle3, MSGBOX_DEFAULT
 	clearflag FLAG_REMATCH_DARKIMALRO
 	release
@@ -210,6 +216,7 @@ Darkigym_EventScript_BuenroDefeated2::
 	goto_if_set FLAG_DEFEATED_DARKI_GYM, Darkigym_EventScript_Buenro_DarkiDerrotado
 	lock
 	faceplayer
+	speakername CommonName_Text_Darkimalro
 	msgbox Darkigym_Text_BuenroPostBattle2, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Darkigym_EventScript_Heal
@@ -219,6 +226,7 @@ Darkigym_EventScript_Heal::
 	playfanfare MUS_ME_ASA
 	waitfanfare
 	special HealPlayerParty
+	speakername CommonName_Text_Darkimalro
 	msgbox Darkigym_Text_BuenroPostBattleHeal, MSGBOX_DEFAULT
 	release
 	end
@@ -227,6 +235,7 @@ Darkigym_EventScript_Buenro_DarkiDerrotado::
 	goto_if_set FLAG_REMATCH_DARKIBUENRO, Darkigym_EventScript_Buenro_DarkiRematch
 	lock
 	faceplayer
+	speakername CommonName_Text_Darkibuenro
 	msgbox Darkigym_Text_BuenroPostBattle3, MSGBOX_DEFAULT
 	release
 	end
@@ -237,6 +246,7 @@ Darkigym_EventScript_Buenro_DarkiRematch::
 	end
 	
 Darkigym_EventScript_DarkiBuenroRematchDefeated::
+	speakername CommonName_Text_Darkibuenro
 	msgbox Darkigym_Text_BuenroPostBattle3, MSGBOX_DEFAULT
 	clearflag FLAG_REMATCH_DARKIBUENRO
 	release
@@ -1250,7 +1260,7 @@ Darkigym_Text_BuenroPostBattle:
 	.string "Nyehehehe\p"
 
 	.string "En especial por que ese tal RAGU, mejoró\n" 
-	.string "las MO, ¡mecachis!\p"
+	.string "las HMs, ¡mecachis!\p"
 
 	.string "¡Ánimo y mucha suerte!\p"
 
@@ -1458,3 +1468,9 @@ LevelCapItem_Text_GymDarki:
 	.string "POKéMON pueden llegar al nivel 100.\p"
 	
 	.string "¡El objeto LEVEL CAP desapareció!$"
+	
+CommonName_Text_Darkibuenro:
+	.string "DARKIBUENRO$"
+	
+CommonName_Text_Darkimalro:
+	.string "DARKIMALRO$"

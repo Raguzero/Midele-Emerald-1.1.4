@@ -26,6 +26,7 @@ GymSanty_EventScript_Santy_Shifteo2::
 	end
 	
 GymSanty_EventScript_Santy_Derrotado::
+	speakername CommonName_Text_Santygrass
 	msgbox GymSanty_Text_SantyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -36,6 +37,7 @@ GymSanty_EventScript_Santy_Rematch::
 	end
 	
 GymSanty_EventScript_SantyRematchDefeated::
+	speakername CommonName_Text_Santygrass
 	msgbox GymSanty_Text_SantyPostBattle, MSGBOX_DEFAULT
 	setvar VAR_SHIFTEO_SANTY_GYM, 3
 	release
@@ -56,9 +58,11 @@ GymSanty_EventScript_SantyShifteo1Defeated::
 	end
 
 GymSanty_EventScript_SantyShifteo2Defeated::
+	speakername NULL
 	message GymSanty_Text_ReceivedBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Santygrass
 	msgbox GymSanty_Text_ExplainBadgeTakeThis, MSGBOX_DEFAULT
 	@ Level Cap Item
 	delay 30
@@ -67,6 +71,7 @@ GymSanty_EventScript_SantyShifteo2Defeated::
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_GymSanty, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item	
@@ -312,3 +317,6 @@ GymSanty_Text_SantyRematchDefeat:
 LevelCapItem_Text_GymSanty:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 85.$"
+	
+CommonName_Text_Santygrass:
+	.string "SANTYGRASS$"

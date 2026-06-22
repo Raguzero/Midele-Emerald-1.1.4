@@ -13,9 +13,11 @@ IzabeIsland_SecretHouseB1_EventScript_PC::
 
 IzabeIsland_SecretHouseB1_EventScript_Titan::
 	lockall
+	speakername CommonName_Text_Masuda
 	msgbox DesafiarMasuda_Text, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq IzabeIsland_SecretHouseB1_EventScript_TitanNoFight
+	speakername CommonName_Text_Masuda
 	msgbox DesafiarMasuda_Text_Desacuerdo, MSGBOX_DEFAULT
 	setvar VAR_0x8004, BOSS_BATTLE_MASUDA
 	special CreateBossBattleMon
@@ -29,11 +31,13 @@ IzabeIsland_SecretHouseB1_EventScript_Titan::
 	end
 
 IzabeIsland_SecretHouseB1_EventScript_TitanNoFight:
+	speakername CommonName_Text_Masuda
 	msgbox DesafiarMasuda_Text_DeAcuerdo, MSGBOX_DEFAULT
 	releaseall
 	end
 
 IzabeIsland_SecretHouseB1_EventScript_TitanDefeated::
+	speakername NULL
 	giveitem ITEM_MICOLO_KEY
 	setflag FLAG_DEFEATED_IZABE_GIANT_2
 	removeobject 1
@@ -112,8 +116,7 @@ IzabeIsland_SecretHouseB1_Text_PC::
 	.string "“PD: Monociclo porque mono es uno.”$"
 
 DesafiarMasuda_Text:
-	.string "MASUDA: ¿Pero qué mierdas pasa en este\n"
-	.string "lugar?\p"
+	.string "¿Pero qué mierdas pasa en este lugar?\p"
 	.string "Sentí una perturbación en mi cuenta\n"
 	.string "bancaria y no me está llegando tanto\l"
 	.string "dinero de esta línea... ¿acaso alguien\l"
@@ -138,7 +141,7 @@ DesafiarMasuda_Text:
 	.string "tener un reto real? ¿Estás de acuerdo?$"
 
 DesafiarMasuda_Text_DeAcuerdo:
-	.string "MASUDA: Bueno, me alegro, en ese caso\n"
+	.string "Bueno, me alegro, en ese caso\n"
 	.string "creo que ni me molestaré en crear\l"
 	.string "BLANCO y NEGRO en esta línea\l"
 	.string "temporal... ¿que qué es eso? Nah, no te\l"
@@ -146,7 +149,7 @@ DesafiarMasuda_Text_DeAcuerdo:
 	.string "mediana calidad te fuese a interesar...$"
 
 DesafiarMasuda_Text_Desacuerdo:
-	.string "MASUDA: ¿Cómo? MELASUDA.\p"
+	.string "¿Cómo? MELASUDA.\p"
 	.string "Aunque, bueno... si piensas así tendré\n"
 	.string "que enseñarte por qué la dificultad no\l"
 	.string "vende, cerebro de mosquito.\p"

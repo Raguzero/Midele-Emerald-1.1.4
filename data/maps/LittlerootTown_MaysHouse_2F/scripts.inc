@@ -165,8 +165,10 @@ LittlerootTown_MaysHouse_2F_EventScript_JZombieAppears::
 	applymovement 17, LittlerootTown_PlayersHouse_2F_Movement_PushPlayerDown
 	waitmovement 0
 	playbgm THEMEOFENCOUNTER, 0
+	speakername CommonName_Text_Jzombie
 	msgbox LittlerootTown_PlayersHouse_2F_Text_JZombieIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_JZOMBIE2, LittlerootTown_PlayersHouse_2F_Text_JZombieDefeat
+	speakername CommonName_Text_Jzombie
 	msgbox LittlerootTown_PlayersHouse_2F_Text_JZombieAfterBattle, MSGBOX_DEFAULT
 	closemessage
 	applymovement 17, LittlerootTown_PlayersHouse_2F_Movement_LeaveRoom

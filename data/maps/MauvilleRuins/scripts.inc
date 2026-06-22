@@ -35,6 +35,8 @@ MauvilleRuins_EventScript_OpenRegiEntrance::
 	special DrawWholeMapView
 	playse SE_BAN
 	setflag FLAG_SYS_BRAILLE_REGIELEKI_COMPLETED
+	speakername CommonName_Text_a_vader
+	msgbox MauvilleRuins_Text_Vader5, MSGBOX_NPC
 	return
 
 MauvilleRuins_EventScript_CaveEntranceMiddle::
@@ -91,7 +93,10 @@ MauvilleRuins_EventScript_Regieleki_Robado::
 	waitmovement 0
 	applymovement EVENT_OBJ_ID_PLAYER, MauvilleRuins_Movement_Player2
 	waitmovement 0
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_Vader2, MSGBOX_NPC
+	speakername NULL
+	msgbox MauvilleRuins_Text_VaderXenoBall, MSGBOX_NPC
 	// ANIMACION DE POKEBALL
 	waitse
 	playse SE_REGI
@@ -101,6 +106,7 @@ MauvilleRuins_EventScript_Regieleki_Robado::
 	addobject 4
 	delay 80
 	removeobject 4
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_Vader3, MSGBOX_NPC
 	applymovement 3, MauvilleRuins_Avader3_Movement
 	waitmovement 0
@@ -115,6 +121,7 @@ MauvilleRuins_EventScript_Vader::
 	faceplayer
 	goto_if_set FLAG_VADER_MAUVILLE_RUINS_ANTESDEABRIR, MauvilleRuins_EventScript_Vader2
 	goto_if_set FLAG_REGI_DOORS_OPENED, MauvilleRuins_EventScript_Vader2Extra
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_Vader, MSGBOX_NPC
 	switch VAR_FACING
 	case DIR_EAST, MauvilleRuins_EventScript_East
@@ -135,6 +142,7 @@ MauvilleRuins_EventScript_East::
 	
 MauvilleRuins_EventScript_Vader2Extra::
 	goto_if_set FLAG_SYS_BRAILLE_REGIELEKI_COMPLETED, MauvilleRuins_EventScript_Vader3
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_VaderExtra, MSGBOX_NPC
 	switch VAR_FACING
 	case DIR_EAST, MauvilleRuins_EventScript_East
@@ -146,11 +154,13 @@ MauvilleRuins_EventScript_Vader2Extra::
 	
 MauvilleRuins_EventScript_Vader2::
 	goto_if_set FLAG_SYS_BRAILLE_REGIELEKI_COMPLETED, MauvilleRuins_EventScript_Vader3
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_Vader4, MSGBOX_NPC
 	release
 	end
 	
 MauvilleRuins_EventScript_Vader3::
+	speakername CommonName_Text_a_vader
 	msgbox MauvilleRuins_Text_Vader5, MSGBOX_NPC
 	release
 	end
@@ -205,18 +215,17 @@ MauvilleRuins_MauvilleMewVader_Text_1:
 
 	
 MauvilleRuins_Text_Vader:
-	.string "A.VADER: Este taladro de ANTHONY\n"
-	.string "ha sido lo suficientemente\l"
-	.string "poderoso para derribar la entrada\l"
-	.string "de estas ruinas, pero ha quedado\l"
-	.string "hecho trizas, ya no sirve para nada\l"
-	.string "este cacharro.\p"
+	.string "Este taladro de ANTHONY ha sido\n"
+	.string "lo suficientemente poderoso para\l"
+	.string "derribar la entrada de estas ruinas,\l"
+	.string "pero ha quedado hecho trizas,\l"
+	.string "ya no sirve para nada este cacharro.\p"
 
 	.string "Vaya, ¡Pero si es {PLAYER}!\p"
 	.string "No me había dado cuenta de que\n"
 	.string "estabas justo ahí.\p"
 	
-	.string "Por cierto, si mis calculos son\n"
+	.string "Por cierto, si mis cálculos son\n"
 	.string "correctos...\p"
 	
 	.string "Esta es la cueva donde me tiré a\n"
@@ -291,16 +300,16 @@ MauvilleRuins_Text_Vader:
 	.string "esta puerta.$"
 	
 MauvilleRuins_Text_VaderExtra:
-	.string "A.VADER: Que extraño. Vine a demoler la\n"
-	.string "entrada de estas ruinas con el taladro\l"
-	.string "que le robé a ANTHONY, pero la entrada\l"
-	.string "ya estaba abierta.\p"
+	.string "Que extraño. Vine a demoler la entrada\n"
+	.string "de estas ruinas con el taladro que le\l"
+	.string "robé a ANTHONY, pero la entrada ya\l"
+	.string "estaba abierta.\p"
 
 	.string "Vaya, ¡Pero si es {PLAYER}!\p"
 	.string "No me había dado cuenta de que\n"
 	.string "estabas justo ahí.\p"
 	
-	.string "Por cierto, si mis calculos son\n"
+	.string "Por cierto, si mis cálculos son\n"
 	.string "correctos...\p"
 	
 	.string "Esta es la cueva donde me tiré a\n"
@@ -375,8 +384,7 @@ MauvilleRuins_Text_VaderExtra:
 	.string "esta puerta.$"
 	
 MauvilleRuins_Text_Vader4:
-	.string "A.VADER: Si mis calculos son\n"
-	.string "correctos...\p"
+	.string "Si mis cálculos son correctos...\p"
 	
 	.string "Esta es la cueva donde me tiré a\n"
 	.string "tu MADRE, quiero decir... donde\l"
@@ -450,13 +458,13 @@ MauvilleRuins_Text_Vader4:
 	.string "esta puerta.$"
 
 MauvilleRuins_Text_Vader2:
-	.string "A.VADER: Gracias por hacerme el\n"
-	.string "trabajo sucio.\p"
+	.string "Gracias por hacerme el trabajo sucio.\p"
 
 	.string "Ahora voy a llevarme lo que\n"
-	.string "me pertenece.\p"
-	
-	.string "“A.VADER usa una MASTER BALL”$"
+	.string "me pertenece.$"
+
+MauvilleRuins_Text_VaderXenoBall:	
+	.string "“A.VADER usa una XENO BALL”$"
 
 MauvilleRuins_Text_Vader3:
 	.string "¿Qué habría sido más divertido?\p"
@@ -473,5 +481,5 @@ MauvilleRuins_Text_Vader3:
 	.string "¡Adios PRINGAO, nos vemos en MICOLANDIA!$"
 	
 MauvilleRuins_Text_Vader5:
-	.string "A.VADER: ¡Today, We Use Our Power To Fell\n"
+	.string "¡Today, We Use Our Power To Fell\n"
 	.string "A God, And Then... Seize Our Destiny!!$"

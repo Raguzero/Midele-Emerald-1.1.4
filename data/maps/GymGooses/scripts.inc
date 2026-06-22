@@ -991,9 +991,11 @@ GymGooses_EventScript_Gooses::
 	end
 	
 GymGooses_EventScript_GoosesDefeated::
+	speakername NULL
 	message GymGooses_Text_ReceivedBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Gooses
 	msgbox GymGooses_Text_ExplainBadgeTakeThis, MSGBOX_DEFAULT
 	@ Level Cap Item
 	delay 30
@@ -1002,6 +1004,7 @@ GymGooses_EventScript_GoosesDefeated::
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_GymGooses, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -1012,6 +1015,7 @@ GymGooses_EventScript_GoosesDefeated::
 	
 GymGooses_EventScript_Gooses_Derrotado::
 	goto_if_set FLAG_REMATCH_GOOSES, GymGooses_EventScript_Gooses_Rematch
+	speakername CommonName_Text_Gooses
 	msgbox GymGooses_Text_GoosesPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -1022,6 +1026,7 @@ GymGooses_EventScript_Gooses_Rematch::
 	end
 	
 GymGooses_EventScript_GoosesRematchDefeated::
+	speakername CommonName_Text_Gooses
 	msgbox GymGooses_Text_GoosesPostBattle, MSGBOX_DEFAULT
 	clearflag FLAG_REMATCH_GOOSES
 	release
@@ -1421,3 +1426,7 @@ GymGooses_Text_Curacion:
 LevelCapItem_Text_GymGooses:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 95.$"
+	
+CommonName_Text_Gooses:
+	.string "GOOSES$"
+

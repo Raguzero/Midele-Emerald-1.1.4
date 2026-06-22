@@ -30,6 +30,7 @@ RustboroCity_DevonCorp_1F_EventScript_MicoloGiveInfodex:
 	lockall
 	playse SE_KAIDAN
 	delay 10
+	playbgm THATPERSONSNAMEIS, 1
 	addobject 4
 	applymovement 4, RustboroCity_DevonCorp_1F_Movement_MicoloApproaches1
 	waitmovement 0
@@ -38,6 +39,7 @@ RustboroCity_DevonCorp_1F_EventScript_MicoloGiveInfodex:
 	waitmovement 0
 	applymovement 4, RustboroCity_DevonCorp_1F_Movement_MicoloApproaches2
 	waitmovement 0
+	speakername CommonName_Text_Micolo
 	msgbox RustboroCity_DevonCorp_1F_Text_MicoloGiveDexNav, MSGBOX_DEFAULT
 	closemessage
 	playse SE_TK_KASYA
@@ -48,6 +50,7 @@ RustboroCity_DevonCorp_1F_EventScript_MicoloGiveInfodex:
 	delay 10
 	playse SE_TK_KASYA
 	delay 20
+	speakername CommonName_Text_Micolo
 	msgbox RustboroCity_DevonCorp_1F_Text_MicoloGoodBye, MSGBOX_DEFAULT
 	closemessage
 	applymovement 4, RustboroCity_DevonCorp_1F_Movement_MicoloLeaves
@@ -55,6 +58,7 @@ RustboroCity_DevonCorp_1F_EventScript_MicoloGiveInfodex:
 	playse SE_KAIDAN
 	delay 10
 	removeobject 4
+	fadedefaultbgm
 	
 	setvar VAR_TEMP_0, 0
 	setflag FLAG_SYS_DEXNAV_GET
@@ -238,7 +242,7 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay: @ 8211722
 	.string "POKé BALLS and POKéNAV systems.”$"
 
 RustboroCity_DevonCorp_1F_Text_MicoloGiveDexNav:
-	.string "MICOLO: Hola reina, soy MICOLO n.n\n"
+	.string "Hola reina, soy MICOLO n.n\n"
 	.string "Parece que has conocido a unos\l"
 	.string "chalados y los has derrotado.\p"
 	.string "DARKRAI: Ha recuperado las\n"
@@ -250,7 +254,7 @@ RustboroCity_DevonCorp_1F_Text_MicoloGiveDexNav:
 	.string "MICOLO: xDDDDDDDDDDDDDDDDD\n"
 	.string "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\l"
 	.string "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\p"
-	.string "MICOLO: Te he visto derrotar al recluta\n"
+	.string "Te he visto derrotar al recluta\n"
 	.string "AQUA, tu equipo es muy poderoso n.n\p"
 	.string "Pero te recomiendo que no te metas con\n"
 	.string "ellos, son gente peligrosa xDDDD\p"
@@ -262,7 +266,7 @@ RustboroCity_DevonCorp_1F_Text_MicoloGiveDexNav:
 	
 
 RustboroCity_DevonCorp_1F_Text_MicoloGoodBye:
-	.string "MICOLO: Con el DEXNAV podrás obtener\n"
+	.string "Con el DEXNAV podrás obtener\n"
 	.string "POKéMON poderosos para luchar contra\l"
 	.string "esos villanos. n.n\p"
 	.string "Probablemente volvamos a encontrarnos\n"

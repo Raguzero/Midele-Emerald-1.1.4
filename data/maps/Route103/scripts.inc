@@ -477,6 +477,7 @@ Route103_EventScript_NotEnoughMoney::
 
 Route103_EventScript_Avader::
 	lockall
+	speakername CommonName_Text_a_vader
     goto_if_unset FLAG_ADVENTURE_STARTED, Route103_EventScript_Avader_NoDex
 	msgbox Route103_Text_Avader_TalkToHimself, MSGBOX_DEFAULT
 	faceplayer
@@ -485,7 +486,9 @@ Route103_EventScript_Avader::
 	waitmovement 0
 	msgbox Route103_Text_Avader_BeforeBattle, MSGBOX_NPC
 	trainerbattle_no_intro TRAINER_AVADER_OLDALE, Route103_Text_Avader_Defeated
+	speakername CommonName_Text_a_vader
 	msgbox Route103_Text_Avader_Text_TakeUnown, MSGBOX_DEFAULT
+	speakername NULL
 	setvar VAR_TEMP_1, SPECIES_UNOWN
 	givemon SPECIES_UNOWN, 5, ITEM_NONE, FALSE
 	compare VAR_RESULT, 0
@@ -543,6 +546,7 @@ Route103_EventScript_Avader_ReceivedUnownFanfare::
 	return
 
 Route103_EventScript_Avader_AfterBattle::
+	speakername CommonName_Text_a_vader
 	msgbox Route103_Text_Avader_AfterBattle, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_OLDALE_AVADER
 	applymovement 22, Route103_Movement_AvaderSpin
@@ -555,6 +559,7 @@ Route103_EventScript_Avader_AfterBattle::
 	end
 	
 Route103_Avader_EventScript_NoRoomForPokemon::
+	speakername CommonName_Text_a_vader
 	msgbox Route103_Text_Avader_NoRoomForPokemon, MSGBOX_DEFAULT
 	goto Route103_EventScript_Avader_AfterBattle
 	end
@@ -764,3 +769,6 @@ Route103_Text_Avader_NoDex:
 	.string "POKéDEX, y eso te hace un NOOB de\l"
 	.string "manual, así que mejor vete, que no\l"
 	.string "quiero que te vean comigo, jeje.$"
+
+CommonName_Text_a_vader:
+	.string "A.VADER$"

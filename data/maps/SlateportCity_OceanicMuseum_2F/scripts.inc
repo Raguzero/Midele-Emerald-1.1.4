@@ -43,6 +43,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern:: @ 820BB00
 	applymovement 4, Common_Movement_QuestionMark
 	waitmovement 0
 	playbgm THATPERSONSNAMEIS, 1 @ Micolo music
+	speakername CommonName_Text_Micolo
 	msgbox SlateportCity_OceanicMuseum_2F_Text_MicoloAppears, MSGBOX_DEFAULT
 	playse SE_W153
 	waitse
@@ -75,6 +76,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern:: @ 820BB00
 	addobject 2
 	applymovement 2, SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter
 	waitmovement 0
+	speakername NULL
 	msgbox SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong, MSGBOX_DEFAULT
 	closemessage
 	applymovement 2, SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer
@@ -469,7 +471,7 @@ SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica: @ 820C93A
 	.string "circles the globe.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_MicoloAppears:
-	.string "MICOLO: Hola reina n.n\p"
+	.string "Hola reina n.n\p"
 	.string "DARKRAI: Estos noobs quieren las\n"
 	.string "DEVON GOODS.\p"
 	.string "MEWTWO: Pero ya no hacen\n"
@@ -484,7 +486,7 @@ SlateportCity_OceanicMuseum_2F_Text_MicoloAppears:
 	.string "poner a prueba xDDDDDD$"
 
 SlateportCity_OceanicMuseum_2F_Text_MicoloDefeatsGrunts:
-	.string "MICOLO: un 6-0...\p"
+	.string "Un 6-0...\p"
 	.string "Qué noobs LOOOOOOOOOOOOOOOO\n"
 	.string "OOOOOOOOOOOOOOOOOOOOOOOOOOO\l"
 	.string "OOOOOOOOOOOOOOOOOOOOOOOOOOOL\p"
@@ -492,8 +494,7 @@ SlateportCity_OceanicMuseum_2F_Text_MicoloDefeatsGrunts:
 	.string "vuestro JEFE os despida xDDDDDDD$"
 
 SlateportCity_OceanicMuseum_2F_Text_MicoloWantsToBattle:
-	.string "MICOLO: Nos vemos otra vez,\n"
-	.string "{PLAYER} n.n\p"
+	.string "Nos vemos otra vez, {PLAYER} n.n\p"
 	.string "Veo que STEVEN y su padre te han pedido\n"
 	.string "que les entregues las DEVON GOODS al\l"
 	.string "CAPT. STERN.\p"

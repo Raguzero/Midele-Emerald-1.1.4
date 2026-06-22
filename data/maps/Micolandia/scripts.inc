@@ -152,6 +152,7 @@ Micolandia_EventScript_BirchsHouseFemale::
 Micolandia_EventScript_TopoVigilante::
 	lock
 	faceplayer
+	speakername CommonName_Text_Topo
 	compare VAR_STATE_MICOLANDIA, 0
 	goto_if_ne Micolandia_EventScript_TopoVigilante2
 	goto_if_set FLAG_DEFEATED_DARKI_GYM, Micolandia_EventScript_TopoCombate
@@ -185,6 +186,7 @@ Micolandia_EventScript_TopoVigilante2::
 Micolandia_EventScript_Rotonda::
 	lock
 	faceplayer
+	speakername CommonName_Text_MadreDe
 	msgbox Micolandia_Text_Rotonda, MSGBOX_DEFAULT
 	release
 	end
@@ -199,6 +201,7 @@ Micolandia_EventScript_NPC::
 Micolandia_EventScript_Michoh::
 	lock
 	faceplayer
+	speakername CommonName_Text_Michoh
 	msgbox Micolandia_Text_Michoh, MSGBOX_DEFAULT
 	release
 	end
@@ -217,6 +220,7 @@ Micolandia_Topo_Movement:
 Micolandia_EventScript_Lord::
 	lock
 	faceplayer
+	speakername CommonName_Text_Infinit
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, Micolandia_EventScript_Lord_Fight	
 	msgbox Lord_SinBatalla, MSGBOX_AUTOCLOSE
 	release
@@ -449,9 +453,21 @@ Micolandia_Text_NPC:
 	.string "¡JAJAJAJAJAJA!$"
 	
 Micolandia_Text_Michoh:
-	.string "MICHOH: Hola, yo soy el genuino creador\n"
+	.string "Hola, yo soy el genuino creador\n"
 	.string "de los OOT, pero ya pasaron a mejor vida,\l"
 	.string "una pena: ¡Requiescat in pace!\p"
 	
 	.string "¡Qué tiempos aquellos de flood!\n"
 	.string "¡No los olvides, nunca!$"
+	
+CommonName_Text_Michoh:
+	.string "MICHOH$"
+	
+CommonName_Text_MadreDe:
+	.string "Madre de ????$"
+	
+CommonName_Text_Topo:
+	.string "TOPO$"
+	
+CommonName_Text_Infinit:
+	.string "INFINIT$"

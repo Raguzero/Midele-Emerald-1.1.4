@@ -52,11 +52,13 @@ Micolandia_Temple_of_Time3_Viajera_Script3::
 	
 Micolandia_Temple_of_Time3_EventScript_Santygrass::
 	lockall
+	speakername CommonName_Text_Desconocido
 	msgbox Micolandia_Temple_of_Time3_Text_Santygrass_TalkToHimself, MSGBOX_DEFAULT
 	faceplayer
 	playse SE_PIN
 	applymovement 4, Common_Movement_ExclamationMark
 	waitmovement 0
+	speakername CommonName_Text_Santygrass
 	msgbox Micolandia_Temple_of_Time3_Text_Santygrass_Talks, MSGBOX_NPC
 	setflag FLAG_COMPLETE_FORBIDDEN_FOREST
 	applymovement 4, Micolandia_Temple_of_Time3_Movement_SantygrassSpin

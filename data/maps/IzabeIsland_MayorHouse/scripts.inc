@@ -40,13 +40,16 @@ IzabeIsland_MayorHouse_EventScript_Mayor::
 IzabeIsland_MayorHouse_EventScript_Mayor_AskForBattle::
 	lockall
 	faceplayer
+	speakername CommonName_Text_Garm
 	msgbox IzabeIsland_MayorHouse_Text_Mayor_ExplainSituation, MSGBOX_NPC
   closemessage
   faceplayer
+	speakername CommonName_Text_Garm
   msgbox IzabeIsland_MayorHouse_Text_Mayor_AreYouPrepared, MSGBOX_YESNO
   compare VAR_RESULT, NO
   goto_if_eq IzabeIsland_MayorHouse_Event_Mayor_YouAreNotPrepared
 	trainerbattle_no_intro TRAINER_IZABE_MAYOR, IzabeIsland_MayorHouse_Text_Mayor_BattleDefeated
+	speakername CommonName_Text_Garm
 	msgbox IzabeIsland_MayorHouse_Text_Mayor_AskForCooperation, MSGBOX_NPC
 	setvar VAR_IZABE_ISLAND_STATE, 1
 	applymovement 6, IzabeIsland_Movement_MoveGuardLeft
@@ -65,11 +68,13 @@ IzabeIsland_Movement_MoveGuardLeft::
 	step_end
 
 IzabeIsland_MayorHouse_EventScript_Mayor_RememberPetition::
+	speakername CommonName_Text_Garm
 	msgbox IzabeIsland_MayorHouse_Text_Mayor_AskForCooperation, MSGBOX_NPC
 	end
 
 IzabeIsland_MayorHouse_EventScript_Mayor_GiveItem::
 	goto_if_set FLAG_SYS_GAME_CLEAR, IzabeIsland_MayorHouse_EventScript_Garm_PostGameBattle
+	speakername CommonName_Text_Garm
 	msgbox IzabeIsland_MayorHouse_Text_Mayor_TakeYourReward, MSGBOX_NPC
 	end
 	
@@ -219,3 +224,6 @@ IzabeIsland_MayorHouse_Text_Garm_PostBattle::
   .string "luchar ahora mismo, jeje.\p"
   .string "A todo esto, me pregunto si a.vader\n"
   .string "tuvo éxito en su plan maestro.$"
+  
+CommonName_Text_Garm:
+	.string "GARM$"

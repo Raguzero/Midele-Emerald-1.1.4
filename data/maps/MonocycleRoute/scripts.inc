@@ -97,8 +97,10 @@ Monocycle_Road_EventScript_MirorB::
 	playse SE_PIN
 	applymovement 9, Common_Movement_ExclamationMark
 	waitmovement 0
+	speakername CommonName_Text_Miror_B
 	msgbox MirorB_AntesBatalla, MSGBOX_NPC
 	trainerbattle_no_intro TRAINER_MIRORB, MirorB_MensajeDerrota
+	speakername CommonName_Text_Miror_B
 	msgbox MirorB_DespuesDeBatalla_Text
 	closemessage
 	applymovement 9, Monocycle_Road_Movement_MirorBSpin
@@ -332,3 +334,6 @@ Monocycle_Road_Text_Constructor:
 	
 	.string "¿Por qué no retas algún GYM mientras\n"
 	.string "tanto, para hacer tiempo?$"
+	
+CommonName_Text_Miror_B:
+	.string "MIROR B$"

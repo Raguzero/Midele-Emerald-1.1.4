@@ -50,12 +50,14 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable:: @ 81FC04F
 	
 OldaleTown_PokemonCenter_1F_EventScript_PCOcupado::
 	lockall
+	speakername CommonName_Text_a_vader
 	goto_if_set FLAG_OLDALE_TOWN_PC_OCUPADO, OldaleTown_PokemonCenter_1F_EventScript_GoPC
 	playse SE_PIN
 	applymovement 6, Common_Movement_ExclamationMark
 	msgbox OldaleTown_PokemonCenter_1F_Text_PCOcupado, MSGBOX_DEFAULT
 	closemessage
 	delay 120
+	speakername CommonName_Text_a_vader
 	msgbox OldaleTown_PokemonCenter_1F_Text_PCOcupado2, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -71,6 +73,7 @@ OldaleTown_PokemonCenter_1F_EventScript_PCOcupado::
 OldaleTown_PokemonCenter_1F_EventScript_GoPC::
 	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
+	speakername CommonName_Text_a_vader
 	msgbox OldaleTown_PokemonCenter_1F_Text_PCOcupado2, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection

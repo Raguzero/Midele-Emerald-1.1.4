@@ -176,11 +176,13 @@ IzabeIsland_OutskirtsCave_EventScript_NoEffect::
 IzabeIsland_OutskirtsCave_EventScript_Lavender::
 	lockall
 	faceplayer
+	speakername CommonName_Text_Lavender
 	compare VAR_TEMP_2, 1
 	goto_if_eq IzabeIsland_OutskirtsCave_EventScript_Lavender_AskFight
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_ExplainSituation, MSGBOX_NPC
 	setvar VAR_TEMP_2, 1
 IzabeIsland_OutskirtsCave_EventScript_Lavender_AskFight:
+	speakername CommonName_Text_Lavender
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_AskFight, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq IzabeIsland_OutskirtsCave_EventScript_Lavender_NoFight
@@ -188,16 +190,20 @@ IzabeIsland_OutskirtsCave_EventScript_Lavender_AskFight:
 	trainerbattle_no_intro TRAINER_IZABE_LAVENDER, IzabeIsland_OutskirtsCave_Text_Lavender_BattleDefeated
 
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_TryGiveItem, MSGBOX_DEFAULT
+	speakername NULL
 	giveitem ITEM_HM02
 	setflag FLAG_RECEIVED_HM02
 	setvar VAR_IZABE_ISLAND_STATE, 2
+	speakername CommonName_Text_Lavender
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_UpgradeMusicPlayer, MSGBOX_DEFAULT
 	setvar VAR_MUSIC_PLAYER, MUSIC_PLAYER_STATE_IZABE
 	playse SE_TK_KASYA
 	delay 10
 	playfanfare MUS_FANFA4
+	speakername NULL
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_MusicPlayerUpgraded, MSGBOX_DEFAULT
 	waitfanfare
+	speakername CommonName_Text_Lavender
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_Bye, MSGBOX_DEFAULT
 
 	applymovement 2, IzabeIsland_OutskirtsCave_Movement_LavenderSpin
@@ -210,6 +216,7 @@ IzabeIsland_OutskirtsCave_EventScript_Lavender_AskFight:
 	end
 
 IzabeIsland_OutskirtsCave_EventScript_Lavender_NoFight:
+	speakername CommonName_Text_Lavender
 	msgbox IzabeIsland_OutskirtsCave_Text_Lavender_NoFight, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -263,8 +270,8 @@ IzabeIsland_OutskirtsCave_Text_Lavender_BattleDefeated::
 	.string "Te odio.$"
 
 IzabeIsland_OutskirtsCave_Text_Lavender_TryGiveItem::
-	.string "LAVENDER: esos TOTEMS han sido creados\n"
-	.string "por MICOLO, el científico legendario.\p"
+	.string "Esos TOTEMS han sido creados por\n"
+	.string "MICOLO, el científico legendario.\p"
 	.string "MICOLO solía vivir en esta ISLA,\n"
 	.string "pero un día desapareció.\p"
 	.string "Sin embargo, parece que MICOLO ha vuelto\n"
@@ -292,9 +299,10 @@ IzabeIsland_OutskirtsCave_Text_Lavender_UpgradeMusicPlayer:
 	.string "actualice.$"
 
 IzabeIsland_OutskirtsCave_Text_Lavender_Bye:
-	.string "LAVENDER: Ahora podrás escuchar una\n"
-	.string "mayor variedad de canciones, prúebalo.\p"
+	.string "Ahora podrás escuchar una mayor\n"
+	.string "variedad de canciones, prúebalo.\p"
 	.string "Dicho esto... ¡hasta la vista!$"
 
 IzabeIsland_OutskirtsCave_Text_Lavender_MusicPlayerUpgraded::
 	.string "¡Tu MUSIC PLAYER ha sido mejorado!$"
+

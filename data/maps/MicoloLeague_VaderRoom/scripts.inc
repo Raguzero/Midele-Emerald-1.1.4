@@ -19,6 +19,7 @@ MicoloLeague_VaderRoom_EventScript_Vader::
     faceplayer
 	checktrainerflag TRAINER_AVADER_MICOLANDIA
 	goto_if 1, MicoloLeague_VaderRoom_EventScript_Vader_2
+	speakername CommonName_Text_a_vader
 	msgbox MicoloLeague_VaderRoom_EventScript_Vader_Text_1, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_AVADER_MICOLANDIA, MicoloLeague_VaderRoom_EventScript_Vader_Text_2
 	setflag FLAG_TEMP_1
@@ -29,6 +30,7 @@ MicoloLeague_VaderRoom_EventScript_Vader_1:
 	return
 
 MicoloLeague_VaderRoom_EventScript_Vader_2:
+	speakername CommonName_Text_a_vader
 	msgbox MicoloLeague_VaderRoom_EventScript_Vader_Text_0, MSGBOX_DEFAULT
 	goto MicoloLeague_VaderRoom_EventScript_Vader_1
 

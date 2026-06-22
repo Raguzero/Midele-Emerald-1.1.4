@@ -209,12 +209,16 @@ Route101_EventScript_Youngster:: @ 81EBDFB
 	
 Route101_EventScript_LevelCap::
 	lockall
+	speakername CommonName_Text_Desconocido
 	msgbox Route101_Text_Ragu, MSGBOX_DEFAULT
 	closemessage
 	applymovement 7, Route101_Movement_Ragu
 	waitmovement 0
+	speakername CommonName_Text_Ragu
 	msgbox Route101_Text_Ragu2, MSGBOX_DEFAULT
+	speakername NULL
 	giveitem ITEM_LEVEL_CAP, 1
+	speakername CommonName_Text_Ragu
 	msgbox Route101_Text_Ragu3, MSGBOX_DEFAULT
 	closemessage
 	applymovement 7, Route101_Movement_Ragu3
@@ -227,12 +231,16 @@ Route101_EventScript_LevelCap::
 	
 Route101_EventScript_LevelCap2::
 	lockall
+	speakername CommonName_Text_Desconocido
 	msgbox Route101_Text_Ragu, MSGBOX_DEFAULT
 	closemessage
 	applymovement 7, Route101_Movement_Ragu2
 	waitmovement 0
+	speakername CommonName_Text_Ragu
 	msgbox Route101_Text_Ragu2, MSGBOX_DEFAULT
+	speakername NULL
 	giveitem ITEM_LEVEL_CAP, 1
+	speakername CommonName_Text_Ragu
 	msgbox Route101_Text_Ragu3, MSGBOX_DEFAULT
 	closemessage
 	applymovement 7, Route101_Movement_Ragu3
@@ -374,7 +382,7 @@ Route101_Text_RouteSign: @ 81EC0C8
 	.string "{UP_ARROW} OLDALE TOWN$"
 	
 Route101_Text_Ragu:
-	.string "¡Alto ahí!$"
+	.string "¡ALTO AHÍ!$"
 	
 Route101_Text_Ragu2:
 	.string "¡Hola! Mi nombre es RAGU, y estoy\n"
@@ -425,3 +433,8 @@ Route101_Text_Ragu3:
 	
 	.string "¡Adiós! Seguro que nos volveremos a ver.$"
 
+CommonName_Text_Desconocido:
+	.string "???$"
+
+CommonName_Text_Ragu:
+	.string "RAGU$"

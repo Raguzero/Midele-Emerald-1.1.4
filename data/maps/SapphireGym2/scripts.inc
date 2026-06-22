@@ -98,11 +98,13 @@ SapphireGym2_EventScript_SapphDefeated::
 SapphireGym2_EventScript_Sapphire_Defeated::
 	goto_if_set FLAG_REMATCH_SAPPH, SapphireGym2_EventScript_Sapph_Rematch
 	goto_if_unset FLAG_DEFEATED_BOSS_TITAN, SapphireGym2_EventScript_SapphPostBattle_CheckTheBasement
+	speakername CommonName_Text_Sapphire
 	msgbox SapphireGym2_Text_SapphPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 SapphireGym2_EventScript_SapphPostBattle_CheckTheBasement:
+	speakername CommonName_Text_Sapphire
 	msgbox SapphireGym2_Text_SapphPostBattle_CheckTheBasement, MSGBOX_DEFAULT
 	release
 	end
@@ -239,3 +241,6 @@ SapphireGym2_Text_SapphPostBattle_CheckTheBasement:
 	.string "temporales. Creo que algo hicieron allá\l"
 	.string "abajo o enterraron algo que finalmente\l"
 	.string "se desató.$"
+	
+CommonName_Text_Sapphire:
+	.string "SAPPHIRE$"

@@ -9,6 +9,7 @@ Route117_PokemonDayCare_OnTransition:: @ 822BBB7
 Route117_PokemonDayCare_EventScript_Vladiland::
 	lock
 	faceplayer
+	speakername CommonName_Text_Vladiland
 	goto_if_set FLAG_DAYCARE_DITTO_RECEIVED, Route117_PokemonDayCare_EventScript_ExplainDitto
 	msgbox Route117_PokemonDayCare_Text_Vladiland_BeforeBattle, MSGBOX_YESNO
 	compare VAR_RESULT, YES
@@ -20,6 +21,7 @@ Route117_PokemonDayCare_EventScript_Vladiland2::
 	msgbox Route117_PokemonDayCare_Text_Vladiland_BeforeBattle2, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VLADILAND, Route117_PokemonDayCare_Text_Vladiland_Defeated
 	msgbox Route117_PokemonDayCare_Text_Vladiland_AfterBattle, MSGBOX_DEFAULT
+	speakername NULL
 	setvar VAR_TEMP_1, SPECIES_DITTO
 	givecustommon SPECIES_DITTO, 20, ITEM_METAL_POWDER, ITEM_MASTER_BALL, NATURE_HARDY, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_TRANSFORM, MOVE_NONE, MOVE_NONE, MOVE_NONE, TRUE
 	compare VAR_RESULT, 0
@@ -50,6 +52,7 @@ Route117_PokemonDayCare_EventScript_Vladiland_ReceiveDittoPC::
 
 Route117_PokemonDayCare_EventScript_Vladiland_SendDittoToPC::
 	call Common_EventScript_TransferredToPC
+	speakername CommonName_Text_Vladiland
 	msgbox Route117_PokemonDayCare_Text_Vladiland_Text_TakeDitto, MSGBOX_DEFAULT
 	setflag FLAG_DAYCARE_DITTO_RECEIVED
 	release
@@ -69,11 +72,13 @@ Route117_PokemonDayCare_EventScript_Vladiland_AfterBattle::
 	end
 	
 Route117_PokemonDayCare_Vladiland_EventScript_NoRoomForPokemon::
+	speakername CommonName_Text_Vladiland
 	msgbox Route117_PokemonDayCare_Text_Vladiland_NoRoomForPokemon, MSGBOX_DEFAULT
 	goto Route117_PokemonDayCare_EventScript_Vladiland_AfterBattle
 	end
 
 Route117_PokemonDayCare_EventScript_ExplainDitto::
+	speakername CommonName_Text_Vladiland
 	msgbox Route117_PokemonDayCare_Text_Vladiland_Text_TakeDitto, MSGBOX_DEFAULT
 	release
 	end
@@ -126,3 +131,6 @@ Route117_PokemonDayCare_Text_Vladiland_NoRoomForPokemon:
 
 Route117_PokemonDayCare_Text_Vladiland_PlayerReceivedDitto: 
 	.string "{PLAYER} received DITTO!$"
+	
+CommonName_Text_Vladiland:
+	.string "VLADILAND$"

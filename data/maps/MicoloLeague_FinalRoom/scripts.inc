@@ -14,7 +14,9 @@ MicoloLeague_FinalRoom_Micolo_Defeat::
 	msgbox MicoloLeague_FinalRoom_Micolo_Defeat_Text_1, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_TEMP_1, SPECIES_DARK_PIKACHU
+	speakername CommonName_Text_Micolo
 	msgbox MicoloLeague_FinalRoom_Micolo_DarkPika, MSGBOX_DEFAULT
+	speakername NULL
 	givecustommon SPECIES_DARK_PIKACHU, 5, ITEM_STARF_BERRY, ITEM_MASTER_BALL, NATURE_HARDY, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_DARK_THUNDER, MOVE_HOLA_REINA, MOVE_MIDELE_POWER, MOVE_BRUTAL_BALL, 0
 	compare VAR_RESULT, 0
 	goto_if_eq MicoloLeague_FinalRoom_Micolo_EventScript_ReceiveMonParty
@@ -27,6 +29,7 @@ MicoloLeague_FinalRoom_Micolo_EventScript_ReceiveMonEnd:
 	compare VAR_RESULT, FALSE
 	goto_if_eq MicoloLeague_FinalRoom_Micolo_Defeat_2
 MicoloLeague_FinalRoom_Micolo_Defeat_1:
+	speakername CommonName_Text_Micolo
 	msgbox MicoloLeague_FinalRoom_Micolo_Defeat_Text_2, MSGBOX_DEFAULT	
 	call MicoloLeague_FinalRoom_GameEndFlags
 	goto_if_unset FLAG_MICOLANDIA_MODE, MicoloLeague_FinalRoom_Micolo_Defeat_1_Continue
@@ -78,6 +81,7 @@ MicoloLeague_FinalRoom_Micolo_EventScript_SendMonPC:: @ 82700D0
 	end
 	
 MicoloLeague_FinalRoom_Micolo_EventScript_NoMoreRoomForPokemon::
+	speakername CommonName_Text_Micolo
 	msgbox MicoloLeague_FinalRoom_Micolo_gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
 	goto MicoloLeague_FinalRoom_Micolo_EventScript_ReceiveMonEnd
 	end
@@ -91,7 +95,9 @@ MicoloLeague_FinalRoom_Micolo_EventScript_ReceiveMonFanfare:: @ 82700DB
 	return
 
 MicoloLeague_FinalRoom_Micolo_Defeat_2:
+	speakername CommonName_Text_Micolo
 	msgbox MicoloLeague_FinalRoom_Micolo_Defeat_Text_0, MSGBOX_DEFAULT
+	speakername NULL
 	giveitem ITEM_PSYCHE_ARMOR, 1
 	goto MicoloLeague_FinalRoom_Micolo_Defeat_1
 
@@ -181,3 +187,6 @@ MicoloLeague_FinalRoom_Micolo_Defeat_Text_2:
 	
 	.string "Bueno, {PLAYER}, espero que nos\n"
 	.string "volvamos a ver, ¡hasta entonces!$"
+
+CommonName_Text_Micolo:
+	.string "MICOLO$"

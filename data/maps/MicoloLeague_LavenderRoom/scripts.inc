@@ -151,6 +151,7 @@ MicoloLeague_LavenderRoom_Reporter::
 MicoloLeague_LavenderRoom_Lavender::
 	lock
 	faceplayer
+	speakername CommonName_Text_Lavender
 	msgbox MicoloLeague_LavenderRoom_DefeatedLavender_Text_0, MSGBOX_NPC
 	release
 	return
@@ -250,10 +251,9 @@ MicoloLeague_LavenderRoom_FightLavender_Text_1:
 	.string "¡Con vosotros... LAVENDER!$"
 
 MicoloLeague_LavenderRoom_FightLavender_Text_2:
-	.string "LAVENDER: Hola, ¿me recuerdas? Nos\n"
-	.string "vimos en IZABE ISLAND. En cuanto te vi,\l"
-	.string "supe que serías capaz de llegar hasta\l"
-	.string "aquí...\p"
+	.string "Hola, ¿me recuerdas? Nos vimos en\n"
+	.string "IZABE ISLAND. En cuanto te vi, supe que\l"
+	.string "serías capaz de llegar hasta aquí...\p"
 	.string "Nah, en realidad no. Solo era un diálogo\n"
 	.string "para hacerme el interesante. Ya sabes.\p"
 	.string "Sea como sea, te agradezco que hayas\n"
@@ -301,3 +301,5 @@ MicoloLeague_LavenderRoom_Reporter_Text_0:
 	.string "¡En todos mis años como presentador\l"
 	.string "nunca había visto nada igual!$"
 
+CommonName_Text_Lavender:
+	.string "LAVENDER$"

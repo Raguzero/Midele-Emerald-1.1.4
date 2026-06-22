@@ -545,6 +545,7 @@ SlateportCity_PokemartDecor: @ 81DD1B8
 SlateportCity_EventScript_Masuda::
 	lock
 	faceplayer
+	speakername CommonName_Text_Masuda
 	msgbox Text_Slateport_Masuda, MSGBOX_DEFAULT
 	release
 	end
@@ -1368,22 +1369,22 @@ SlateportCity_Text_TakingBattleTentChallenge: @ 81DF28C
 	
 Text_Slateport_Masuda:
 	.string "¿Quieres comprar algo? ¡MELASUDA!\p"
-    .string "MASUDA: mira, joven, soy MASUDA,\n"
+    .string "Mira, joven, soy MASUDA,\n"
     .string "director de unos de los juegos de\l"
     .string "POKéMON más exitosos de la saga,\l"
     .string "POKéMON ESPADA y ESCUDO, y me\l"
     .string "gustaría darte una lección de vida.\p"
     .string "No sé por qué has hablado conmigo;\n"
     .string "quizás querías comprar algún objeto.\l"
-    .string "MTs, por ejemplo. Pero yo no vendo MTs.\p"
-    .string "Las MTs consumibles son cosa del\n"
+    .string "TMs, por ejemplo. Pero yo no vendo TMs.\p"
+    .string "Las TMs consumibles son cosa del\n"
     .string "pasado, eso creíamos en GAME FREAK.\l"
     .string "Que fuesen de un solo uso resultaba en\l"
     .string "que los jugadores nunca las utilizasen,\l"
     .string "o que las malgastasen y les fuese muy\l"
     .string "difícil volver a conseguirlas.\p"
     .string "Por eso en GAME FREAK decidimos hacer\n"
-    .string "que las MTs tuviesen usos infinitos, y\l"
+    .string "que las TMs tuviesen usos infinitos, y\l"
     .string "fue algo que todo el mundo recibió con\l"
     .string "los brazos abiertos.\p"
     .string "Pero en GAME FREAK nos dimos cuenta de\n"
@@ -1393,14 +1394,14 @@ Text_Slateport_Masuda:
     .string "huevos, pasarse horas buscando un\l"
     .string "shiny con naturaleza desfavorable e\l"
     .string "IVs a 0, o pasarse horas farmeando en\l"
-    .string "la TORRE BATALLA para que les haxeen a\l"
+    .string "la BATTLE TOWER para que les haxeen a\l"
     .string "tope y sus 90 victorias seguidas se\l"
     .string "vayan a la basura.\p"
     .string "A estos gamers les gusta el farmeo\n"
     .string "intenso, y por eso, en GAME FREAK se\l"
     .string "nos ocurrió la genial idea de crear las\l"
     .string "DT.\p"
-    .string "Son como las MT viejas, se gastan, y\n"
+    .string "Son como las TMs viejas, se gastan, y\n"
     .string "para conseguirlas vas a tener que\l"
     .string "farmear más que un esclavo de MIDELE...\p"
     .string "Pero no te preocupes, las DT todavía no\n"
@@ -1408,3 +1409,6 @@ Text_Slateport_Masuda:
     .string "Por cierto, no compartas LEAKS de\n"
     .string "nuestros videojuegos, o enviaré a mis\l"
     .string "abogados.$"
+	
+CommonName_Text_Masuda:
+	.string "MASUDA$"

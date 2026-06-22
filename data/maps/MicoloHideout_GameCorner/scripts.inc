@@ -29,6 +29,7 @@ MicoloHideout_GameCorner_OpenMicoloHideoutEntrance:
 
 MicoloHideout_GameCorner_EventScript_PacochefJugando::
 	lock
+	speakername CommonName_Text_Pacochef
 	msgbox MicoloHideout_GameCorner_EventScript_PacochefJugando_Text_0, MSGBOX_DEFAULT
 	faceplayer
 	msgbox MicoloHideout_GameCorner_EventScript_PacochefJugando_Text_1, MSGBOX_DEFAULT
@@ -38,7 +39,7 @@ MicoloHideout_GameCorner_EventScript_PacochefJugando::
 
 
 MicoloHideout_GameCorner_EventScript_PacochefJugando_Text_0:
-	.string "PACOCHEF: MUERE, MUERE, MUERE. PUTAS\n"
+	.string "MUERE, MUERE, MUERE. PUTAS\n"
 	.string "TRAGAPERRAS AMAÑADAS.$"
 
 MicoloHideout_GameCorner_EventScript_PacochefJugando_Text_1:
@@ -71,6 +72,7 @@ MicoloHideout_Sign_LaPapelera_2:
 	waitmovement 0
 	applymovement 10, Movement_Paco_Approach
 	waitmovement 0
+	speakername CommonName_Text_Pacochef
 	msgbox MicoloHideout_Sign_LaPapelera_Text_1, MSGBOX_DEFAULT
 	waitmessage
 	applymovement EVENT_OBJ_ID_PLAYER, Movement_JugadorEmpujado
@@ -110,6 +112,7 @@ MicoloHideout_Sign_LaPapelera_2:
 	setvar VAR_STATE_MICOLANDIA, 2
 	applymovement EVENT_OBJ_ID_PLAYER, Movement_Player_AcercarPapelera
 	waitmovement 0
+	speakername NULL
 	msgbox MicoloHideout_Sign_LaPapelera_Text_BuscarPapelera, MSGBOX_DEFAULT
 	playse SE_TK_KASYA
 	delay 10
@@ -157,7 +160,7 @@ MicoloHideout_Sign_LaPapelera_Text_0:
 	.string "papelera...$"
 
 MicoloHideout_Sign_LaPapelera_Text_1:
-    .string "PACOCHEF: Hey, sí, estoy tranquilo,\n"
+    .string "Hey, sí, estoy tranquilo,\n"
 	.string "déjame esa papelera un momento.$"
 
 MicoloHideout_Sign_LaPapelera_Text_2:

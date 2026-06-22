@@ -801,6 +801,7 @@ MauvilleCity_GameCorner_EventScript_Ghaddar_Hablar::
 MauvilleCity_GameCorner_EventScript_Ghaddar::
 	lock
 	faceplayer
+	speakername CommonName_Text_Ghaddar
 	msgbox MauvilleCity_GameCorner_Text_Ghaddar, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	call_if_eq MauvilleCity_GameCorner_EventScript_Ghaddar_Combate
@@ -816,12 +817,14 @@ MauvilleCity_GameCorner_EventScript_Ghaddar_Combate::
 	end
 	
 MauvilleCity_GameCorner_EventScript_Ghaddar_ENCONTRA::
+	speakername CommonName_Text_Ghaddar
 	msgbox MauvilleCity_GameCorner_Text_Ghaddar_ENCONTRA, MSGBOX_NPC
 	setvar VAR_TEMP_0, 1
 	release
 	end
 
 MauvilleCity_GameCorner_EventScript_Ghaddar_FALTAEMPATIA:
+	speakername CommonName_Text_Ghaddar
 	msgbox MauvilleCity_GameCorner_Text_Ghaddar_FALTAEMPATIA, MSGBOX_NPC
 	release
 	end
@@ -1071,3 +1074,6 @@ MauvilleCity_GameCorner_Text_GetMon::
 
 MauvilleCity_GameCorner_Text_NoRoom::
     .string "Your PC and party are full.$"
+	
+CommonName_Text_Ghaddar:
+	.string "GHADDAR$"

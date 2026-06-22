@@ -88,6 +88,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene:: @ 822BD5F
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	// MICOLO EVENT
 	clearflag FLAG_HIDE_MICOLO_METEORFALL
+	playbgm THATPERSONSNAMEIS, 1
 	addobject 11
 	playse SE_PIN
 	applymovement 11, Common_Movement_ExclamationMark
@@ -96,9 +97,11 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene:: @ 822BD5F
 	waitmovement 0
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
+	speakername CommonName_Text_Micolo
 	msgbox MeteorFalls_1F_1R_Text_Micolo, MSGBOX_DEFAULT
 	closemessage
-	
+	speakername NULL
+
 	setvar VAR_TEMP_1, SPECIES_ZUBAT
 	givecustommon SPECIES_ZUBAT, 23, ITEM_SOOTHE_BELL, ITEM_LUXURY_BALL, NATURE_HASTY, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_ICE_BEAM, MOVE_AERIAL_ACE, MOVE_SLUDGE_BOMB, TRUE
 	compare VAR_RESULT, 0
@@ -108,6 +111,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene:: @ 822BD5F
 	// Si no hay sitio para más Pokémon, el ZUBAT se pierde.
 	goto Common_EventScript_NoMoreRoomForPokemon 
 MeteorFalls_1F_1R_EventScript_ReceiveMonEnd:
+	speakername CommonName_Text_Micolo
 	msgbox MeteorFalls_1F_1R_Text_MicoloBye, MSGBOX_DEFAULT
 	closemessage
 	fadescreen 1
@@ -115,6 +119,7 @@ MeteorFalls_1F_1R_EventScript_ReceiveMonEnd:
 	removeobject 11
 	delay 30
 	fadescreen 0
+	fadedefaultbgm
 	setflag FLAG_HIDE_MICOLO_METEORFALL
 	// MICOLO EVENT
 	setvar VAR_METEOR_FALLS_STATE, 1
@@ -384,7 +389,7 @@ MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney: @ 822C47D
 	.string "METEORITE at MT. CHIMNEY?$"
 	
 MeteorFalls_1F_1R_Text_Micolo: 
-	.string "MICOLO: MAXIE y ARCHIE, jefes y líderes\n"
+	.string "MAXIE y ARCHIE, jefes y líderes\n"
 	.string "de TEAM MAGMA y TEAM AQUA, solo son\l"
 	.string "dos chiflados con un sueño absurdo y\l"
 	.string "una chorrada de idea.\p"

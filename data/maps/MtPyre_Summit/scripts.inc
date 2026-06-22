@@ -326,11 +326,14 @@ MtPyre_Summit_EventScript_Micolo::
 MtPyre_Summit_EventScript_Micolo_1:
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
+	speakername CommonName_Text_Micolo
 	msgbox MtPyre_Summit_EventScript_Micolo_Text_0
 	trainerbattle_no_intro TRAINER_MICOLO_2, MtPyre_Summit_EventScript_Micolo_Text_1
+	speakername CommonName_Text_Micolo
 	msgbox MtPyre_Summit_EventScript_Micolo_Text_2
 	closemessage
-	
+	speakername NULL
+
 	// GIFT KECLEON
 	setvar VAR_TEMP_1, SPECIES_KECLEON
 	givecustommon SPECIES_KECLEON, 40, ITEM_SALAC_BERRY, ITEM_LUXURY_BALL, NATURE_ADAMANT, 1, 0, 120, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SKY_UPPERCUT, MOVE_DISABLE, MOVE_X_SCISSOR, MOVE_SLASH, TRUE
@@ -341,6 +344,7 @@ MtPyre_Summit_EventScript_Micolo_1:
 	// Si no hay sitio para más Pokémon, el KECLEON se pierde.
 	goto Common_EventScript_NoMoreRoomForPokemon 
 MtPyre_Summit_EventScript_ReceiveMonEnd:
+	speakername CommonName_Text_Micolo
 	msgbox MtPyre_Summit_Text_MicoloBye, MSGBOX_DEFAULT
 	closemessage
 	
@@ -770,7 +774,7 @@ MtPyre_Summit_Text_HoennTrioTale: @ 823325D
 
 MtPyre_Summit_EventScript_Micolo_Text_0:
 	.string "LOOOOOOOOOOOOOOOOL\p"
-	.string "MICOLO: Hola, reina n.n\p"
+	.string "Hola, reina n.n\p"
 	.string "¿MAXIE y ARCHIE han robado los orbes?\n"
 	.string "Vaya par de idiotas, no saben la paliza\l"
 	.string "que recibirán de GROUDON, KYOGRE y\l"
@@ -799,7 +803,7 @@ MtPyre_Summit_EventScript_Micolo_Text_1:
 	.string "Todo va como he planeado... n.n$"
 
 MtPyre_Summit_EventScript_Micolo_Text_2:
-	.string "MICOLO: Has mejorado mucho, no tendrás\n"
+	.string "Has mejorado mucho, no tendrás\n"
 	.string "problemas con AQUA y MAGMA... y\l"
 	.string "seguramente puedas derrotar a la LIGA\l"
 	.string "POKéMON...\p"

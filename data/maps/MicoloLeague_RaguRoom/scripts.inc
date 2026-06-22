@@ -22,6 +22,7 @@ MicoloLeague_RaguRoom_EventScript_RaguDefeated::
 	end
 	
 MicoloLeague_RaguRoom_EventScript_Ragu_Derrotado::
+	speakername CommonName_Text_Ragu
 	msgbox MicoloLeague_RaguRoom_Text_RaguPostBattle, MSGBOX_DEFAULT
 	release
 	end

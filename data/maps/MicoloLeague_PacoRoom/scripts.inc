@@ -96,6 +96,7 @@ MicoloLeague_PacoRoom_Suicune::
 MicoloLeague_PacoRoom_Paco::
 	lockall
     faceplayer
+	speakername CommonName_Text_Pacochef
 	checktrainerflag TRAINER_PACOCHEF_MICOLANDIA
 	goto_if 1, MicoloLeague_PacoRoom_Paco_2
 	msgbox MicoloLeague_PacoRoom_Paco_Text_1, MSGBOX_DEFAULT
@@ -207,7 +208,7 @@ MicoloLeague_PacoRoom_CameraMan_Text_0:
 	.string "Soy FRAN, el real, no ese bicho chungo\n"
 	.string "que se hace llamar PACOCHEF. Tengo un\l"
 	.string "trabajo de mierda como cámara, esos\l"
-	.string "pelotudos de RAGU y NACHO me han\l"
+	.string "pelotudos de RAGU y LAVENDER me han\l"
 	.string "pedido que grabe todo para que se\l"
 	.string "pueda ver en el emulador. Grrrr, se van\l"
 	.string "a enterar cuando salga de aquí.\p"
@@ -232,4 +233,7 @@ MicoloLeague_PacoRoom_Latios_Text_0:
 
 MicoloLeague_PacoRoom_Suicune_Text_0:
 	.string "Cuuuune...$"
+	
+CommonName_Text_Pacochef:
+	.string "PACOCHEF$"
 

@@ -229,9 +229,12 @@ SlateportCity_OceanicMuseum_1F_EventScript_PacochefEast::
 	end
 
 SlateportCity_OceanicMuseum_1F_EventScript_Pacochef::
+	speakername CommonName_Text_Desconocido
 	msgbox SlateportCity_OceanicMuseum_1F_Text_Pacochef, MSGBOX_NPC
+	speakername NULL
 	giveitem ITEM_MUSIC_PLAYER
 	setvar VAR_MUSIC_PLAYER, MUSIC_PLAYER_STATE_INITIAL
+	speakername CommonName_Text_Desconocido
 	msgbox SlateportCity_OceanicMuseum_1F_Text_PacochefMusicPlayer, MSGBOX_DEFAULT
 	applymovement 15, SlateportCity_OceanicMuseum_1F_Movement_PacochefLeave
 	waitmovement 0
@@ -448,7 +451,7 @@ SlateportCity_OceanicMuseum_1F_Text_DepthMeasuringMachine: @ 820BA9C
 	.string "of something…$"
 
 SlateportCity_OceanicMuseum_1F_Text_Pacochef:
-	.string "???: Hey, hey, hey, ¿nos conocemos...?\p"
+	.string "Hey, hey, hey, ¿nos conocemos...?\p"
 	.string "Umm, diría que no. Aunque tu mirada me\n"
 	.string "es familiar. Eso o estoy más drogado\l"
 	.string "de lo que debería.\p"

@@ -4,6 +4,7 @@ LilycoveCity_MelkorHouse_MapScripts::
 LilycoveCity_MelkorHouse_EventScript_Alliare::
 	lock
 	faceplayer
+	speakername CommonName_Text_Alliare
 	msgbox LilycoveCity_MelkorHouse_EventScript_Alliare_Text_0
 	release
 	return
@@ -18,6 +19,7 @@ LilycoveCity_MelkorHouse_EventScript_DataminingBook::
 
 LilycoveCity_MelkorHouse_EventScript_Melkor::
 	lock
+	speakername CommonName_Text_Melkor
 	compare VAR_MELKOR_STATE, 0
 	goto_if_eq LilycoveCity_MelkorHouse_EventScript_Melkor_2
 	compare VAR_MELKOR_STATE, 1
@@ -65,6 +67,7 @@ LilycoveCity_MelkorHouse_EventScript_Melkor_3:
 	goto LilycoveCity_MelkorHouse_EventScript_Melkor_1
 
 LilycoveCity_MelkorHouse_EventScript_Melkor_7:
+	speakername NULL
 	setvar VAR_TEMP_1, SPECIES_RIOLU
 	givemon SPECIES_RIOLU, 5, ITEM_SOOTHE_BELL, TRUE
 	compare VAR_RESULT, 0
@@ -75,10 +78,12 @@ LilycoveCity_MelkorHouse_EventScript_Melkor_13:
 	waitmessage
 	waitfanfare
 	setvar VAR_MELKOR_STATE, 2
+	speakername CommonName_Text_Melkor
 	msgbox LilycoveCity_MelkorHouse_EventScript_Melkor_Text_4
 	goto LilycoveCity_MelkorHouse_EventScript_Melkor_1
 
 LilycoveCity_MelkorHouse_EventScript_Melkor_10:
+	speakername NULL
 	setvar VAR_TEMP_1, SPECIES_RIOLU
 	givemon SPECIES_RIOLU, 5, ITEM_SOOTHE_BELL, TRUE
 	compare VAR_RESULT, 0
@@ -89,6 +94,7 @@ LilycoveCity_MelkorHouse_EventScript_Melkor_18:
 	waitmessage
 	waitfanfare
 	setvar VAR_MELKOR_STATE, 2
+	speakername CommonName_Text_Melkor
 	msgbox LilycoveCity_MelkorHouse_EventScript_Melkor_Text_4
 	goto LilycoveCity_MelkorHouse_EventScript_Melkor_1
 
@@ -117,8 +123,8 @@ LilycoveCity_MelkorHouse_EventScript_PCPokexperto::
 	return
 
 LilycoveCity_MelkorHouse_EventScript_Alliare_Text_0:
-	.string "ALLIARE: Los foros están pasados de\n"
-	.string "moda... eso es lo que dice MELKOR.\p"
+	.string "Los foros están pasados de moda...\n"
+	.string "eso es lo que dice MELKOR.\p"
 	.string "No es que no esté de acuerdo, pero, ¿no\n"
 	.string "podría hacer algo más que no sea\l"
 	.string "pasarse todo el día en TWITTR?\p"
@@ -151,9 +157,9 @@ LilycoveCity_MelkorHouse_EventScript_Melkor_Text_1:
 	.string "pasaba por aquí... Mmm... en ese caso...\l"
 	.string "¿podrías hacer como que no has oído\l"
 	.string "nada?\p"
-	.string "MELKOR: soy MELKOR, administrador de\n"
-	.string "PxP. Hace tiempo que dejé el antiguo\l"
-	.string "PxP y me mudé aquí, a mi nuevo hogar.\l"
+	.string "soy MELKOR, administrador de PxP\n"
+	.string "Hace tiempo que dejé el antiguo PxP\l"
+	.string "y me mudé aquí, a mi nuevo hogar.\l"
 	.string "Desde entonces me dedico a publicar\l"
 	.string "noticias de POKéMON GO en TWITTR. Ya\l"
 	.string "sabes, los foros están muertos y eso.\p"
@@ -231,4 +237,10 @@ LilycoveCity_MelkorHouse_PostgameBattlePostBattle:
 	.string "Baton Pass Team es una terrorífica\n"
 	.string "estrategia de combate que funciona\l"
 	.string "en cadena, si sale bien.$"
+	
+CommonName_Text_Alliare:
+	.string "ALLIARE$"
+	
+CommonName_Text_Melkor:
+	.string "MELKOR$"
 

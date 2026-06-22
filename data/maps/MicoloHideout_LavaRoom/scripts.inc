@@ -8,17 +8,20 @@ MicoloHideout_LavaRoom_EventScript_GiratinaMaster::
 	special HasDefeatedAllMicoloHideoutTrainers
 	compare VAR_RESULT, TRUE
 	goto_if_eq MicoloHideout_LavaRoom_EventScript_GiratinaMaster_2
+	speakername CommonName_Text_GiratinaMaster
 	msgbox MicoloHideout_LavaRoom_EventScript_GiratinaMaster_Text_1, MSGBOX_DEFAULT
 MicoloHideout_LavaRoom_EventScript_GiratinaMaster_1:
 	release
 	return
 
 MicoloHideout_LavaRoom_EventScript_GiratinaMaster_2:
+	speakername CommonName_Text_GiratinaMaster
 	msgbox MicoloHideout_LavaRoom_EventScript_GiratinaMaster_Text_0, MSGBOX_DEFAULT
 	applymovement 6, MicoloHideout_LavaRoom_Movement_GiratinaMaster
 	waitmovement 0
 	removeobject 6
 	setflag FLAG_HIDE_LAVAROOM_GIRATINAMASTER
+	speakername NULL
 	msgbox MicoloHideout_LavaRoom_Text_GiratinaMaster_MusicPlayerUpgrade, MSGBOX_DEFAULT
 	playse SE_TK_KASYA
 	delay 10
@@ -49,30 +52,23 @@ MicoloHideout_LavaRoom_BagFull::
     end
 
 MicoloHideout_LavaRoom_EventScript_GiratinaMaster_Text_0:
-	.string "GIRATINA MASTER: ¿has derrotado a\n"
-	.string "todos los entrenadores? eres pro,\l"
-	.string "puedes pasar. cierro tema. :lock: :lock:\l"
+	.string "¿Has derrotado a todos los entrenadores?\n"
+	.string "Eres pro, puedes pasar. cierro tema.\l"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
-	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
-	.string ":lock: :lock: :lock:$"
+	.string ":lock: :lock: :lock: :lock: :lock: :lock:$"
 
 MicoloHideout_LavaRoom_EventScript_GiratinaMaster_Text_1:
-	.string "GIRATINA MASTER: SOY MOD, NO PUEDES\n"
-	.string "PASAR. SE CIERRA LA LIGA.\p"
+	.string "HOLA, SOY GIRATINA MASTER, SOY MOD,\n"
+	.string "NO PUEDES PASAR. SE CIERRA LA LIGA.\p"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\n"
-	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\p"
-	.string "Soy MOD, pero te dejaré pasar si\n"
-	.string "derrotas a todos los entrenadores de\l"
-	.string "la GUARIDA.\p"
-	.string "Has derrotado a {STR_VAR_1} de\n"
-	.string "{STR_VAR_2}.\p"
+	.string "Soy MOD, pero te dejaré pasar si derrotas\n"
+	.string "a todos los entrenadores de la GUARIDA.\p"
+	.string "Has derrotado a {STR_VAR_1} de {STR_VAR_2}.\p"
 	.string "Venga, combate o te baneo. Cierro tema.\p"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\n"
-	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
-	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
 	.string ":lock: :lock: :lock: :lock: :lock: :lock:\l"
 	.string ":lock: :lock: :lock: :lock: :lock:$"
 
@@ -321,3 +317,6 @@ MicoloHideout_LavaRoom_Text_ManecPostBattle:
     .string "Vaya flojera da tener que ir ahora al\n"
     .string "CENTRO POKéMON.\l"
     .string "Y menos mal que no están privatizados.$"
+	
+CommonName_Text_GiratinaMaster:
+	.string "G.M.$"
