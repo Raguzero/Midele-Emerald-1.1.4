@@ -86,9 +86,11 @@ MauvilleCity_Gym_EventScript_Wattson:: @ 820DEEB
 	end
 
 MauvilleCity_Gym_EventScript_WattsonDefeated:: @ 820DF2B
+	speakername NULL
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Wattson
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
@@ -106,6 +108,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated:: @ 820DF2B
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox MauvilleCity_Gym_Text_RegisteredWattson, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -124,23 +127,28 @@ MauvilleCity_Gym_EventScript_WattsonDefeated:: @ 820DF2B
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave2:: @ 820DF8D
+	speakername NULL
 	giveitem ITEM_TM34
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_Wattson
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM34
 	release
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave:: @ 820DFB1
+	speakername NULL
 	giveitem ITEM_TM34
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_Wattson
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM34
 	return
 
 MauvilleCity_Gym_EventScript_CompletedNewMauville:: @ 820DFD4
+	speakername CommonName_Text_Wattson
 	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
 	release
 	end
@@ -410,7 +418,7 @@ MauvilleCity_Gym_Text_GymStatueCertified: @ 820E96C
 	.string "{PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch: @ 820E9A7
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"
@@ -422,7 +430,7 @@ MauvilleCity_Gym_Text_WattsonRematchDefeat: @ 820EA42
 	.string "Our batteries ran dry…$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch: @ 820EA5E
-	.string "WATTSON: We'll have to recharge our\n"
+	.string "We'll have to recharge our\n"
 	.string "batteries again.\p"
 	.string "When we're fully charged up, we'll\n"
 	.string "gladly accept your challenge.\p"
@@ -430,7 +438,7 @@ MauvilleCity_Gym_Text_WattsonPostRematch: @ 820EA5E
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons: @ 820EAFD
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"
@@ -442,4 +450,6 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons: @ 820EAFD
 LevelCapItem_Text_MauvilleGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 35.$"
-
+	
+CommonName_Text_Wattson:
+	.string "WATTSON$"

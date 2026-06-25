@@ -43,6 +43,7 @@ EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_SITENNOU, 0
+	speakername CommonName_Text_Drake
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, EGC_AltDrake
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
@@ -55,6 +56,7 @@ EGC_AltDrake::
 	end
 	
 EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech:: @ 822871A
+	speakername CommonName_Text_Drake
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -64,6 +66,7 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated:: @ 8228724
 	special Script_TryGainNewFanFromCounter
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	speakername CommonName_Text_Drake
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -97,3 +100,5 @@ EverGrandeCity_DrakesRoom_Text_PostBattleSpeech: @ 82288B0
 	.string "Go! Go onwards!\n"
 	.string "The CHAMPION is waiting!$"
 
+CommonName_Text_Drake:
+	.string "DRAKE$"

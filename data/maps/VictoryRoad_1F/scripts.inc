@@ -40,8 +40,10 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger2:: @ 8235DC8
 VictoryRoad_1F_EventScript_WallyEntranceBattle:: @ 8235DE1
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
+	speakername CommonName_Text_Wally
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
+	speakername CommonName_Text_Wally
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
 	copyobjectxytoperm 4
@@ -79,6 +81,7 @@ VictoryRoad_1F_Movement_WallyApproachPlayer2: @ 8235E21
 
 @ This Wally appears near the entrance once his battle is triggered and remains there until the Hall of Fame is entered
 VictoryRoad_1F_EventScript_EntranceWally:: @ 8235E2C
+	speakername CommonName_Text_Wally
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_NPC
 	end
 
@@ -88,11 +91,13 @@ VictoryRoad_1F_EventScript_ExitWally:: @ 8235E35
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq VictoryRoad_1F_EventScript_RematchWally
+	speakername CommonName_Text_Wally
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_1F_EventScript_RematchWally:: @ 8235E5C
 	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+	speakername CommonName_Text_Wally
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -122,7 +127,7 @@ VictoryRoad_1F_EventScript_Katelynn:: @ 8235ECF
 	end
 
 VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore: @ 8235EE6
-	.string "WALLY: Hi! {PLAYER}!\p"
+	.string "Hi! {PLAYER}!\p"
 	.string "I bet you're surprised to see me here!\p"
 	.string "I made it all the way here, and it's\n"
 	.string "all thanks to you!\p"
@@ -138,12 +143,12 @@ VictoryRoad_1F_Text_WallyEntranceDefeat: @ 8235FFC
 	.string "{PLAYER}, you are strong, after all!$"
 
 VictoryRoad_1F_Text_WallyPostEntranceBattle: @ 8236020
-	.string "WALLY: I couldn't beat you today,\n"
+	.string "I couldn't beat you today,\n"
 	.string "{PLAYER}, but one of these days, I'll\l"
 	.string "catch up to you!$"
 
 VictoryRoad_1F_Text_WallyIntro: @ 8236073
-	.string "WALLY: Hi! {PLAYER}!\p"
+	.string "Hi! {PLAYER}!\p"
 	.string "I've gotten stronger since that last\n"
 	.string "time! I wanted to show you, {PLAYER}!\p"
 	.string "Okay… Here I come!$"
@@ -153,7 +158,7 @@ VictoryRoad_1F_Text_WallyDefeat: @ 82360DA
 	.string "{PLAYER}, you are strong, after all!$"
 
 VictoryRoad_1F_Text_WallyPostBattle: @ 82360FE
-	.string "WALLY: I couldn't beat you this time,\n"
+	.string "I couldn't beat you this time,\n"
 	.string "too… But one of these days, {PLAYER},\l"
 	.string "I'm going to catch up to you…\p"
 	.string "And challenge the POKéMON LEAGUE!$"

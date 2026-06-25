@@ -26,9 +26,11 @@ FortreeCity_Gym_EventScript_Winona:: @ 82165C8
 	end
 
 FortreeCity_Gym_EventScript_WinonaDefeated:: @ 82165FD
+	speakername NULL
 	message FortreeCity_Gym_Text_ReceivedFeatherBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Winona
 	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_FORTREE_GYM
 	setflag FLAG_BADGE06_GET
@@ -39,6 +41,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated:: @ 82165FD
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox FortreeCity_Gym_Text_RegisteredWinona, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -49,6 +52,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated:: @ 82165FD
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_FortreeGym, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -59,18 +63,22 @@ FortreeCity_Gym_EventScript_WinonaDefeated:: @ 82165FD
 	end
 
 FortreeCity_Gym_EventScript_GiveAerialAce2:: @ 8216646
+	speakername NULL
 	giveitem ITEM_TM40
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_Winona
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM40
 	release
 	end
 
 FortreeCity_Gym_EventScript_GiveAerialAce:: @ 821666A
+	speakername NULL
 	giveitem ITEM_TM40
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_Winona
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM40
 	return
@@ -296,7 +304,7 @@ FortreeCity_Gym_Text_GymStatueCertified: @ 82170C7
 	.string "{PLAYER}$"
 
 FortreeCity_Gym_Text_WinonaPreRematch: @ 8217100
-	.string "WINONA: We humans can never escape\n"
+	.string "We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
@@ -309,14 +317,14 @@ FortreeCity_Gym_Text_WinonaRematchDefeat: @ 82171E6
 	.string "I failed to reach your height again…$"
 
 FortreeCity_Gym_Text_WinonaPostRematch: @ 821720B
-	.string "WINONA: Even though I have lost,\n"
+	.string "Even though I have lost,\n"
 	.string "the wings of my heart remain unbroken.\p"
 	.string "I can rise and soar again and\n"
 	.string "yet again.\p"
 	.string "I am convinced of it!$"
 
 FortreeCity_Gym_Text_WinonaRematchNeedTwoMons: @ 8217292
-	.string "WINONA: We humans can never escape\n"
+	.string "We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
@@ -332,3 +340,7 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons: @ 8217292
 LevelCapItem_Text_FortreeGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 50.$"
+	
+CommonName_Text_Winona:
+	.string "WINONA$"
+

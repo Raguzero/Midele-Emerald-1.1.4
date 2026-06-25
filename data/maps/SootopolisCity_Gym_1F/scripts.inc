@@ -94,9 +94,11 @@ SootopolisCity_Gym_1F_EventScript_Juan:: @ 8224F44
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
+	speakername NULL
 	message SootopolisCity_Gym_1F_Text_ReceivedRainBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Juan
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
 	setflag FLAG_BADGE08_GET
@@ -111,6 +113,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox SootopolisCity_Gym_1F_Text_RegisteredJuan, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -121,6 +124,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_SootopolisGym, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -129,23 +133,28 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	end
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse:: @ 8224FD4
+	speakername NULL
 	giveitem ITEM_TM03
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_Juan
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2:: @ 8224FF7
+	speakername NULL
 	giveitem ITEM_TM03
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_Juan
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	release
 	end
 
 SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge:: @ 822501B
+	speakername CommonName_Text_Juan
 	msgbox SootopolisCity_Gym_1F_Text_GoGetFortreeBadge, MSGBOX_DEFAULT
 	release
 	end
@@ -299,7 +308,7 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified: @ 8225916
 	.string "{PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch: @ 8225950
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
@@ -312,7 +321,7 @@ SootopolisCity_Gym_1F_Text_JuanRematchDefeat: @ 8225A2E
 	.string "You have defeated me again!$"
 
 SootopolisCity_Gym_1F_Text_JuanPostRematch: @ 8225A67
-	.string "JUAN: If I told you to become my\n"
+	.string "If I told you to become my\n"
 	.string "apprentice, you will refuse, I am sure.\p"
 	.string "I would like to make a gift of my coat\n"
 	.string "to you.\p"
@@ -322,7 +331,7 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch: @ 8225A67
 	.string "of nobility!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons: @ 8225B48
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
@@ -336,4 +345,7 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons: @ 8225B48
 LevelCapItem_Text_SootopolisGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 65.$"
+	
+CommonName_Text_Juan:
+	.string "JUAN$"
 

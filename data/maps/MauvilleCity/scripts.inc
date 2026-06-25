@@ -179,8 +179,11 @@ MauvilleCity_EventScript_Wally:: @ 81DF452
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_WallyRequestBattleAgain
 	applymovement 6, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
+	speakername CommonName_Text_Wally
 	msgbox MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT
+	speakername NULL
 	msgbox MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT
+	speakername CommonName_Text_Wally
 	msgbox MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT
 	applymovement 6, Common_Movement_FacePlayer
 	waitmovement 0
@@ -215,6 +218,7 @@ MauvilleCity_EventScript_WallyAndUncleExitNorth:: @ 81DF4E0
 	applymovement EVENT_OBJ_ID_PLAYER, MauvilleCity_Movement_PlayerFaceUncleNorth
 	applymovement 7, MauvilleCity_Movement_WallysUncleApproachPlayerNorth
 	waitmovement 0
+	speakername NULL
 	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
 	closemessage
 	applymovement EVENT_OBJ_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth2
@@ -234,6 +238,7 @@ MauvilleCity_EventScript_WallyAndUncleExitEast:: @ 81DF53D
 	delay 30
 	applymovement 7, MauvilleCity_Movement_WallysUncleApproachPlayerEast
 	waitmovement 0
+	speakername NULL
 	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
 	closemessage
 	applymovement EVENT_OBJ_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitEast2
@@ -294,6 +299,7 @@ MauvilleCity_EventScript_ScottExitEast:: @ 81DF628
 	return
 
 MauvilleCity_EventScript_BattleWally:: @ 81DF63A
+	speakername CommonName_Text_Wally
 	msgbox MauvilleCity_Text_WallyHereICome, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat
 	applymovement 6, Common_Movement_WalkInPlaceFastestRight
@@ -304,11 +310,13 @@ MauvilleCity_EventScript_BattleWally:: @ 81DF63A
 	msgbox MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT
 	applymovement 6, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
+	speakername NULL
 	msgbox MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT
 	return
 
 MauvilleCity_EventScript_DeclineWallyBattle:: @ 81DF683
 	setflag FLAG_DECLINED_WALLY_BATTLE_MAUVILLE
+	speakername CommonName_Text_Wally
 	msgbox MauvilleCity_Text_WallyMyUncleWontKnowImStrong, MSGBOX_DEFAULT
 	release
 	end
@@ -316,6 +324,7 @@ MauvilleCity_EventScript_DeclineWallyBattle:: @ 81DF683
 MauvilleCity_EventScript_WallyRequestBattleAgain:: @ 81DF690
 	applymovement 6, Common_Movement_FacePlayer
 	waitmovement 0
+	speakername CommonName_Text_Wally
 	msgbox MauvilleCity_Text_WallyPleaseBattleMe, MSGBOX_YESNO
 	goto MauvilleCity_EventScript_BattleWallyPrompt
 	end
@@ -587,7 +596,7 @@ MauvilleCity_Text_UncleHesTooPeppy: @ 81DF7DC
 	.string "But he's become a bit too peppy…$"
 
 MauvilleCity_Text_WallyWantToChallengeGym: @ 81DF845
-	.string "WALLY: Aww, UNCLE, please?\p"
+	.string "Aww, UNCLE, please?\p"
 	.string "I want to challenge this GYM and see\n"
 	.string "how much better I've become.\p"
 	.string "Please? May I, please?$"
@@ -600,12 +609,12 @@ MauvilleCity_Text_UncleYourePushingIt: @ 81DF8B9
 	.string "to suddenly challenge a GYM?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone: @ 81DF963
-	.string "WALLY: I'm not pushing it.\p"
+	.string "I'm not pushing it.\p"
 	.string "If I combine forces with RALTS,\n"
 	.string "we can beat anyone!$"
 
 MauvilleCity_Text_WallyWillYouBattleMe: @ 81DF9B2
-	.string "WALLY: Oh! Hi, {PLAYER}!\p"
+	.string "Oh! Hi, {PLAYER}!\p"
 	.string "I've gotten a lot stronger since\n"
 	.string "we met.\p"
 	.string "{PLAYER}, I want you and my UNCLE to\n"
@@ -614,7 +623,7 @@ MauvilleCity_Text_WallyWillYouBattleMe: @ 81DF9B2
 	.string "a battle with me?$"
 
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong: @ 81DFA4A
-	.string "WALLY: Oh… If you won't battle me,\n"
+	.string "Oh… If you won't battle me,\n"
 	.string "{PLAYER}, my UNCLE won't know that I've\l"
 	.string "become really strong.$"
 
@@ -626,11 +635,11 @@ MauvilleCity_Text_UncleCanYouBattleWally: @ 81DFAA5
 	.string "any reason the way he is now.$"
 
 MauvilleCity_Text_WallyPleaseBattleMe: @ 81DFB42
-	.string "WALLY: {PLAYER}, please!\n"
+	.string "{PLAYER}, please!\n"
 	.string "Battle with me, please.$"
 
 MauvilleCity_Text_WallyHereICome: @ 81DFB6D
-	.string "WALLY: {PLAYER}, thank you.\p"
+	.string "{PLAYER}, thank you.\p"
 	.string "Okay… Here I come!$"
 
 MauvilleCity_Text_WallyDefeat: @ 81DFB96
@@ -639,7 +648,7 @@ MauvilleCity_Text_WallyDefeat: @ 81DFB96
 	.string "I lost…$"
 
 MauvilleCity_Text_WallyIllGoBackToVerdanturf: @ 81DFBC3
-	.string "WALLY: UNCLE…\n"
+	.string "UNCLE…\n"
 	.string "I'll go back to VERDANTURF…$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle: @ 81DFBED

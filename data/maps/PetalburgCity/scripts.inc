@@ -40,12 +40,15 @@ PetalburgCity_EventScript_WallyTutorial:: @ 81DC32E
 	applymovement 2, PetalburgCity_Movement_WallyTutorialWally
 	applymovement EVENT_OBJ_ID_PLAYER, PetalburgCity_Movement_WallyTutorialPlayer
 	waitmovement 0
+	speakername CommonName_Text_Wally
 	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
 	special StartWallyTutorialBattle
 	waitstate
+	speakername CommonName_Text_Wally
 	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
 	applymovement 2, Common_Movement_WalkInPlaceFastestLeft, MAP_PETALBURG_CITY
 	waitmovement 2, MAP_PETALBURG_CITY
+	speakername CommonName_Text_Wally
 	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_MAP_NAME_POPUP

@@ -12,9 +12,11 @@ RustboroCity_Gym_EventScript_Roxanne:: @ 8212F31
 	end
 
 RustboroCity_Gym_EventScript_RoxanneDefeated:: @ 8212F66
+	speakername NULL
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Roxanne
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
@@ -28,10 +30,12 @@ RustboroCity_Gym_EventScript_RoxanneDefeated:: @ 8212F66
 	end
 
 RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
+	speakername NULL
 	giveitem ITEM_TM39
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM39
+	speakername CommonName_Text_Roxanne
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
 	@ Level Cap Item
 	delay 30
@@ -40,6 +44,7 @@ RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_RustboroGym, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -267,7 +272,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne: @ 8213C01
 	.string "in the POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch: @ 8213C2F
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
@@ -279,13 +284,13 @@ RustboroCity_Gym_Text_RoxanneRematchDefeat: @ 8213CF9
 	.string "Again, I have lost…$"
 
 RustboroCity_Gym_Text_RoxannePostRematch: @ 8213D12
-	.string "ROXANNE: I still have much to learn\n"
+	.string "I still have much to learn\n"
 	.string "when it comes to battling POKéMON.\p"
 	.string "That awareness makes me love battling\n"
 	.string "all that much more!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons: @ 8213D93
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
@@ -299,3 +304,6 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons: @ 8213D93
 LevelCapItem_Text_RustboroGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 20.$"
+
+CommonName_Text_Roxanne:
+	.string "ROXANNE$"

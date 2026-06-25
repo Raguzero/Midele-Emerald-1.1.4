@@ -81,7 +81,9 @@ PetalburgCity_Gym_OnFrame: @ 820499A
 
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial:: @ 82049A4
 	lockall
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
+	speakername CommonName_Text_Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
 	closemessage
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
@@ -93,6 +95,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial:: @ 82049A4
 	delay 30
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
@@ -108,6 +111,7 @@ PetalburgCity_Gym_Movement_WallyExitGym: @ 82049EC
 PetalburgCity_Gym_EventScript_Norman:: @ 82049F1
 	lock
 	faceplayer
+	speakername CommonName_Text_Norman
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -156,9 +160,13 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial:: @ 8204AAC
 	call_if_eq PetalburgCity_Gym_EventScript_WallyArriveWestEast
 	compare VAR_0x8008, 3
 	call_if_eq PetalburgCity_Gym_EventScript_WallyArriveWestEast
+	speakername CommonName_Text_Desconocido
 	msgbox PetalburgCity_Gym_Text_WallyIdLikeAPokemon, MSGBOX_DEFAULT
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadOhYoureWallyRight, MSGBOX_DEFAULT
+	speakername CommonName_Text_Wally
 	msgbox PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon, MSGBOX_DEFAULT
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadHmISee, MSGBOX_DEFAULT
 	compare VAR_0x8008, 0
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressPlayerSouth
@@ -168,6 +176,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial:: @ 8204AAC
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressPlayerWest
 	compare VAR_0x8008, 3
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressPlayerEast
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadPlayerGoWithWally, MSGBOX_DEFAULT
 	compare VAR_0x8008, 0
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressWallySouth
@@ -177,8 +186,17 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial:: @ 8204AAC
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressWallyWest
 	compare VAR_0x8008, 3
 	call_if_eq PetalburgCity_Gym_EventScript_NormanAddressWallyEast
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon, MSGBOX_DEFAULT
+	speakername NULL
+	msgbox PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon2, MSGBOX_DEFAULT
+	speakername CommonName_Text_Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall, MSGBOX_DEFAULT
+	speakername CommonName_Text_Norman
+	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall2, MSGBOX_DEFAULT
+	speakername NULL
+	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall3, MSGBOX_DEFAULT
+	speakername CommonName_Text_Wally
 	msgbox PetalburgCity_Gym_Text_WallyOhWowThankYou, MSGBOX_DEFAULT
 	compare VAR_0x8008, 0
 	call_if_eq PetalburgCity_Gym_EventScript_NormanFaceDoorSouth
@@ -196,6 +214,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial:: @ 8204AAC
 	call_if_eq PetalburgCity_Gym_EventScript_WallyFacePlayer
 	compare VAR_0x8008, 3
 	call_if_eq PetalburgCity_Gym_EventScript_WallyFacePlayer
+	speakername CommonName_Text_Wally
 	msgbox PetalburgCity_Gym_Text_WouldYouReallyComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_DONT_TRANSITION_MUSIC
@@ -361,6 +380,7 @@ PetalburgCity_Gym_EventScript_NormanPostBattle:: @ 8204D80
 	goto_if_eq PetalburgCity_Gym_EventScript_GiveEnigmaBerry
 	goto_if_unset FLAG_RECEIVED_TM42, PetalburgCity_Gym_EventScript_GiveFacade2
 	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
 	release
 	end
@@ -387,6 +407,7 @@ PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry:: @ 8204DCE
 	goto_if_eq PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
 	compare VAR_ENIGMA_BERRY_AVAILABLE, 0
 	goto_if_eq PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_GiveEnigmaBerry, MSGBOX_DEFAULT
 	setvar VAR_RESULT, TRUE
 	return
@@ -406,9 +427,11 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry:: @ 8204E1D
 PetalburgCity_Gym_EventScript_NormanBattle:: @ 8204E3B
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	speakername NULL
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	setvar VAR_PETALBURG_GYM_STATE, 7
@@ -424,6 +447,7 @@ PetalburgCity_Gym_EventScript_NormanBattle:: @ 8204E3B
 	special DrawWholeMapView
 	call PetalburgCity_Gym_EventScript_GiveFacade
 	delay 30
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -433,6 +457,7 @@ PetalburgCity_Gym_EventScript_NormanBattle:: @ 8204E3B
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_PetalburgGym, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -447,10 +472,12 @@ PetalburgCity_Gym_EventScript_NormanBattle:: @ 8204E3B
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade:: @ 8204ED2
+	speakername NULL
 	giveitem ITEM_TM42
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
 	setflag FLAG_RECEIVED_TM42
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT
 	return
 
@@ -481,6 +508,7 @@ PetalburgCity_Gym_EventScript_WallysUncleArrives:: @ 8204F13
 	call_if_eq PetalburgCity_Gym_EventScript_WallysUncleApproachPlayerEast
 	compare VAR_0x8008, 3
 	call_if_eq PetalburgCity_Gym_EventScript_WallysUncleApproachPlayerWest
+	speakername NULL
 	msgbox PetalburgCity_Gym_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -782,6 +810,7 @@ PetalburgCity_Gym_Movement_PlayerExitWithWallyEast: @ 8205123
 	step_end
 
 PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough:: @ 820512D
+	speakername CommonName_Text_Norman
 	msgbox PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough, MSGBOX_DEFAULT
 	release
 	end
@@ -1269,7 +1298,7 @@ PetalburgCity_Gym_Text_DadOhYoureWallyRight: @ 82058DB
 	.string "You're WALLY, right?$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon: @ 8205910
-	.string "WALLY: I'm going to go stay with my\n"
+	.string "I'm going to go stay with my\n"
 	.string "relatives in VERDANTURF TOWN.\p"
 	.string "I thought I would be lonely by myself,\n"
 	.string "so I wanted to take a POKéMON along.\p"
@@ -1286,18 +1315,24 @@ PetalburgCity_Gym_Text_DadPlayerGoWithWally: @ 82059E8
 	.string "safely catches a POKéMON.$"
 
 PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon: @ 8205A46
-	.string "WALLY, here, I'll loan you my POKéMON.\p"
+	.string "WALLY, here, I'll loan you my POKéMON.$"
+
+PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon2:
 	.string "WALLY received a ZIGZAGOON!$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall: @ 8205A89
-	.string "WALLY: Oh, wow!\n"
-	.string "A POKéMON!\p"
+	.string "Oh, wow!\n"
+	.string "A POKéMON!$"
+
+PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall2:
 	.string "DAD: Hm. I'll give you a POKé BALL, too.\n"
-	.string "Go for it!\p"
+	.string "Go for it!$"
+
+PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall3:
 	.string "WALLY received a POKé BALL!$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou: @ 8205AF4
-	.string "WALLY: Oh, wow!\n"
+	.string "Oh, wow!\n"
 	.string "Thank you!$"
 
 PetalburgCity_Gym_Text_WouldYouReallyComeWithMe: @ 8205B0F
@@ -1308,7 +1343,7 @@ PetalburgCity_Gym_Text_DadSoDidItWorkOut: @ 8205B32
 	.string "DAD: So, did it work out?$"
 
 PetalburgCity_Gym_Text_WallyThankYouBye: @ 8205B4C
-	.string "WALLY: Thank you, yes, it did.\n"
+	.string "Thank you, yes, it did.\n"
 	.string "Here's your POKéMON back.\p"
 	.string "{PLAYER}, thank you for coming along\n"
 	.string "with me.\p"
@@ -1707,3 +1742,9 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons: @ 820764A
 LevelCapItem_Text_PetalburgGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 45.$"
+	
+CommonName_Text_Wally:
+	.string "WALLY$"
+	
+CommonName_Text_Norman:
+	.string "NORMAN$"

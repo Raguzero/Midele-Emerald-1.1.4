@@ -54,9 +54,11 @@ LavaridgeTown_Gym_1F_EventScript_Flannery:: @ 81FE78C
 	end
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
+	speakername NULL
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Flannery
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
@@ -72,6 +74,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox LavaridgeTown_Gym_1F_Text_RegisteredFlannery, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -81,18 +84,22 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2:: @ 81FE81D
+	speakername NULL
 	giveitem ITEM_TM50
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_Flannery
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM50
 	release
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat:: @ 81FE841
+	speakername NULL
 	giveitem ITEM_TM50
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_Flannery
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM50
 	return
@@ -367,7 +374,7 @@ LavaridgeTown_Gym_1F_Text_GymStatueCertified: @ 81FF5C4
 	.string "{PLAYER}$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPreRematch: @ 81FF601
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love POKéMON.\n"
 	.string "I love to battle.\l"
@@ -380,7 +387,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat: @ 81FF69F
 	.string "On the verge of eruption!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostRematch: @ 81FF6BF
-	.string "FLANNERY: I lost the match,\n"
+	.string "I lost the match,\n"
 	.string "but I'm completely satisfied.\p"
 	.string "It's not often I get to enjoy a battle\n"
 	.string "this heated.\p"
@@ -388,7 +395,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPostRematch: @ 81FF6BF
 	.string "again sometime!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons: @ 81FF75E
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love POKéMON.\n"
 	.string "I love to battle.\l"
@@ -399,3 +406,6 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons: @ 81FF75E
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two POKéMON.$"
+	
+CommonName_Text_Flannery:
+	.string "FLANNERY$"

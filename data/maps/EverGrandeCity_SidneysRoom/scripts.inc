@@ -48,6 +48,7 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney:: @ 8227F64
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_SITENNOU, 0
+	speakername CommonName_Text_Sydney
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, EGC_AltSidney
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
@@ -60,6 +61,7 @@ EGC_AltSidney::
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech:: @ 8227F8B
+	speakername CommonName_Text_Sydney
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -67,6 +69,7 @@ EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech:: @ 8227F8B
 EverGrandeCity_SidneysRoom_EventScript_Defeated:: @ 8227F95
 	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	speakername CommonName_Text_Sydney
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -92,3 +95,5 @@ EverGrandeCity_SidneysRoom_Text_PostBattleSpeech: @ 82280EC
 	.string "Now, go on to the next room and enjoy\l"
 	.string "your next battle!$"
 
+CommonName_Text_Sydney:
+	.string "SYDNEY$"

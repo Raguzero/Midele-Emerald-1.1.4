@@ -23,6 +23,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame:: @ 8229850
 	applymovement 1, Common_Movement_WalkInPlaceFastestRight
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions, MSGBOX_DEFAULT
 	closemessage
 	applymovement 1, EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2
@@ -32,6 +33,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame:: @ 8229850
 	applymovement 1, Common_Movement_WalkInPlaceFastestRight
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames, MSGBOX_DEFAULT
 	closemessage
 	applymovement 1, Common_Movement_WalkInPlaceFastestUp
@@ -84,7 +86,7 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2: @ 8229908
 	step_end
 
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions: @ 822990E
-	.string "WALLACE: This room…\p"
+	.string "This room…\p"
 	.string "This is where we keep records of\n"
 	.string "POKéMON that prevailed through\l"
 	.string "harsh battles.\p"
@@ -92,7 +94,7 @@ EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions: @ 822990E
 	.string "are honored.$"
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames: @ 82299A3
-	.string "WALLACE: Come on, let's record your\n"
+	.string "Come on, let's record your\n"
 	.string "name as a TRAINER who triumphed over\l"
 	.string "the POKéMON LEAGUE, and the names of\l"
 	.string "the partners who battled with you.$"

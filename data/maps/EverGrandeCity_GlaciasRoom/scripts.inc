@@ -42,6 +42,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia:: @ 8228469
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_SITENNOU, 0
+	speakername CommonName_Text_Glacia
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, EGC_AltGlacia
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
@@ -54,6 +55,7 @@ EGC_AltGlacia::
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech:: @ 8228490
+	speakername CommonName_Text_Glacia
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -61,6 +63,7 @@ EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech:: @ 8228490
 EverGrandeCity_GlaciasRoom_EventScript_Defeated:: @ 822849A
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	speakername CommonName_Text_Glacia
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -88,3 +91,5 @@ EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech: @ 8228640
 	.string "And there, confirm the truly fearsome\n"
 	.string "side of the POKéMON LEAGUE.$"
 
+CommonName_Text_Glacia:
+	.string "GLACIA$"

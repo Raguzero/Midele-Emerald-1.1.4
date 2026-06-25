@@ -39,6 +39,7 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace: @ 8228A42
 
 EverGrandeCity_ChampionsRoom_EventScript_Wallace:: @ 8228A45
 	playbgm MUS_DAIGO, 0
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, EGC_AltWallace
 	trainerbattle_no_intro TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat
@@ -55,8 +56,10 @@ EverGrandeCity_ChampionsRoom_EventScript_Defeated:: @ 8228A61
 	setmetatile 6, 1, METATILE_EliteFour_OpenDoorChampion_Frame, 0
 	setmetatile 6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, 0
 	special DrawWholeMapView
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	closemessage
+	speakername NULL
 	playse SE_DOOR
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -123,6 +126,7 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF:: @ 8228B30
 	delay 20
 	applymovement 1, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -134,6 +138,7 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF:: @ 8228B30
 	delay 20
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
+	speakername CommonName_Text_Wallace
 	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside, MSGBOX_DEFAULT
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -151,10 +156,12 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF:: @ 8228B30
 	end
 
 EverGrandeCity_ChampionsRoom_EventScript_MayCongratulations:: @ 8228BEB
+	speakername NULL
 	msgbox EverGrandeCity_ChampionsRoom_Text_MayCongratulations, MSGBOX_DEFAULT
 	return
 
 EverGrandeCity_ChampionsRoom_EventScript_BrendanCongratulations:: @ 8228BF4
+	speakername NULL
 	msgbox EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations, MSGBOX_DEFAULT
 	return
 
@@ -234,7 +241,7 @@ EverGrandeCity_ChampionsRoom_Movement_BirchArrives: @ 8228C43
 	step_end
 
 EverGrandeCity_ChampionsRoom_Text_IntroSpeech: @ 8228C4C
-	.string "WALLACE: Welcome, {PLAYER}{KUN}.\p"
+	.string "Welcome, {PLAYER}{KUN}.\p"
 	.string "That incident in SOOTOPOLIS CITY…\n"
 	.string "That was superb work, putting an end\l"
 	.string "to that crisis all by yourself.\p"
@@ -266,7 +273,7 @@ EverGrandeCity_ChampionsRoom_Text_Defeat: @ 8228EAC
 	.string "TRAINER!$"
 
 EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech: @ 8228F66
-	.string "WALLACE: The POKéMON you sent into\n"
+	.string "The POKéMON you sent into\n"
 	.string "battle…\p"
 	.string "At times they danced like a spring\n"
 	.string "breeze, and at times they struck\l"
@@ -324,13 +331,13 @@ EverGrandeCity_ChampionsRoom_Text_BirchCongratulations: @ 822934D
 	.string "Now, go proudly into the final room!$"
 
 EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe: @ 8229399
-	.string "WALLACE: {PLAYER}{KUN}…\p"
+	.string "{PLAYER}{KUN}…\p"
 	.string "No, let me rephrase that properly.\p"
 	.string "The new CHAMPION!\p"
 	.string "Come with me.$"
 
 EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside: @ 82293EB
-	.string "WALLACE: I'm sorry, but…\p"
+	.string "I'm sorry, but…\p"
 	.string "From here on, only those TRAINERS who\n"
 	.string "have become CHAMPIONS may enter.\p"
 	.string "You'll have to wait outside with\n"
@@ -352,3 +359,5 @@ EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations: @ 82294F5
 	.string "{PLAYER}, way to go!\n"
 	.string "Congratulations!$"
 
+CommonName_Text_Wallace:
+	.string "WALLACE$"

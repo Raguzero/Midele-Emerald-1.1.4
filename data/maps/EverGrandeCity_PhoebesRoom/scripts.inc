@@ -42,6 +42,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe:: @ 82281CB
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_SITENNOU, 0
+	speakername CommonName_Text_Phoebes
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_DEFEATED_GOOSES_GYM, EGC_AltPhoebes
 	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
@@ -54,6 +55,7 @@ EGC_AltPhoebes::
 	end
 
 EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech:: @ 82281F2
+	speakername CommonName_Text_Phoebes
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -61,6 +63,7 @@ EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech:: @ 82281F2
 EverGrandeCity_PhoebesRoom_EventScript_Defeated:: @ 82281FC
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	speakername CommonName_Text_Phoebes
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
@@ -88,4 +91,7 @@ EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech: @ 8228343
 	.string "Yup, I'd like to see how far your bond\n"
 	.string "will carry you.\p"
 	.string "Go ahead, move on to the next room.$"
+	
+CommonName_Text_Phoebes:
+	.string "PHOEBES$"
 

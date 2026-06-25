@@ -59,9 +59,11 @@ MossdeepCity_Gym_EventScript_TateAndLiza:: @ 8220898
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
+	speakername NULL
 	message MossdeepCity_Gym_Text_ReceivedMindBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_TateAndLiza
 	msgbox MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_MOSSDEEP_GYM
 	setflag FLAG_BADGE07_GET
@@ -81,6 +83,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox MossdeepCity_Gym_Text_RegisteredTateAndLiza, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -91,6 +94,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
 	waitmovement 0
 	playfanfare MUS_ME_B_SMALL
 	delay 30
+	speakername NULL
 	msgbox LevelCapItem_Text_MossdeepGym, MSGBOX_DEFAULT
 	closemessage
 	@ Level Cap Item
@@ -99,18 +103,22 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind2:: @ 8220937
+	speakername NULL
 	giveitem ITEM_TM04
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_TateAndLiza
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM04
 	release
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind:: @ 822095B
+	speakername NULL
 	giveitem ITEM_TM04
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_TateAndLiza
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM04
 	return
@@ -663,3 +671,6 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons: @ 8221EB8
 LevelCapItem_Text_MossdeepGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 55.$"
+	
+CommonName_Text_TateAndLiza:
+	.string "TATE&LIZA$"

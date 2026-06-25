@@ -155,9 +155,11 @@ DewfordTown_Gym_EventScript_Brawly:: @ 81FC7C2
 
 DewfordTown_Gym_EventScript_BrawlyDefeated:: @ 81FC7F7
 	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
+	speakername NULL
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	speakername CommonName_Text_Brawly
 	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_DEWFORD_GYM
 	setflag FLAG_BADGE02_GET
@@ -170,6 +172,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated:: @ 81FC7F7
 	closemessage
 	delay 30
 	playfanfare MUS_ME_TORE_EYE
+	speakername NULL
 	msgbox DewfordTown_Gym_Text_RegisteredBrawly, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -190,17 +193,21 @@ DewfordTown_Gym_EventScript_BrawlyDefeated:: @ 81FC7F7
 	end
 
 DewfordTown_Gym_EventScript_GiveBulkUp:: @ 81FC855
+	speakername NULL
 	giveitem ITEM_TM08
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
+	speakername CommonName_Text_Brawly
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM08
 	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp2: @ 81FC878
+	speakername NULL
 	giveitem ITEM_TM08
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	speakername CommonName_Text_Brawly
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM08
 	release
@@ -456,7 +463,7 @@ DewfordTown_Gym_Text_GymStatueCertified: @ 81FD28B
 	.string "{PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch: @ 81FD2C4
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
@@ -468,12 +475,12 @@ DewfordTown_Gym_Text_BrawlyRematchDefeat: @ 81FD367
 	.string "Swamped again!$"
 
 DewfordTown_Gym_Text_BrawlyPostRematch: @ 81FD37B
-	.string "BRAWLY: Battling is vast and it's deep.\n"
+	.string "Battling is vast and it's deep.\n"
 	.string "You can't see the bottom.\l"
 	.string "It's just like the sea of HOENN!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons: @ 81FD3DE
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
@@ -485,3 +492,6 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons: @ 81FD3DE
 LevelCapItem_Text_DewfordGym:
 	.string "LEVEL CAP: Actualización completada.\n"
 	.string "El nuevo límite es el nivel 30.$"
+	
+CommonName_Text_Brawly:
+	.string "BRAWLY$"
