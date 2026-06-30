@@ -17,7 +17,7 @@ IzabeIsland_Lobby_Text_Receptionist::
 	.string "IZABE se enorgullece de estar a la\n"
 	.string "última en investigación marina y naval.\p"
 	.string "Trabajamos junto a los ASTILLEROS y el\n"
-	.string "MUSEO OCEÁNICO de CIUDAD PORTUAL.$"
+	.string "MUSEO OCEÁNICO de SLATEPORT CITY.$"
 
 IzabeIsland_Lobby_Text_OldMan::
 	.string "Uf... el camino a la ciudad es más largo\n"

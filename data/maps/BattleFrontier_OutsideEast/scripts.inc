@@ -236,6 +236,7 @@ BattleFrontier_OutsideEast_EventScript_Camper:: @ 8242E08
 	end
 
 BattleFrontier_OutsideEast_Masuda::
+	speakername CommonName_Text_Masuda
 	msgbox BattleFrontier_OutsideEast_Masuda_Text_0, MSGBOX_NPC
 	releaseall
 	return
@@ -446,7 +447,7 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail: @ 8243D0B
 	.string "it kept staring at me!$"
 
 BattleFrontier_OutsideEast_Masuda_Text_0:
-	.string "MASUDA: ¿Quieres pasar...? MELASUDA\p"
+	.string "¿Quieres pasar...? MELASUDA\p"
 	.string "Creo que no sabes quién soy; soy\n"
 	.string "MASUDA, el director del segundo\l"
 	.string "videojuego de POKéMON más vendido de\l"
@@ -460,15 +461,15 @@ BattleFrontier_OutsideEast_Masuda_Text_0:
 	.string "tiempo para cosas tediosas como\l"
 	.string "explorar, tener retos o pasárselo bien.\p"
 	.string "Por eso, en GAME FREAK creemos que\n"
-	.string "cosas como el FRENTE BATALLA sobran,\l"
+	.string "cosas como el BATTLE FRONTIER sobran,\l"
 	.string "son reliquias del pasado.\p"
 	.string "Nuestro proyecto de destrucción del\n"
-	.string "FRENTE BATALLA ya ha comenzado, y es\l"
+	.string "BATTLE FRONTIER ya ha comenzado, y es\l"
 	.string "por eso que este edificio ya no está\l"
 	.string "disponible.\p"
 	.string "Quién sabe, quizás en un futuro muy\n"
 	.string "lejano... o en otra dimensión, lo que\l"
-	.string "quede del FRENTE BATALLA no sea más\l"
+	.string "quede del BATTLE FRONTIER no sea más\l"
 	.string "que una triste maqueta.\p"
 	.string "Por cierto, compra los DLC de ESPADA Y\n"
 	.string "ESCUDO, no te arrepentirás.$"

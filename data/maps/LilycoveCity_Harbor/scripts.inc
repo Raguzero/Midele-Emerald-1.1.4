@@ -532,6 +532,7 @@ LilycoveCity_Harbor_EventScript_BoardFerryWithBrineyAndSailorEast:: @ 821E6BA
 	return
 
 LilycoveCity_Harbor_EventScript_GiratinaMaster::
+  speakername CommonName_Text_GiratinaMaster
   msgbox LilycoveCity_Harbor_Text_GiratinaMaster, MSGBOX_NPC
   end
 

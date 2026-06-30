@@ -6808,9 +6808,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_PICHU7] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_SCIENTISH,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .battleMusic = MUS_RG_VS_GYM,
+        .battleMusic = MUS_RG_VS_TORE,
         .trainerPic = TRAINER_PIC_SCIENTISH_FRLG,
         .trainerName = _("PICHU7"),
         .items = {},
@@ -8869,9 +8869,10 @@ const struct Trainer gTrainers[] = {
     [TRAINER_LORD] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MIDELE,
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_MIDELE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
+        .battleMusic = MUS_RG_VS_TORE,
         .trainerName = _("INFINIT"),
         .items = {},
         .doubleBattle = FALSE,
