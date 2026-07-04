@@ -6,6 +6,9 @@
 #include "event_data.h"
 #include "text.h"
 #include "match_call.h"
+#include "trainer_hill.h"
+#include "constants/maps.h"
+#include "constants/region_map_sections.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA const u8* gSpeakerName = NULL;
@@ -33,12 +36,16 @@ static void sub_8098154(u8 taskId)
            task->data[0]++;
            break;
         case 1:
-           if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
+           if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME) 
+		   && !InTrainerHill()
+		   && (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER || gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_OUTSIDE_EAST)))
+		   {
                 DrawDialogueFrameWithNameplate(0, TRUE);
                 PutWindowTilemap(1);
                 CopyWindowToVram(1, 3);
             }
-            else {
+            else 
+			{
                 DrawDialogueFrame(0, TRUE);
             } 
            task->data[0]++;
@@ -122,7 +129,10 @@ extern void FillDialogFramePlate();
 extern int GetDialogFramePlateWidth();
 static void textbox_fdecode_auto_and_task_add(u8* str, bool32 allowSkippingDelayWithButtonPress)
 {
-    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
+    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)
+		&& !InTrainerHill()
+		&& (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER || gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_OUTSIDE_EAST)))
+		{
         int strLen = GetStringWidth(0, gSpeakerName, -1);
         if (strLen > 0) {
             strLen = GetDialogFramePlateWidth()/2 - strLen/2;
@@ -130,7 +140,9 @@ static void textbox_fdecode_auto_and_task_add(u8* str, bool32 allowSkippingDelay
             gNamePlateBuffer[1] = EXT_CTRL_CODE_CLEAR_TO;
             gNamePlateBuffer[2] = strLen;
             StringExpandPlaceholders(&gNamePlateBuffer[3], gSpeakerName);
-        } else {
+        } 
+		else 
+		{
             StringExpandPlaceholders(&gNamePlateBuffer[0], gSpeakerName);
         }
         FillDialogFramePlate();
