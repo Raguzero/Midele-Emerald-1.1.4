@@ -2678,6 +2678,7 @@ const u16 gEggMoves[] = {
         MOVE_STOCKPILE,
         MOVE_SPIT_UP,
         MOVE_SWALLOW,
+        MOVE_RECOVER,
         MOVE_MIST,
         MOVE_ZAP_CANNON,
         MOVE_COTTON_SPORE),

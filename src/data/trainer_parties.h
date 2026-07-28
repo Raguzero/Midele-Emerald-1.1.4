@@ -10123,7 +10123,7 @@ static const struct TrainerMonCustomMidele sParty_Alberto[] = {
 	.nature = NATURE_MODEST,
 	.heldItem = ITEM_MENTAL_HERB,
 	.evs = {0, 0, 0, 112, 0, 112},
-    .moves = {MOVE_GIGA_DRAIN, MOVE_CONFUSE_RAY, MOVE_GLARE, MOVE_DRILL_PECK}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_CONFUSE_RAY, MOVE_THUNDER_WAVE, MOVE_DRILL_PECK}
     }
 };
 static const struct TrainerMonCustomMidele sParty_Jacki1[] = {
@@ -17807,7 +17807,6 @@ static const struct TrainerMonCustomMidele sParty_Nicolas3[] = {
     .species = SPECIES_SALAMENCE,
 	.nature = NATURE_ADAMANT,
 	.heldItem = ITEM_LUM_BERRY,
-	.friendship = 255,
 	.evs = {0, 252, 0, 0, 108, 0},
     .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE}
     },
@@ -17838,7 +17837,6 @@ static const struct TrainerMonCustomMidele sParty_Nicolas4[] = {
     .species = SPECIES_SALAMENCE,
 	.nature = NATURE_ADAMANT,
 	.heldItem = ITEM_LUM_BERRY,
-	.friendship = 255,
 	.evs = {0, 252, 0, 0, 108, 0},
     .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE}
     },
@@ -25233,7 +25231,7 @@ static const struct TrainerMonCustomMidele sParty_Vin[] = {
 	.evs = {4, 0, 0, 252, 0, 252},
 	.ability = 1,
 	.shiny = 1,
-    .moves = {MOVE_DAZZLING_GLEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER, MOVE_LIGHT_SCREEN}
+    .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_FLAMETHROWER, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = 31,
@@ -26272,13 +26270,13 @@ static const struct TrainerMonCustomMidele sParty_Josito2[] = {
     },
     {
     .iv = 31, 
-    .lvl = 85,
+    .lvl = 84,
     .species = SPECIES_STRANCLOUD,
 	.heldItem = ITEM_SITRUS_BERRY,
 	.nature = NATURE_TIMID,
 	.evs = {6, 0, 0, 252, 0, 252},
 	.ability = 0, // DRIZZLE
-    .moves = {MOVE_THUNDER, MOVE_WEATHER_BALL, MOVE_HAZE, MOVE_BLIZZARD}
+    .moves = {MOVE_THUNDER, MOVE_WEATHER_BALL, MOVE_STOCKPILE, MOVE_RECOVER}
     },
     {
     .iv = 31, 
@@ -26300,6 +26298,16 @@ static const struct TrainerMonCustomMidele sParty_Josito2[] = {
 	.evs = {252, 0, 252, 0, 0, 6},
 	.ability = 0, // OVERCOAT
     .moves = {MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_RECOVER, MOVE_FIRE_PUNCH}
+    },
+    {
+    .iv = 31, 
+    .lvl = 84,
+    .species = SPECIES_MEGA_STRANCLOUD,
+	.heldItem = ITEM_NEVER_MELT_ICE,
+	.nature = NATURE_TIMID,
+	.evs = {6, 0, 0, 252, 0, 252},
+	.ability = 0, // SNOW WARNING
+    .moves = {MOVE_DAZZLING_GLEAM, MOVE_THUNDERBOLT, MOVE_DARK_PULSE, MOVE_BLIZZARD}
     }
 };
 static const struct TrainerMonCustomMidele sParty_Mrzero[] = {
