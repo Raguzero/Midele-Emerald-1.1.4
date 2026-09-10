@@ -17132,7 +17132,7 @@ static const struct TrainerMonCustomMidele sParty_Angelina[] = {
     .lvl = 25,
     .species = SPECIES_ZANGOOSE,
 	.evs = {40, 0, 0, 0, 0, 40},
-    .moves = {MOVE_SLASH, MOVE_FURY_CUTTER, MOVE_AERIAL_ACE, MOVE_REVENGE}
+    .moves = {MOVE_METAL_CLAW, MOVE_FURY_CUTTER, MOVE_AERIAL_ACE, MOVE_REVENGE}
     }
 };
 static const struct TrainerMonCustomMidele sParty_Lenny[] = {
@@ -17277,7 +17277,7 @@ static const struct TrainerMonCustomMidele sParty_Hector[] = {
     .lvl = 26,
     .species = SPECIES_ZANGOOSE,
 	.evs = {40, 40, 0, 0, 0, 0},
-    .moves = {MOVE_SLASH, MOVE_FURY_CUTTER, MOVE_METAL_CLAW, MOVE_REVENGE}
+    .moves = {MOVE_QUICK_ATTACK, MOVE_FURY_CUTTER, MOVE_METAL_CLAW, MOVE_REVENGE}
     },
     {
     .iv = 31,
